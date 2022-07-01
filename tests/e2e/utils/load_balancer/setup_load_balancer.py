@@ -144,6 +144,7 @@ def configure_load_balancer_controller(
     # tag cluster subnet with kubernetes.io/cluster/<cluster_name> tag
     # see prerequisites in https://docs.aws.amazon.com/eks/latest/userguide/alb-ingress.html
     cluster_desc = eks_client.describe_cluster(name=cluster_name)
+    eksRoleArn = cluster_desc["cluster"]["roleArn"]
     ec2_client.create_tags(
         Resources=cluster_desc["cluster"]["resourcesVpcConfig"]["subnetIds"],
         Tags=[
@@ -164,6 +165,7 @@ def configure_load_balancer_controller(
             "name": alb_sa_name,
             "namespace": alb_sa_namespace,
             "policyArn": alb_policy.arn,
+            "eksRoleArn": eksRoleArn
         }
     }
 
