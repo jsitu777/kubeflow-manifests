@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kubeflow on AWS – About</title>
-    <link>https://awslabs.github.io/kubeflow-manifests/docs/about/</link>
+    <link>https://wenjinsitu.github.io/kubeflow-manifests/docs/about/</link>
     <description>Recent content in About on Kubeflow on AWS</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://awslabs.github.io/kubeflow-manifests/docs/about/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://wenjinsitu.github.io/kubeflow-manifests/docs/about/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>Docs: AWS Features for Kubeflow</title>
-      <link>https://awslabs.github.io/kubeflow-manifests/docs/about/features/</link>
+      <link>https://wenjinsitu.github.io/kubeflow-manifests/docs/about/features/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://awslabs.github.io/kubeflow-manifests/docs/about/features/</guid>
+      <guid>https://wenjinsitu.github.io/kubeflow-manifests/docs/about/features/</guid>
       <description>
         
         
@@ -54,10 +54,10 @@
     
     <item>
       <title>Docs: Releases and Versioning</title>
-      <link>https://awslabs.github.io/kubeflow-manifests/docs/about/releases/</link>
+      <link>https://wenjinsitu.github.io/kubeflow-manifests/docs/about/releases/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://awslabs.github.io/kubeflow-manifests/docs/about/releases/</guid>
+      <guid>https://wenjinsitu.github.io/kubeflow-manifests/docs/about/releases/</guid>
       <description>
         
         
@@ -80,24 +80,28 @@
     
     <item>
       <title>Docs: Amazon EKS and Kubeflow Compatibility</title>
-      <link>https://awslabs.github.io/kubeflow-manifests/docs/about/eks-compatibility/</link>
+      <link>https://wenjinsitu.github.io/kubeflow-manifests/docs/about/eks-compatibility/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://awslabs.github.io/kubeflow-manifests/docs/about/eks-compatibility/</guid>
+      <guid>https://wenjinsitu.github.io/kubeflow-manifests/docs/about/eks-compatibility/</guid>
       <description>
         
         
         &lt;h2 id=&#34;compatibility&#34;&gt;Compatibility&lt;/h2&gt;
-&lt;p&gt;Amazon EKS maintains end-to-end testing between EKS Kubernetes versions and Kubeflow versions. The following table relates compatibility between Kubernetes versions on Amazon EKS and Kubeflow v1.4.&lt;/p&gt;
+&lt;p&gt;Amazon EKS maintains end-to-end testing between EKS Kubernetes versions and Kubeflow versions. The following table relates compatibility between Kubernetes versions on Amazon EKS and Kubeflow v1.5.&lt;/p&gt;
 &lt;div class=&#34;table-responsive&#34;&gt;
   &lt;table class=&#34;table table-bordered&#34;&gt;
     &lt;thead class=&#34;thead-light&#34;&gt;
       &lt;tr&gt;
         &lt;th&gt;EKS Versions&lt;/th&gt;
-        &lt;th&gt;Kubeflow v1.4&lt;/th&gt;
+        &lt;th&gt;Kubeflow v1.5&lt;/th&gt;
       &lt;/tr&gt;
     &lt;/thead&gt;
     &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td&gt;1.22&lt;/td&gt;
+        &lt;td&gt;&lt;b&gt;Incompatible&lt;/b&gt;&lt;/td&gt;
+      &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td&gt;1.21&lt;/td&gt;
         &lt;td&gt;&lt;b&gt;Compatible&lt;/b&gt;&lt;/td&gt;
@@ -117,21 +121,16 @@
 &lt;li&gt;&lt;strong&gt;Incompatible&lt;/strong&gt;: the combination is not known to work together&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;Compatible&lt;/strong&gt;: all Kubeflow features have been tested and verified for the EKS Kubernetes version&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;kubeflow-v15-support&#34;&gt;Kubeflow v1.5 Support&lt;/h2&gt;
-&lt;p&gt;Support for Kubeflow-v1.5 is in active development. You can track the following issue to stay up to date on progress:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/awslabs/kubeflow-manifests/issues/91&#34;&gt;v1.5 tracking issue&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 
       </description>
     </item>
     
     <item>
       <title>Docs: Security</title>
-      <link>https://awslabs.github.io/kubeflow-manifests/docs/about/security/</link>
+      <link>https://wenjinsitu.github.io/kubeflow-manifests/docs/about/security/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://awslabs.github.io/kubeflow-manifests/docs/about/security/</guid>
+      <guid>https://wenjinsitu.github.io/kubeflow-manifests/docs/about/security/</guid>
       <description>
         
         
@@ -145,7 +144,7 @@
 &lt;li&gt;&lt;a href=&#34;https://docs.aws.amazon.com/AmazonS3/latest/userguide/security-best-practices.html&#34;&gt;Security best practices for Amazon Simple Storage Service (S3)&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/security.html&#34;&gt;Security in Amazon Route53&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.aws.amazon.com/acm/latest/userguide/security.html&#34;&gt;Security in Amazon Certificate Manager (ACM)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.aws.amazon.com/AmazonS3/latest/userguide/security-best-practices.html&#34;&gt;Security best practices for Amazon Cognito user pools&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.aws.amazon.com/cognito/latest/developerguide/managing-security.html&#34;&gt;Security best practices for Amazon Cognito user pools&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/security.html&#34;&gt;Security in Amazon Elastic Load Balancing (ELB)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
@@ -154,10 +153,10 @@
     
     <item>
       <title>Docs: Usage Tracking</title>
-      <link>https://awslabs.github.io/kubeflow-manifests/docs/about/usage-tracking/</link>
+      <link>https://wenjinsitu.github.io/kubeflow-manifests/docs/about/usage-tracking/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://awslabs.github.io/kubeflow-manifests/docs/about/usage-tracking/</guid>
+      <guid>https://wenjinsitu.github.io/kubeflow-manifests/docs/about/usage-tracking/</guid>
       <description>
         
         
@@ -165,23 +164,23 @@
 &lt;p&gt;Usage tracking for Kubeflow on AWS collects the instance ID used by one of the worker nodes in a customer’s cluster. This data is sent back to AWS once per day. Usage tracking only collects the EC2 instance ID where Kubeflow is running and does not collect or export any other data to AWS. If you wish to deactivate this tracking, instructions are below.&lt;/p&gt;
 &lt;h3 id=&#34;activate-usage-tracking&#34;&gt;Activate usage tracking&lt;/h3&gt;
 &lt;p&gt;Usage tracking is activated by default. If you deactivated usage tracking for your Kubeflow deployment and would like to activate it after the fact, you can do so at any time with the following command:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kustomize build awsconfigs/common/aws-telemetry &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; kubectl apply -f -
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kustomize build awsconfigs/common/aws-telemetry &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; kubectl apply -f -
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;deactivate-usage-tracking&#34;&gt;Deactivate usage tracking&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;Before deploying Kubeflow:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;You can deactivate usage tracking by skipping the telemetry component installation in one of two ways:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;For single line installation, comment out the &lt;a href=&#34;https://github.com/awslabs/kubeflow-manifests/blob/main/deployment/vanilla/kustomization.yaml#L57&#34;&gt;&lt;code&gt;aws-telemetry&lt;/code&gt; line&lt;/a&gt; in the &lt;code&gt;kustomization.yaml&lt;/code&gt; file of your choosing:
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# ./../aws-telemetry&lt;/span&gt;
+&lt;li&gt;For single line installation, comment out the &lt;a href=&#34;https://github.com/awslabs/kubeflow-manifests/blob/main/deployments/vanilla/kustomization.yaml#L59&#34;&gt;&lt;code&gt;aws-telemetry&lt;/code&gt; line&lt;/a&gt; in the &lt;code&gt;kustomization.yaml&lt;/code&gt; file of your choosing:
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# ../../aws-telemetry&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;For individual component installation, &lt;strong&gt;do not&lt;/strong&gt; install the &lt;code&gt;aws-telemetry&lt;/code&gt; component:
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8f5902;font-style:italic&#34;&gt;# AWS Telemetry - This is an optional component. &lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kustomize build awsconfigs/common/aws-telemetry &lt;span style=&#34;color:#000;font-weight:bold&#34;&gt;|&lt;/span&gt; kubectl apply -f -
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# AWS Telemetry - This is an optional component. &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kustomize build awsconfigs/common/aws-telemetry &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; kubectl apply -f -
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;strong&gt;After deploying Kubeflow:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;To deactivate usage tracking on an existing deployment, delete the &lt;code&gt;aws-kubeflow-telemetry&lt;/code&gt; cronjob with the following command:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl delete cronjob -n kubeflow aws-kubeflow-telemetry
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;information-collected-by-usage-tracking&#34;&gt;Information collected by usage tracking&lt;/h3&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl delete cronjob -n kubeflow aws-kubeflow-telemetry
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;information-collected-by-usage-tracking&#34;&gt;Information collected by usage tracking&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;Instance ID&lt;/strong&gt; - We collect the instance ID used by one of the worker nodes in the customer’s EKS cluster. This collection occurs once per day.&lt;/li&gt;
 &lt;/ul&gt;
