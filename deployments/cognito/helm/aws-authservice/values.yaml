@@ -1,0 +1,7 @@
+cognitoUserpool:
+  appClientId: #1a2b3c4d5e6f7g8h
+  domain: #auth.platform.example.people.aws.dev
+
+route53:
+  subDomain:
+    name: #platform.example.people.aws.dev

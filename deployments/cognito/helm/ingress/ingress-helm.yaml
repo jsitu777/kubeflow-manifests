@@ -1,0 +1,48 @@
+---
+# Source: ingress/templates/ConfigMap/istio-ingress-cognito-parameters-istio-system-ConfigMap.yaml
+apiVersion: v1
+data:
+  CognitoAppClientId: '5u3tf08s54lbnt60v6gk3lh4jc'
+  CognitoUserPoolArn: 'arn:aws:cognito-idp:ca-central-1:351537711515:userpool/ca-central-1_60HzLdMK8'
+  CognitoUserPoolDomain: 'auth.platform.jsitu.people.aws.dev'
+  certArn: ''
+kind: ConfigMap
+metadata:
+  name: istio-ingress-cognito-parameters
+  namespace: istio-system
+---
+# Source: ingress/templates/ConfigMap/istio-ingress-parameters-istio-system-ConfigMap.yaml
+apiVersion: v1
+data:
+  loadBalancerScheme: internet-facing
+kind: ConfigMap
+metadata:
+  labels:
+    kustomize.component: istio-ingress
+  name: istio-ingress-parameters
+  namespace: istio-system
+---
+# Source: ingress/templates/Ingress/istio-ingress-istio-system-Ingress.yaml
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    alb.ingress.kubernetes.io/auth-idp-cognito: '{"UserPoolArn":"arn:aws:cognito-idp:ca-central-1:351537711515:userpool/ca-central-1_60HzLdMK8","UserPoolClientId":"5u3tf08s54lbnt60v6gk3lh4jc", "UserPoolDomain":"auth.platform.jsitu.people.aws.dev"}'
+    alb.ingress.kubernetes.io/auth-type: cognito
+    alb.ingress.kubernetes.io/certificate-arn: ''
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443}]'
+    alb.ingress.kubernetes.io/load-balancer-attributes: routing.http.drop_invalid_header_fields.enabled=true
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    kubernetes.io/ingress.class: alb
+  labels:
+    kustomize.component: istio-ingress
+  name: istio-ingress
+  namespace: istio-system
+spec:
+  rules:
+  - http:
+      paths:
+      - backend:
+          serviceName: istio-ingressgateway
+          servicePort: 80
+        path: /*
