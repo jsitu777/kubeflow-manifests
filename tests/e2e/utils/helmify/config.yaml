@@ -1,0 +1,3 @@
+Kustomization Filepath: /Users/jsitu/Dev/forked-kubeflow/kubeflow-manifests/awsconfigs/common/aws-secrets-manager
+Helm Chart Name: aws-secret-test
+Output Helm Filepath: /Users/jsitu/Dev/forked-kubeflow/kubeflow-manifests/
