@@ -126,7 +126,7 @@ def findFailedConfigFiles (helm_chart_path, helm_chart_name):
     if os.path.isdir(f"{dir}/templates/ConfigMap"):
         filelist = [ f for f in os.listdir(f"{dir}/templates/ConfigMap")]
         for f in filelist:
-            content = load_multiple_yaml_files(file_path=f"{helm_chart_path}/{helm_chart_name}/{f}") 
+            content = load_multiple_yaml_files(file_path=f"{dir}/templates/ConfigMap/{f}") 
             for elem in content:
                 findFailedFilesRecursiveLookup(elem,problemFileList,f)
                         
