@@ -1,5 +1,0 @@
-rds:
-  secretName: jsitu-7-rds-secret
-
-s3:
-  secretName: jsitu-7-s3-secret

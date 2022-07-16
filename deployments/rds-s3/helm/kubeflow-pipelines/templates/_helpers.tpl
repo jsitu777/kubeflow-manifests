@@ -1,7 +1,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "katib-rds-and-s3.name" -}}
+{{- define "kubeflow-pipelines.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -10,7 +10,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "katib-rds-and-s3.fullname" -}}
+{{- define "kubeflow-pipelines.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -26,16 +26,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "katib-rds-and-s3.chart" -}}
+{{- define "kubeflow-pipelines.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "katib-rds-and-s3.labels" -}}
-helm.sh/chart: {{ include "katib-rds-and-s3.chart" . }}
-{{ include "katib-rds-and-s3.selectorLabels" . }}
+{{- define "kubeflow-pipelines.labels" -}}
+helm.sh/chart: {{ include "kubeflow-pipelines.chart" . }}
+{{ include "kubeflow-pipelines.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -45,17 +45,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "katib-rds-and-s3.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "katib-rds-and-s3.name" . }}
+{{- define "kubeflow-pipelines.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "kubeflow-pipelines.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "katib-rds-and-s3.serviceAccountName" -}}
+{{- define "kubeflow-pipelines.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "katib-rds-and-s3.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "kubeflow-pipelines.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
