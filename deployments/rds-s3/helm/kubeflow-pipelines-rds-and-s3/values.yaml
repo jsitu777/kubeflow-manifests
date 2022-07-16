@@ -1,8 +1,8 @@
 rds:
-  dbHost: #kubeflow-db.example.us-west-2.rds.amazonaws.com
+  dbHost: #kubeflow-db.12234k.us-west-2.rds.amazonaws.com
   mlmdDb: #metadb
 
 s3:
-  bucketName: #jsitu-s3-bucket-1
+  bucketName: #jsitu-11-bucket
   minioServiceRegion: #us-west-2
   minioServiceHost: #s3.amazonaws.com 
