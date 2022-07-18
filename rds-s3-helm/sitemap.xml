@@ -3,147 +3,147 @@
   
   <url>
     <loc>https://www.kubeflow.orghttps://wenjinsitu.github.io/kubeflow-manifests/rds-s3-helm/docs/deployment/add-ons/load-balancer/guide/</loc>
-    <lastmod>2022-07-18T11:22:18-07:00</lastmod>
+    <lastmod>2022-07-18T14:41:38-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.orghttps://wenjinsitu.github.io/kubeflow-manifests/rds-s3-helm/docs/about/</loc>
-    <lastmod>2022-07-18T11:22:18-07:00</lastmod>
+    <lastmod>2022-07-18T14:41:38-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.orghttps://wenjinsitu.github.io/kubeflow-manifests/rds-s3-helm/docs/deployment/cognito/guide-automated/</loc>
-    <lastmod>2022-07-18T11:22:18-07:00</lastmod>
+    <lastmod>2022-07-18T14:41:38-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.orghttps://wenjinsitu.github.io/kubeflow-manifests/rds-s3-helm/docs/about/features/</loc>
-    <lastmod>2022-07-18T11:22:18-07:00</lastmod>
+    <lastmod>2022-07-18T14:41:38-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.orghttps://wenjinsitu.github.io/kubeflow-manifests/rds-s3-helm/docs/deployment/</loc>
-    <lastmod>2022-07-18T11:22:18-07:00</lastmod>
+    <lastmod>2022-07-18T14:41:38-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.orghttps://wenjinsitu.github.io/kubeflow-manifests/rds-s3-helm/docs/deployment/add-ons/storage/efs/guide/</loc>
-    <lastmod>2022-07-18T11:22:18-07:00</lastmod>
+    <lastmod>2022-07-18T14:41:38-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.orghttps://wenjinsitu.github.io/kubeflow-manifests/rds-s3-helm/docs/component-guides/notebooks/</loc>
-    <lastmod>2022-07-18T11:22:18-07:00</lastmod>
+    <lastmod>2022-07-18T14:41:38-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.orghttps://wenjinsitu.github.io/kubeflow-manifests/rds-s3-helm/docs/component-guides/katib/</loc>
-    <lastmod>2022-07-18T11:22:18-07:00</lastmod>
+    <lastmod>2022-07-18T14:41:38-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.orghttps://wenjinsitu.github.io/kubeflow-manifests/rds-s3-helm/docs/deployment/add-ons/storage/fsx-for-lustre/guide/</loc>
-    <lastmod>2022-07-18T11:22:18-07:00</lastmod>
+    <lastmod>2022-07-18T14:41:38-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.orghttps://wenjinsitu.github.io/kubeflow-manifests/rds-s3-helm/docs/deployment/cognito/guide/</loc>
-    <lastmod>2022-07-18T11:22:18-07:00</lastmod>
+    <lastmod>2022-07-18T14:41:38-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.orghttps://wenjinsitu.github.io/kubeflow-manifests/rds-s3-helm/docs/component-guides/pipelines/</loc>
-    <lastmod>2022-07-18T11:22:18-07:00</lastmod>
+    <lastmod>2022-07-18T14:41:38-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.orghttps://wenjinsitu.github.io/kubeflow-manifests/rds-s3-helm/docs/deployment/prerequisites/</loc>
-    <lastmod>2022-07-18T11:22:18-07:00</lastmod>
+    <lastmod>2022-07-18T14:41:38-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.orghttps://wenjinsitu.github.io/kubeflow-manifests/rds-s3-helm/docs/about/releases/</loc>
-    <lastmod>2022-07-18T11:22:18-07:00</lastmod>
+    <lastmod>2022-07-18T14:41:38-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.orghttps://wenjinsitu.github.io/kubeflow-manifests/rds-s3-helm/docs/about/eks-compatibility/</loc>
-    <lastmod>2022-07-18T11:22:18-07:00</lastmod>
+    <lastmod>2022-07-18T14:41:38-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.orghttps://wenjinsitu.github.io/kubeflow-manifests/rds-s3-helm/docs/deployment/add-ons/cloudwatch/guide/</loc>
-    <lastmod>2022-07-18T11:22:18-07:00</lastmod>
+    <lastmod>2022-07-18T14:41:38-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.orghttps://wenjinsitu.github.io/kubeflow-manifests/rds-s3-helm/docs/component-guides/</loc>
-    <lastmod>2022-07-18T11:22:18-07:00</lastmod>
+    <lastmod>2022-07-18T14:41:38-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.orghttps://wenjinsitu.github.io/kubeflow-manifests/rds-s3-helm/docs/component-guides/kserve/</loc>
-    <lastmod>2022-07-18T11:22:18-07:00</lastmod>
+    <lastmod>2022-07-18T14:41:38-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.orghttps://wenjinsitu.github.io/kubeflow-manifests/rds-s3-helm/docs/troubleshooting-aws/</loc>
-    <lastmod>2022-07-18T11:22:18-07:00</lastmod>
+    <lastmod>2022-07-18T14:41:38-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.orghttps://wenjinsitu.github.io/kubeflow-manifests/rds-s3-helm/docs/deployment/vanilla/guide/</loc>
-    <lastmod>2022-07-18T11:22:18-07:00</lastmod>
+    <lastmod>2022-07-18T14:41:38-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.orghttps://wenjinsitu.github.io/kubeflow-manifests/rds-s3-helm/docs/component-guides/profiles/</loc>
-    <lastmod>2022-07-18T11:22:18-07:00</lastmod>
+    <lastmod>2022-07-18T14:41:38-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.orghttps://wenjinsitu.github.io/kubeflow-manifests/rds-s3-helm/docs/deployment/rds-s3/guide/</loc>
-    <lastmod>2022-07-18T11:22:18-07:00</lastmod>
+    <lastmod>2022-07-18T14:41:38-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.orghttps://wenjinsitu.github.io/kubeflow-manifests/rds-s3-helm/docs/about/security/</loc>
-    <lastmod>2022-07-18T11:22:18-07:00</lastmod>
+    <lastmod>2022-07-18T14:41:38-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.orghttps://wenjinsitu.github.io/kubeflow-manifests/rds-s3-helm/docs/deployment/cognito/</loc>
-    <lastmod>2022-07-18T11:22:18-07:00</lastmod>
+    <lastmod>2022-07-18T14:41:38-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.orghttps://wenjinsitu.github.io/kubeflow-manifests/rds-s3-helm/docs/about/usage-tracking/</loc>
-    <lastmod>2022-07-18T11:22:18-07:00</lastmod>
+    <lastmod>2022-07-18T14:41:38-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.orghttps://wenjinsitu.github.io/kubeflow-manifests/rds-s3-helm/docs/deployment/cognito-rds-s3/guide/</loc>
-    <lastmod>2022-07-18T11:22:18-07:00</lastmod>
+    <lastmod>2022-07-18T14:41:38-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.orghttps://wenjinsitu.github.io/kubeflow-manifests/rds-s3-helm/docs/deployment/add-ons/</loc>
-    <lastmod>2022-07-18T11:22:18-07:00</lastmod>
+    <lastmod>2022-07-18T14:41:38-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.orghttps://wenjinsitu.github.io/kubeflow-manifests/rds-s3-helm/docs/deployment/uninstall-kubeflow/</loc>
-    <lastmod>2022-07-18T11:22:18-07:00</lastmod>
+    <lastmod>2022-07-18T14:41:38-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.orghttps://wenjinsitu.github.io/kubeflow-manifests/rds-s3-helm/docs/</loc>
-    <lastmod>2022-07-18T11:22:18-07:00</lastmod>
+    <lastmod>2022-07-18T14:41:38-07:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.kubeflow.orghttps://wenjinsitu.github.io/kubeflow-manifests/rds-s3-helm/</loc>
-    <lastmod>2022-07-18T11:22:18-07:00</lastmod>
+    <lastmod>2022-07-18T14:41:38-07:00</lastmod>
   </url>
   
 </urlset>
