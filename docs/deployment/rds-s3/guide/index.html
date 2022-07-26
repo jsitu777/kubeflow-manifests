@@ -12,7 +12,7 @@
       "@type" : "WebSite",
       "mainEntityOfPage": {
            "@type": "WebPage",
-           "@id": "https:\/\/wenjinsitu.github.io\/kubeflow-manifests\/"
+           "@id": "https:\/\/jsitu777.github.io\/kubeflow-manifests\/"
       },
       "articleSection" : "docs",
       "name" : "RDS and S3",
@@ -27,7 +27,7 @@
       "copyrightYear" : "0001",
       "datePublished": "0001-01-01 00:00:00 \u002b0000 UTC",
       "dateModified" : "0001-01-01 00:00:00 \u002b0000 UTC",
-      "url" : "https:\/\/wenjinsitu.github.io\/kubeflow-manifests\/docs\/deployment\/rds-s3\/guide\/",
+      "url" : "https:\/\/jsitu777.github.io\/kubeflow-manifests\/docs\/deployment\/rds-s3\/guide\/",
       "wordCount" : "2225",
       "keywords" : [ "Kubeflow" ]
   }
@@ -47,13 +47,13 @@
 <meta property="og:title" content="RDS and S3" />
 <meta property="og:description" content="Deploying Kubeflow with RDS and S3" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wenjinsitu.github.io/kubeflow-manifests/docs/deployment/rds-s3/guide/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://jsitu777.github.io/kubeflow-manifests/docs/deployment/rds-s3/guide/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2022-07-18T11:25:09-07:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
+<meta property="article:modified_time" content="2022-07-26T15:17:38-07:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
 
 <meta itemprop="name" content="RDS and S3">
 <meta itemprop="description" content="Deploying Kubeflow with RDS and S3">
-<meta itemprop="dateModified" content="2022-07-18T11:25:09-07:00" />
+<meta itemprop="dateModified" content="2022-07-26T15:17:38-07:00" />
 <meta itemprop="wordCount" content="2225">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="RDS and S3"/>
@@ -364,13 +364,13 @@
             <nav aria-label="breadcrumb" class="td-breadcrumbs">
   <ol class="breadcrumb">
   <li class="breadcrumb-item">
-    <a href="https://wenjinsitu.github.io/kubeflow-manifests/docs/">Documentation</a>
+    <a href="https://jsitu777.github.io/kubeflow-manifests/docs/">Documentation</a>
   </li>
   <li class="breadcrumb-item">
-    <a href="https://wenjinsitu.github.io/kubeflow-manifests/docs/deployment/">Deployment</a>
+    <a href="https://jsitu777.github.io/kubeflow-manifests/docs/deployment/">Deployment</a>
   </li>
   <li class="breadcrumb-item active" aria-current="page">
-    <a href="https://wenjinsitu.github.io/kubeflow-manifests/docs/deployment/rds-s3/guide/">RDS and S3</a>
+    <a href="https://jsitu777.github.io/kubeflow-manifests/docs/deployment/rds-s3/guide/">RDS and S3</a>
   </li>
   </ol>
 </nav>
@@ -396,7 +396,7 @@
 	<p>This guide can be used to deploy Kubeflow Pipelines (KFP) and Katib with RDS and S3.</p>
 <h3 id="rds">RDS</h3>
 <p><a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html">Amazon Relational Database Service (RDS)</a> is a managed relational database service that facilitates several database management tasks such as database scaling, database backups, database software patching, OS patching, and more.</p>
-<p>In the <a href="https://wenjinsitu.github.io/kubeflow-manifests/docs/deployment/vanilla/guide/">default Kubeflow installation</a>, the <a href="https://github.com/kubeflow/manifests/blob/v1.5-branch/apps/pipeline/upstream/third-party/mysql/base/mysql-deployment.yaml">KFP</a> and <a href="https://github.com/kubeflow/manifests/blob/v1.5-branch/apps/katib/upstream/components/mysql/mysql.yaml">Katib</a> components both use their own MySQL pod to persist KFP data (such as experiments, pipelines, jobs, etc.) and Katib experiment observation logs, respectively.</p>
+<p>In the <a href="https://jsitu777.github.io/kubeflow-manifests/docs/deployment/vanilla/guide/">default Kubeflow installation</a>, the <a href="https://github.com/kubeflow/manifests/blob/v1.5-branch/apps/pipeline/upstream/third-party/mysql/base/mysql-deployment.yaml">KFP</a> and <a href="https://github.com/kubeflow/manifests/blob/v1.5-branch/apps/katib/upstream/components/mysql/mysql.yaml">Katib</a> components both use their own MySQL pod to persist KFP data (such as experiments, pipelines, jobs, etc.) and Katib experiment observation logs, respectively.</p>
 <p>Compared to the MySQL setup in the default installation, using RDS provides the following advantages:</p>
 <ul>
 <li>Availability: RDS provides high availability and failover support for DB instances using Multi Availability Zone (Mulit-AZ) deployments with a single standby DB instance, increasing the availability of KFP and Katib services during unexpected network events.</li>
@@ -406,7 +406,7 @@
 </ul>
 <h3 id="s3">S3</h3>
 <p><a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html">Amazon Simple Storage Service (S3)</a> is an object storage service that is highly scalable, available, secure, and performant.</p>
-<p>In the <a href="https://wenjinsitu.github.io/kubeflow-manifests/docs/deployment/vanilla/guide/">default Kubeflow installation</a>, the <a href="https://github.com/kubeflow/manifests/blob/v1.4-branch/apps/pipeline/upstream/third-party/minio/base/minio-deployment.yaml">KFP</a> component uses the MinIO object storage service that can be configured to store objects in S3. However, by default the installation hosts the object store service locally in the cluster. KFP stores data such as pipeline architectures and pipeline run artifacts in MinIO.</p>
+<p>In the <a href="https://jsitu777.github.io/kubeflow-manifests/docs/deployment/vanilla/guide/">default Kubeflow installation</a>, the <a href="https://github.com/kubeflow/manifests/blob/v1.4-branch/apps/pipeline/upstream/third-party/minio/base/minio-deployment.yaml">KFP</a> component uses the MinIO object storage service that can be configured to store objects in S3. However, by default the installation hosts the object store service locally in the cluster. KFP stores data such as pipeline architectures and pipeline run artifacts in MinIO.</p>
 <p>Configuring MinIO to read and write to S3 provides the following advantages:</p>
 <ul>
 <li>Scalability and availability: S3 offers industry-leading scalability and availability and is more durable than the default MinIO object storage solution provided by Kubeflow.</li>
@@ -423,7 +423,7 @@
 <p>To install for only RDS or only S3, complete the steps relevant to your installation choice.</p>
 <p>To install for both RDS and S3, complete all the steps below.</p>
 <h2 id="10-prerequisites">1.0 Prerequisites</h2>
-<p>Follow the steps in <a href="https://wenjinsitu.github.io/kubeflow-manifests/docs/deployment/prerequisites/">Prerequisites</a> to make sure that you have everything you need to get started.</p>
+<p>Follow the steps in <a href="https://jsitu777.github.io/kubeflow-manifests/docs/deployment/prerequisites/">Prerequisites</a> to make sure that you have everything you need to get started.</p>
 <p>Make sure you are starting from the repository root directory.
 Export the below variable:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">REPO_ROOT</span><span class="o">=</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>
@@ -632,7 +632,7 @@ Take note of your <code>S3 bucket name</code> to use in the following steps.</p>
 <p>Use the following command to deploy the Kubeflow manifests for S3 only:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="nb">cd</span> <span class="nv">$REPO_ROOT</span>  <span class="c1"># exported in 1.1 Prerequisites</span>
 </span></span><span class="line"><span class="cl"><span class="k">while</span> ! kustomize build deployments/rds-s3/s3-only <span class="p">|</span> kubectl apply -f -<span class="p">;</span> <span class="k">do</span> <span class="nb">echo</span> <span class="s2">&#34;Retrying to apply resources&#34;</span><span class="p">;</span> sleep 30<span class="p">;</span> <span class="k">done</span>
-</span></span></code></pre></div><p>Once everything is installed successfully, you can access the Kubeflow Central Dashboard <a href="https://wenjinsitu.github.io/kubeflow-manifests/docs/deployment/vanilla/guide/#connect-to-your-kubeflow-cluster">by logging in to your cluster</a>.</p>
+</span></span></code></pre></div><p>Once everything is installed successfully, you can access the Kubeflow Central Dashboard <a href="https://jsitu777.github.io/kubeflow-manifests/docs/deployment/vanilla/guide/#connect-to-your-kubeflow-cluster">by logging in to your cluster</a>.</p>
 <p>You can now start experimenting and running your end-to-end ML workflows with Kubeflow!</p>
 <h2 id="40-verify-the-installation">4.0 Verify the installation</h2>
 <h3 id="41-verify-rds">4.1 Verify RDS</h3>
@@ -681,7 +681,7 @@ Take note of your <code>S3 bucket name</code> to use in the following steps.</p>
 </span></span><span class="line"><span class="cl">+----------------------+
 </span></span></code></pre></div><ol start="4">
 <li>
-<p>Access the Kubeflow Central Dashboard <a href="https://wenjinsitu.github.io/kubeflow-manifests/docs/deployment/vanilla/guide/#connect-to-your-kubeflow-cluster">by logging in to your cluster</a> and navigate to Katib (under Experiments (AutoML)).</p>
+<p>Access the Kubeflow Central Dashboard <a href="https://jsitu777.github.io/kubeflow-manifests/docs/deployment/vanilla/guide/#connect-to-your-kubeflow-cluster">by logging in to your cluster</a> and navigate to Katib (under Experiments (AutoML)).</p>
 </li>
 <li>
 <p>Create an experiment using the following <a href="https://github.com/awslabs/kubeflow-manifests/blob/main/tests/e2e/resources/custom-resource-templates/katib-experiment-random.yaml">yaml file</a>.</p>
@@ -704,7 +704,7 @@ Take note of your <code>S3 bucket name</code> to use in the following steps.</p>
 </span></span></code></pre></div><h3 id="42-verify-s3">4.2 Verify S3</h3>
 <ol>
 <li>
-<p>Access the Kubeflow Central Dashboard <a href="https://wenjinsitu.github.io/kubeflow-manifests/docs/deployment/vanilla/guide/#connect-to-your-kubeflow-cluster">by logging in to your cluster</a> and navigate to Kubeflow Pipelines (under Pipelines).</p>
+<p>Access the Kubeflow Central Dashboard <a href="https://jsitu777.github.io/kubeflow-manifests/docs/deployment/vanilla/guide/#connect-to-your-kubeflow-cluster">by logging in to your cluster</a> and navigate to Kubeflow Pipelines (under Pipelines).</p>
 </li>
 <li>
 <p>Create an experiment named <code>test</code> and create a run using the sample pipeline <code>[Demo] XGBoost - Iterative model training</code>.</p>
@@ -742,7 +742,7 @@ Take note of your <code>S3 bucket name</code> to use in the following steps.</p>
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified July 18, 2022: <a href="https://github.com/awslabs/kubeflow-manifests//commit/0bf7549d99c82eccfbc8727b2492bea0718014c2">add load multiple yaml files function (0bf7549)</a>
+  Last modified July 26, 2022: <a href="https://github.com/awslabs/kubeflow-manifests//commit/775568552245f0a7bffd5144751bcc4e98ad0c85">rename kustomize.py fixture into installation.py fixture, this new fixture will be a wrapper for both kustomize and helm installation options (7755685)</a>
 </div>
 
 </div>
@@ -802,7 +802,7 @@ Take note of your <code>S3 bucket name</code> to use in the following steps.</p>
 
 
 
-<script src="/kubeflow-manifests/js/main.min.61b5554a0b432b631fb6bdab2dde78e101e5d5a05f9bcb5d8f841b29789688fc.js" integrity="sha256-YbVVSgtDK2Mftr2rLd544QHl1aBfm8tdj4QbKXiWiPw=" crossorigin="anonymous"></script>
+<script src="/kubeflow-manifests/js/main.min.14c52bae3f9ec634a47acc8cd4236bb48251b9c21ac3a9158584386f03cbcad7.js" integrity="sha256-FMUrrj&#43;exjSkesyM1CNrtIJRucIaw6kVhYQ4bwPLytc=" crossorigin="anonymous"></script>
 
 
 

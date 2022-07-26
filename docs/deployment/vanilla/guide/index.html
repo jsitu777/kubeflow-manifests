@@ -12,7 +12,7 @@
       "@type" : "WebSite",
       "mainEntityOfPage": {
            "@type": "WebPage",
-           "@id": "https:\/\/wenjinsitu.github.io\/kubeflow-manifests\/"
+           "@id": "https:\/\/jsitu777.github.io\/kubeflow-manifests\/"
       },
       "articleSection" : "docs",
       "name" : "Vanilla Installation",
@@ -27,7 +27,7 @@
       "copyrightYear" : "0001",
       "datePublished": "0001-01-01 00:00:00 \u002b0000 UTC",
       "dateModified" : "0001-01-01 00:00:00 \u002b0000 UTC",
-      "url" : "https:\/\/wenjinsitu.github.io\/kubeflow-manifests\/docs\/deployment\/vanilla\/guide\/",
+      "url" : "https:\/\/jsitu777.github.io\/kubeflow-manifests\/docs\/deployment\/vanilla\/guide\/",
       "wordCount" : "1272",
       "keywords" : [ "Kubeflow" ]
   }
@@ -47,13 +47,13 @@
 <meta property="og:title" content="Vanilla Installation" />
 <meta property="og:description" content="Deploy Kubeflow on AWS using Amazon Elastic Kubernetes Service (EKS)" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wenjinsitu.github.io/kubeflow-manifests/docs/deployment/vanilla/guide/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://jsitu777.github.io/kubeflow-manifests/docs/deployment/vanilla/guide/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2022-07-18T11:25:09-07:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
+<meta property="article:modified_time" content="2022-07-26T15:17:38-07:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
 
 <meta itemprop="name" content="Vanilla Installation">
 <meta itemprop="description" content="Deploy Kubeflow on AWS using Amazon Elastic Kubernetes Service (EKS)">
-<meta itemprop="dateModified" content="2022-07-18T11:25:09-07:00" />
+<meta itemprop="dateModified" content="2022-07-26T15:17:38-07:00" />
 <meta itemprop="wordCount" content="1272">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Vanilla Installation"/>
@@ -342,13 +342,13 @@
             <nav aria-label="breadcrumb" class="td-breadcrumbs">
   <ol class="breadcrumb">
   <li class="breadcrumb-item">
-    <a href="https://wenjinsitu.github.io/kubeflow-manifests/docs/">Documentation</a>
+    <a href="https://jsitu777.github.io/kubeflow-manifests/docs/">Documentation</a>
   </li>
   <li class="breadcrumb-item">
-    <a href="https://wenjinsitu.github.io/kubeflow-manifests/docs/deployment/">Deployment</a>
+    <a href="https://jsitu777.github.io/kubeflow-manifests/docs/deployment/">Deployment</a>
   </li>
   <li class="breadcrumb-item active" aria-current="page">
-    <a href="https://wenjinsitu.github.io/kubeflow-manifests/docs/deployment/vanilla/guide/">Vanilla Installation</a>
+    <a href="https://jsitu777.github.io/kubeflow-manifests/docs/deployment/vanilla/guide/">Vanilla Installation</a>
   </li>
   </ol>
 </nav>
@@ -374,7 +374,7 @@
 	<h1 id="deploying-kubeflow-on-eks">Deploying Kubeflow on EKS</h1>
 <p>This guide describes how to deploy Kubeflow on AWS EKS. This vanilla version has minimal changes to the upstream Kubeflow manifests.</p>
 <h2 id="prerequisites">Prerequisites</h2>
-<p>Be sure that you have satisfied the <a href="https://wenjinsitu.github.io/kubeflow-manifests/docs/deployment/prerequisites/">installation prerequisites</a> before working through this guide.</p>
+<p>Be sure that you have satisfied the <a href="https://jsitu777.github.io/kubeflow-manifests/docs/deployment/prerequisites/">installation prerequisites</a> before working through this guide.</p>
 <h3 id="build-manifests-and-install-kubeflow">Build Manifests and install Kubeflow</h3>
 <p>There two options for installing Kubeflow official components and common services with kustomize.</p>
 <ol>
@@ -492,7 +492,7 @@ components:</p>
 <p>Install the Training Operator official Kubeflow component:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">kustomize build upstream/apps/training-operator/upstream/overlays/kubeflow <span class="p">|</span> kubectl apply -f -
 </span></span></code></pre></div><h4 id="aws-telemetry">AWS Telemetry</h4>
-<p>Install the AWS Kubeflow telemetry component. This is an optional component. See <a href="https://wenjinsitu.github.io/kubeflow-manifests/docs/about/usage-tracking/">Usage Tracking</a> for more information</p>
+<p>Install the AWS Kubeflow telemetry component. This is an optional component. See <a href="https://jsitu777.github.io/kubeflow-manifests/docs/about/usage-tracking/">Usage Tracking</a> for more information</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">kustomize build awsconfigs/common/aws-telemetry <span class="p">|</span> kubectl apply -f -
 </span></span></code></pre></div><h4 id="user-namespace">User namespace</h4>
 <p>Finally, create a new namespace for the the default user. In this example, the namespace is called <code>kubeflow-user-example-com</code>.</p>
@@ -517,7 +517,7 @@ components:</p>
 <li>Login with the default user&rsquo;s credential. The default email address is <code>user@example.com</code> and the default password is <code>12341234</code>.</li>
 </ol>
 <h4 id="exposing-kubeflow-over-load-balancer">Exposing Kubeflow over Load Balancer</h4>
-<p>In order to expose Kubeflow over an external address, you can set up AWS Application Load Balancer. Please take a look at the <a href="https://wenjinsitu.github.io/kubeflow-manifests/docs/deployment/add-ons/load-balancer/guide/">Load Balancer guide</a> to set it up.</p>
+<p>In order to expose Kubeflow over an external address, you can set up AWS Application Load Balancer. Please take a look at the <a href="https://jsitu777.github.io/kubeflow-manifests/docs/deployment/add-ons/load-balancer/guide/">Load Balancer guide</a> to set it up.</p>
 <h3 id="change-default-user-password">Change default user password</h3>
 <p>For security reasons, we do not recommend using the default password for the default Kubeflow user when installing in security-sensitive environments. Instead, you should define your own password before deploying. To define a password for the default user:</p>
 <ol>
@@ -537,7 +537,7 @@ components:</p>
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified July 18, 2022: <a href="https://github.com/awslabs/kubeflow-manifests//commit/0bf7549d99c82eccfbc8727b2492bea0718014c2">add load multiple yaml files function (0bf7549)</a>
+  Last modified July 26, 2022: <a href="https://github.com/awslabs/kubeflow-manifests//commit/775568552245f0a7bffd5144751bcc4e98ad0c85">rename kustomize.py fixture into installation.py fixture, this new fixture will be a wrapper for both kustomize and helm installation options (7755685)</a>
 </div>
 
 </div>
@@ -597,7 +597,7 @@ components:</p>
 
 
 
-<script src="/kubeflow-manifests/js/main.min.61b5554a0b432b631fb6bdab2dde78e101e5d5a05f9bcb5d8f841b29789688fc.js" integrity="sha256-YbVVSgtDK2Mftr2rLd544QHl1aBfm8tdj4QbKXiWiPw=" crossorigin="anonymous"></script>
+<script src="/kubeflow-manifests/js/main.min.14c52bae3f9ec634a47acc8cd4236bb48251b9c21ac3a9158584386f03cbcad7.js" integrity="sha256-FMUrrj&#43;exjSkesyM1CNrtIJRucIaw6kVhYQ4bwPLytc=" crossorigin="anonymous"></script>
 
 
 

@@ -12,7 +12,7 @@
       "@type" : "WebSite",
       "mainEntityOfPage": {
            "@type": "WebPage",
-           "@id": "https:\/\/wenjinsitu.github.io\/kubeflow-manifests\/"
+           "@id": "https:\/\/jsitu777.github.io\/kubeflow-manifests\/"
       },
       "articleSection" : "docs",
       "name" : "Katib",
@@ -27,7 +27,7 @@
       "copyrightYear" : "0001",
       "datePublished": "0001-01-01 00:00:00 \u002b0000 UTC",
       "dateModified" : "0001-01-01 00:00:00 \u002b0000 UTC",
-      "url" : "https:\/\/wenjinsitu.github.io\/kubeflow-manifests\/docs\/component-guides\/katib\/",
+      "url" : "https:\/\/jsitu777.github.io\/kubeflow-manifests\/docs\/component-guides\/katib\/",
       "wordCount" : "668",
       "keywords" : [ "Kubeflow" ]
   }
@@ -47,13 +47,13 @@
 <meta property="og:title" content="Katib" />
 <meta property="og:description" content="Get started with Katib on Amazon EKS" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://wenjinsitu.github.io/kubeflow-manifests/docs/component-guides/katib/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://jsitu777.github.io/kubeflow-manifests/docs/component-guides/katib/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2022-07-18T11:25:09-07:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
+<meta property="article:modified_time" content="2022-07-26T15:17:38-07:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
 
 <meta itemprop="name" content="Katib">
 <meta itemprop="description" content="Get started with Katib on Amazon EKS">
-<meta itemprop="dateModified" content="2022-07-18T11:25:09-07:00" />
+<meta itemprop="dateModified" content="2022-07-26T15:17:38-07:00" />
 <meta itemprop="wordCount" content="668">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Katib"/>
@@ -340,13 +340,13 @@
             <nav aria-label="breadcrumb" class="td-breadcrumbs">
   <ol class="breadcrumb">
   <li class="breadcrumb-item">
-    <a href="https://wenjinsitu.github.io/kubeflow-manifests/docs/">Documentation</a>
+    <a href="https://jsitu777.github.io/kubeflow-manifests/docs/">Documentation</a>
   </li>
   <li class="breadcrumb-item">
-    <a href="https://wenjinsitu.github.io/kubeflow-manifests/docs/component-guides/">Component Guides</a>
+    <a href="https://jsitu777.github.io/kubeflow-manifests/docs/component-guides/">Component Guides</a>
   </li>
   <li class="breadcrumb-item active" aria-current="page">
-    <a href="https://wenjinsitu.github.io/kubeflow-manifests/docs/component-guides/katib/">Katib</a>
+    <a href="https://jsitu777.github.io/kubeflow-manifests/docs/component-guides/katib/">Katib</a>
   </li>
   </ol>
 </nav>
@@ -372,7 +372,7 @@
 	<h2 id="access-aws-services-from-katib">Access AWS Services from Katib</h2>
 <p>In order to grant Katib experiment pods access to AWS resources, the corresponding profile in which the experiment is created needs to be configured with the <code>AwsIamForServiceAccount</code> plugin. To configure the <code>AwsIamForServiceAccount</code> plugin to work with Profiles, follow the steps below.</p>
 <h3 id="prerequisites">Prerequisites</h3>
-<p>Steps to configure Profiles with AWS IAM permissions can be found in the <a href="https://wenjinsitu.github.io/kubeflow-manifests/docs/component-guides/profiles/#configuration-steps">Profiles component guide</a>. Follow those steps to configure the profile controller to work with the <code>AwsIamForServiceAccount</code> plugin.</p>
+<p>Steps to configure Profiles with AWS IAM permissions can be found in the <a href="https://jsitu777.github.io/kubeflow-manifests/docs/component-guides/profiles/#configuration-steps">Profiles component guide</a>. Follow those steps to configure the profile controller to work with the <code>AwsIamForServiceAccount</code> plugin.</p>
 <p>The following is an example of a profile using the <code>AwsIamForServiceAccount</code> plugin:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l">kubeflow.org/v1</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l">Profile</span><span class="w">
@@ -514,11 +514,11 @@
 <h3 id="example-s3-access-from-katib-experiment-pods">Example: S3 Access from Katib experiment pods</h3>
 <p>The following steps walk through creating an experiment with pods that have permissions to list buckets in S3.</p>
 <h4 id="prerequisites-1">Prerequisites</h4>
-<p>Make sure that you have completed the <a href="https://wenjinsitu.github.io/kubeflow-manifests/docs/component-guides/katib/#configuration">configuration steps</a>.</p>
+<p>Make sure that you have completed the <a href="https://jsitu777.github.io/kubeflow-manifests/docs/component-guides/katib/#configuration">configuration steps</a>.</p>
 <h4 id="steps">Steps</h4>
 <ol>
 <li>
-<p>Export the name of the profile created in the <a href="https://wenjinsitu.github.io/kubeflow-manifests/docs/component-guides/katib/#configuration">configuration steps</a>:</p>
+<p>Export the name of the profile created in the <a href="https://jsitu777.github.io/kubeflow-manifests/docs/component-guides/katib/#configuration">configuration steps</a>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> <span class="nb">export</span> <span class="nv">PROFILE_NAME</span><span class="o">=</span>&lt;the created profile name&gt;
 </span></span></code></pre></div></li>
 <li>
@@ -612,7 +612,7 @@
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified July 18, 2022: <a href="https://github.com/awslabs/kubeflow-manifests//commit/0bf7549d99c82eccfbc8727b2492bea0718014c2">add load multiple yaml files function (0bf7549)</a>
+  Last modified July 26, 2022: <a href="https://github.com/awslabs/kubeflow-manifests//commit/775568552245f0a7bffd5144751bcc4e98ad0c85">rename kustomize.py fixture into installation.py fixture, this new fixture will be a wrapper for both kustomize and helm installation options (7755685)</a>
 </div>
 
 </div>
@@ -672,7 +672,7 @@
 
 
 
-<script src="/kubeflow-manifests/js/main.min.61b5554a0b432b631fb6bdab2dde78e101e5d5a05f9bcb5d8f841b29789688fc.js" integrity="sha256-YbVVSgtDK2Mftr2rLd544QHl1aBfm8tdj4QbKXiWiPw=" crossorigin="anonymous"></script>
+<script src="/kubeflow-manifests/js/main.min.14c52bae3f9ec634a47acc8cd4236bb48251b9c21ac3a9158584386f03cbcad7.js" integrity="sha256-FMUrrj&#43;exjSkesyM1CNrtIJRucIaw6kVhYQ4bwPLytc=" crossorigin="anonymous"></script>
 
 
 
