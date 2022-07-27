@@ -1,11 +1,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kubeflow on AWS – Add-ons</title>
-    <link>https://wenjinsitu.github.io/kubeflow-manifests/main/docs/deployment/add-ons/</link>
+    <link>https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/add-ons/</link>
     <description>Recent content in Add-ons on Kubeflow on AWS</description>
     <generator>Hugo -- gohugo.io</generator>
     
-	  <atom:link href="https://wenjinsitu.github.io/kubeflow-manifests/main/docs/deployment/add-ons/index.xml" rel="self" type="application/rss+xml" />
+	  <atom:link href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/add-ons/index.xml" rel="self" type="application/rss+xml" />
     
     
       
@@ -15,10 +15,10 @@
     
     <item>
       <title>Docs: Load Balancer</title>
-      <link>https://wenjinsitu.github.io/kubeflow-manifests/main/docs/deployment/add-ons/load-balancer/guide/</link>
+      <link>https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/add-ons/load-balancer/guide/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wenjinsitu.github.io/kubeflow-manifests/main/docs/deployment/add-ons/load-balancer/guide/</guid>
+      <guid>https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/add-ons/load-balancer/guide/</guid>
       <description>
         
         
@@ -32,8 +32,8 @@
 &lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
 &lt;p&gt;This guide assumes that you have:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;A Kubeflow deployment on EKS with Dex as your authentication provider (Dex is the default authentication provider in the &lt;a href=&#34;https://wenjinsitu.github.io/kubeflow-manifests/main/docs/deployment/vanilla/guide/&#34;&gt;Vanilla&lt;/a&gt; deployment of Kubeflow on AWS).&lt;/li&gt;
-&lt;li&gt;Installed the tools mentioned in the &lt;a href=&#34;https://wenjinsitu.github.io/kubeflow-manifests/main/docs/deployment/prerequisites/&#34;&gt;general prerequisites&lt;/a&gt; guide on the client machine.&lt;/li&gt;
+&lt;li&gt;A Kubeflow deployment on EKS with Dex as your authentication provider (Dex is the default authentication provider in the &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/vanilla/guide/&#34;&gt;Vanilla&lt;/a&gt; deployment of Kubeflow on AWS).&lt;/li&gt;
+&lt;li&gt;Installed the tools mentioned in the &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/prerequisites/&#34;&gt;general prerequisites&lt;/a&gt; guide on the client machine.&lt;/li&gt;
 &lt;li&gt;Verified that you are connected to the right cluster, that the cluster has compute, and that the AWS region is set to the region of your cluster.
 &lt;ul&gt;
 &lt;li&gt;Verify that your cluster name and region are exported:
@@ -141,7 +141,7 @@
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;    kubectl get ingress -n istio-system istio-ingress
     NAME            CLASS    HOSTS   ADDRESS                                                              PORTS   AGE
     istio-ingress   &amp;lt;none&amp;gt;   *       k8s-istiosys-istioing-xxxxxx-110050202.us-west-2.elb.amazonaws.com   80      15d
-&lt;/code&gt;&lt;/pre&gt;If &lt;code&gt;ADDRESS&lt;/code&gt; is empty after a few minutes, check the logs of the controller by following the troubleshooting steps in &lt;a href=&#34;https://wenjinsitu.github.io/kubeflow-manifests/main/docs/troubleshooting-aws/#alb-fails-to-provision&#34;&gt;ALB fails to provision&lt;/a&gt;.&lt;/li&gt;
+&lt;/code&gt;&lt;/pre&gt;If &lt;code&gt;ADDRESS&lt;/code&gt; is empty after a few minutes, check the logs of the controller by following the troubleshooting steps in &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/troubleshooting-aws/#alb-fails-to-provision&#34;&gt;ALB fails to provision&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;When ALB is ready, copy the DNS name of that load balancer and create a CNAME entry to it in Route53 under the subdomain (&lt;code&gt;platform.example.com&lt;/code&gt;) for &lt;code&gt;*.platform.example.com&lt;/code&gt;. Please note that it might make up to five to ten minutes for DNS changes to propagate and for your URL to work.
 &lt;img src=&#34;https://raw.githubusercontent.com/awslabs/kubeflow-manifests/main/website/content/en/docs/images/load-balancer/subdomain-*.platform-record.png&#34; alt=&#34;subdomain-*.platform-record&#34;&gt;&lt;/li&gt;
 &lt;/ol&gt;
@@ -221,19 +221,170 @@
     </item>
     
     <item>
-      <title>Docs: EFS</title>
-      <link>https://wenjinsitu.github.io/kubeflow-manifests/main/docs/deployment/add-ons/storage/efs/guide/</link>
+      <title>Docs: Prometheus</title>
+      <link>https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/add-ons/prometheus/guide/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wenjinsitu.github.io/kubeflow-manifests/main/docs/deployment/add-ons/storage/efs/guide/</guid>
+      <guid>https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/add-ons/prometheus/guide/</guid>
+      <description>
+        
+        
+        &lt;p&gt;This guide shows how to setup a Prometheus server, an AMP workspace, and an AMG workspace on top of Kubeflow on AWS. It also explains to validate the ingestion of data from Prometheus to AMP.&lt;/p&gt;
+&lt;h2 id=&#34;why-you-should-use-prometheus-with-amazon-managed-service-for-prometheus-amp-and-amazon-managed-grafana-amg&#34;&gt;Why you should use Prometheus with Amazon Managed Service for Prometheus (AMP) and Amazon Managed Grafana (AMG)&lt;/h2&gt;
+&lt;p&gt;Many Kubeflow users utilize Prometheus and Grafana to monitor and visualize their metrics. However it can be difficult to scale open source Prometheus and Grafana as the number of nodes to be monitored increases. AMP seeks to simplify this issue by allowing multiple Prometheus servers to aggregate their metrics in Amazon Managed Prometheus, and finally Amazon Managed Grafana allows customers to then view these aggregated metrics.&lt;/p&gt;
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+&lt;p&gt;Download one of our deployment options by following the directions at: &lt;a href=&#34;https://awslabs.github.io/kubeflow-manifests/docs/deployment/&#34;&gt;https://awslabs.github.io/kubeflow-manifests/docs/deployment/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; The steps below will assume you are sitting in the kubeflow-manifests directory.&lt;/p&gt;
+&lt;h2 id=&#34;steps-to-setup-prometheus-and-amp&#34;&gt;Steps to Setup Prometheus and AMP&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Export cluster name and region as environment variables:
+&lt;ol&gt;
+&lt;li&gt;Make sure to replace the following in the below commands:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&amp;lt;your-cluster-name&amp;gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;&amp;lt;your-cluster-region&amp;gt;&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;CLUSTER_NAME&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&amp;lt;your-cluster-name&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;CLUSTER_REGION&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&amp;lt;your-cluster-region&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Create an IAM Policy:
+&lt;ol&gt;
+&lt;li&gt;Make sure to replace the following in the below command:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&amp;lt;desired-amp-policy-name&amp;gt;&lt;/strong&gt; - a policy name of your choosing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;AMP_POLICY_NAME&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&amp;lt;desired-amp-policy-name&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;AMP_POLICY_ARN&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;aws iam create-policy --policy-name &lt;span class=&#34;nv&#34;&gt;$AMP_POLICY_NAME&lt;/span&gt; --policy-document file://deployments/add-ons/prometheus/AMPIngestPermissionPolicy.json --query &lt;span class=&#34;s1&#34;&gt;&amp;#39;Policy.Arn&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; tr -d &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#34;&amp;#39;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Create a Service Account:
+&lt;ol&gt;
+&lt;li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;eksctl create iamserviceaccount --name amp-iamproxy-ingest-service-account --namespace monitoring --cluster &lt;span class=&#34;nv&#34;&gt;$CLUSTER_NAME&lt;/span&gt; --attach-policy-arn &lt;span class=&#34;nv&#34;&gt;$AMP_POLICY_ARN&lt;/span&gt; --override-existing-serviceaccounts --approve --region &lt;span class=&#34;nv&#34;&gt;$CLUSTER_REGION&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Create an AMP Workspace:
+&lt;ol&gt;
+&lt;li&gt;Make sure to replace the following in the below command:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&amp;lt;desired-workspace-alias&amp;gt;&lt;/strong&gt; - a workspace alias of your choosing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;AMP_WORKSPACE_ALIAS&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&amp;lt;desired-amp-workspace-alias&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;AMP_WORKSPACE_ARN&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;aws amp create-workspace --region &lt;span class=&#34;nv&#34;&gt;$CLUSTER_REGION&lt;/span&gt; --alias &lt;span class=&#34;nv&#34;&gt;$AMP_WORKSPACE_ALIAS&lt;/span&gt; --query arn &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; tr -d &lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#34;&amp;#39;&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;AMP_WORKSPACE_REGION&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$AMP_WORKSPACE_ARN&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; cut -d&lt;span class=&#34;s1&#34;&gt;&amp;#39;:&amp;#39;&lt;/span&gt; -f4&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;AMP_WORKSPACE_ID&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;&lt;span class=&#34;nb&#34;&gt;echo&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$AMP_WORKSPACE_ARN&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; cut -d&lt;span class=&#34;s1&#34;&gt;&amp;#39;:&amp;#39;&lt;/span&gt; -f6 &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; cut -d&lt;span class=&#34;s1&#34;&gt;&amp;#39;/&amp;#39;&lt;/span&gt; -f2&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Update deployments/add-ons/prometheus/params.env with your workspace id and region:
+&lt;ol&gt;
+&lt;li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;pushd&lt;/span&gt; tests&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; python3 -c &lt;span class=&#34;s1&#34;&gt;&amp;#39;import os; import e2e.utils.prometheus.setup_prometheus_server as setup_prometheus_server; region = os.environ[&amp;#34;AMP_WORKSPACE_REGION&amp;#34;]; workspace_id = os.environ[&amp;#34;AMP_WORKSPACE_ID&amp;#34;]; local_prometheus_port = os.environ[&amp;#34;LOCAL_PROMETHEUS_PORT&amp;#34;]; setup_prometheus_server.update_params_env(workspace_id, region, params_env_file_path=&amp;#34;../deployments/add-ons/prometheus/params.env&amp;#34;)&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;popd&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Run the kustomize build command to build your prometheus resources:
+&lt;ol&gt;
+&lt;li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kustomize build deployments/add-ons/prometheus &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; kubectl apply -f -
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;steps-to-verify-prometheus-and-amp-are-connected&#34;&gt;Steps to Verify Prometheus and AMP are Connected&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Make sure you have awscurl installed:
+&lt;ol&gt;
+&lt;li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip3 install awscurl
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Start port-forwarding for the prometheus pod:
+&lt;ol&gt;
+&lt;li&gt;Make sure to replace the following in the below command:
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&amp;lt;desired-local-port&amp;gt;&lt;/strong&gt; - a workspace alias of your choosing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;LOCAL_PROMETHEUS_PORT&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&amp;lt;desired-local-port&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubectl port-forward &lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;kubectl get pods --namespace&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;monitoring &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep &lt;span class=&#34;s2&#34;&gt;&amp;#34;prometheus-deployment&amp;#34;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; cut -d&lt;span class=&#34;s1&#34;&gt;&amp;#39; &amp;#39;&lt;/span&gt; -f1&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$LOCAL_PROMETHEUS_PORT&lt;/span&gt;:9090 --namespace&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;monitoring &lt;span class=&#34;p&#34;&gt;&amp;amp;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Make sure your credentials are in ~/.aws/credentials:
+&lt;ol&gt;
+&lt;li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;aws configure
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Run the below command to verify the KFP create experiment count metric is being correctly exported to AMP:
+&lt;ol&gt;
+&lt;li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;pushd&lt;/span&gt; tests&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; python3 -c &lt;span class=&#34;s1&#34;&gt;&amp;#39;import os; import e2e.utils.prometheus.setup_prometheus_server as setup_prometheus_server; cluster_region = os.environ[&amp;#34;CLUSTER_REGION&amp;#34;]; workspace_id = os.environ[&amp;#34;AMP_WORKSPACE_ID&amp;#34;]; setup_prometheus_server.local_prometheus_port = os.environ[&amp;#34;LOCAL_PROMETHEUS_PORT&amp;#34;]; setup_prometheus_server.check_AMP_connects_to_prometheus(cluster_region, workspace_id, expected_value=0)&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;popd&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;If all is working, this should not trigger an assertion error.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Get the PID and kill the port-forwarding process:
+&lt;ol&gt;
+&lt;li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;PORT_FORWARDING_PROCESS&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;lsof -i :&lt;span class=&#34;nv&#34;&gt;$LOCAL_PROMETHEUS_PORT&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; sed -n 2p &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; cut -d&lt;span class=&#34;s1&#34;&gt;&amp;#39; &amp;#39;&lt;/span&gt; -f2&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;kill&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$PORT_FORWARDING_PROCESS&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;steps-to-setup-amg&#34;&gt;Steps to Setup AMG&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.aws.amazon.com/grafana/latest/userguide/getting-started-with-AMG.html&#34;&gt;Create an Amazon Managed Grafana Workspace.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.aws.amazon.com/grafana/latest/userguide/AMP-adding-AWS-config.html&#34;&gt;Add AMP as a data source.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://docs.aws.amazon.com/grafana/latest/userguide/getting-started-grafanaui.html&#34;&gt;Create a dashboard to visualize metrics from your AMP data source.&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: EFS</title>
+      <link>https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/add-ons/storage/efs/guide/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/add-ons/storage/efs/guide/</guid>
       <description>
         
         
         &lt;p&gt;This guide describes how to use Amazon EFS as Persistent storage on top of an existing Kubeflow deployment.&lt;/p&gt;
 &lt;h2 id=&#34;10-prerequisites&#34;&gt;1.0 Prerequisites&lt;/h2&gt;
-&lt;p&gt;For this guide, we assume that you already have an EKS Cluster with Kubeflow installed. The FSx CSI Driver can be installed and configured as a separate resource on top of an existing Kubeflow deployment. See the &lt;a href=&#34;https://wenjinsitu.github.io/kubeflow-manifests/main/docs/deployment/&#34;&gt;deployment options&lt;/a&gt; and &lt;a href=&#34;https://wenjinsitu.github.io/kubeflow-manifests/main/docs/deployment/vanilla/guide/&#34;&gt;general prerequisites&lt;/a&gt; for more information.&lt;/p&gt;
+&lt;p&gt;For this guide, we assume that you already have an EKS Cluster with Kubeflow installed. The FSx CSI Driver can be installed and configured as a separate resource on top of an existing Kubeflow deployment. See the &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/&#34;&gt;deployment options&lt;/a&gt; and &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/vanilla/guide/&#34;&gt;general prerequisites&lt;/a&gt; for more information.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Check that you have the necessary &lt;a href=&#34;https://wenjinsitu.github.io/kubeflow-manifests/main/docs/deployment/vanilla/guide/&#34;&gt;prerequisites&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Check that you have the necessary &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/vanilla/guide/&#34;&gt;prerequisites&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Important: You must make sure you have an &lt;a href=&#34;https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html&#34;&gt;OIDC provider&lt;/a&gt; for your cluster and that it was added from &lt;code&gt;eksctl&lt;/code&gt; &amp;gt;= &lt;code&gt;0.56&lt;/code&gt; or if you already have an OIDC provider in place, then you must make sure you have the tag &lt;code&gt;alpha.eksctl.io/cluster-name&lt;/code&gt; with the cluster name as its value. If you don&amp;rsquo;t have the tag, you can add it via the AWS Console by navigating to IAM-&amp;gt;Identity providers-&amp;gt;Your OIDC-&amp;gt;Tags.&lt;/p&gt;
@@ -388,7 +539,7 @@ The PVC needs to be in the namespace you will be accessing it from. Replace the 
 &lt;p&gt;In the following two sections we will be using this PVC to create a notebook server with Amazon EFS mounted as the workspace volume, download training data into this filesystem and then deploy a TFJob to train a model using this data.&lt;/p&gt;
 &lt;h3 id=&#34;31-connect-to-the-kubeflow-dashboard&#34;&gt;3.1 Connect to the Kubeflow dashboard&lt;/h3&gt;
 &lt;p&gt;Once you have everything setup, Port Forward as needed and Login to the Kubeflow dashboard. At this point, you can also check the &lt;code&gt;Volumes&lt;/code&gt; tab in Kubeflow and you should be able to see your PVC is available for use within Kubeflow.&lt;/p&gt;
-&lt;p&gt;For more details on how to access your Kubeflow dashboard, refer to one of the &lt;a href=&#34;https://wenjinsitu.github.io/kubeflow-manifests/main/docs/deployment/&#34;&gt;deployment option guides&lt;/a&gt; based on your setup. If you used the vanilla deployment, see &lt;a href=&#34;https://wenjinsitu.github.io/kubeflow-manifests/main/docs/deployment/vanilla/guide/#connect-to-your-kubeflow-cluster&#34;&gt;Connect to your Kubeflow cluster&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;For more details on how to access your Kubeflow dashboard, refer to one of the &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/&#34;&gt;deployment option guides&lt;/a&gt; based on your setup. If you used the vanilla deployment, see &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/vanilla/guide/#connect-to-your-kubeflow-cluster&#34;&gt;Connect to your Kubeflow cluster&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;32-changing-the-default-storage-class&#34;&gt;3.2 Changing the default Storage Class&lt;/h3&gt;
 &lt;p&gt;After installing Kubeflow, you can change the default Storage Class from &lt;code&gt;gp2&lt;/code&gt; to the efs storage class you created during the setup. For instance, if you followed the automatic or manual steps, you should have a storage class named &lt;code&gt;efs-sc&lt;/code&gt;. You can check your storage classes by running &lt;code&gt;kubectl get sc&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;This is can be useful if your notebook configuration is set to use the default storage class (it is the case by default). By changing the default storage class, when creating workspace volumes for your notebooks, it will use your EFS storage class automatically. This is not mandatory as you can also manually create a PVC and select the &lt;code&gt;efs-sc&lt;/code&gt; class via the Volume UI but can facilitate the notebook creation process and automatically select this class when creating volume in the UI. You can also decide to keep using &lt;code&gt;gp2&lt;/code&gt; for workspace volumes and keep the EFS storage class for datasets/data volumes only.&lt;/p&gt;
@@ -453,7 +604,7 @@ Source: &lt;a href=&#34;https://www.tensorflow.org/tutorials/load_data/images&#3
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubectl describe tfjob image-classification-pvc -n &lt;span class=&#34;nv&#34;&gt;$PVC_NAMESPACE&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubectl logs -n &lt;span class=&#34;nv&#34;&gt;$PVC_NAMESPACE&lt;/span&gt; image-classification-pvc-worker-0 -f
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;40-cleanup&#34;&gt;4.0 Cleanup&lt;/h2&gt;
-&lt;p&gt;This section cleans up the resources created in this guide. To clean up other resources, such as the Kubeflow deployment, see &lt;a href=&#34;https://wenjinsitu.github.io/kubeflow-manifests/main/docs/deployment/uninstall-kubeflow/&#34;&gt;Uninstall Kubeflow&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This section cleans up the resources created in this guide. To clean up other resources, such as the Kubeflow deployment, see &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/uninstall-kubeflow/&#34;&gt;Uninstall Kubeflow&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;41-clean-up-the-tfjob&#34;&gt;4.1 Clean up the TFJob&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubectl delete tfjob -n &lt;span class=&#34;nv&#34;&gt;$PVC_NAMESPACE&lt;/span&gt; image-classification-pvc
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;42-delete-the-kubeflow-notebook&#34;&gt;4.2 Delete the Kubeflow Notebook&lt;/h3&gt;
@@ -479,18 +630,18 @@ b. Delete the &lt;code&gt;efs-csi-controller-sa&lt;/code&gt; service account and
     
     <item>
       <title>Docs: FSx for Lustre</title>
-      <link>https://wenjinsitu.github.io/kubeflow-manifests/main/docs/deployment/add-ons/storage/fsx-for-lustre/guide/</link>
+      <link>https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/add-ons/storage/fsx-for-lustre/guide/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wenjinsitu.github.io/kubeflow-manifests/main/docs/deployment/add-ons/storage/fsx-for-lustre/guide/</guid>
+      <guid>https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/add-ons/storage/fsx-for-lustre/guide/</guid>
       <description>
         
         
         &lt;p&gt;This guide describes how to use Amazon FSx as Persistent storage on top of an existing Kubeflow deployment.&lt;/p&gt;
 &lt;h2 id=&#34;10-prerequisites&#34;&gt;1.0 Prerequisites&lt;/h2&gt;
-&lt;p&gt;For this guide, we assume that you already have an EKS Cluster with Kubeflow installed. The FSx CSI Driver can be installed and configured as a separate resource on top of an existing Kubeflow deployment. See the &lt;a href=&#34;https://wenjinsitu.github.io/kubeflow-manifests/main/docs/deployment/&#34;&gt;deployment options&lt;/a&gt; and &lt;a href=&#34;https://wenjinsitu.github.io/kubeflow-manifests/main/docs/deployment/vanilla/guide/&#34;&gt;general prerequisites&lt;/a&gt; for more information.&lt;/p&gt;
+&lt;p&gt;For this guide, we assume that you already have an EKS Cluster with Kubeflow installed. The FSx CSI Driver can be installed and configured as a separate resource on top of an existing Kubeflow deployment. See the &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/&#34;&gt;deployment options&lt;/a&gt; and &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/vanilla/guide/&#34;&gt;general prerequisites&lt;/a&gt; for more information.&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Check that you have the necessary &lt;a href=&#34;https://wenjinsitu.github.io/kubeflow-manifests/main/docs/deployment/vanilla/guide/&#34;&gt;prerequisites&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Check that you have the necessary &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/vanilla/guide/&#34;&gt;prerequisites&lt;/a&gt;.&lt;/li&gt;
 &lt;/ol&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Important: You must make sure you have an &lt;a href=&#34;https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html&#34;&gt;OIDC provider&lt;/a&gt; for your cluster and that it was added from &lt;code&gt;eksctl&lt;/code&gt; &amp;gt;= &lt;code&gt;0.56&lt;/code&gt; or if you already have an OIDC provider in place, then you must make sure you have the tag &lt;code&gt;alpha.eksctl.io/cluster-name&lt;/code&gt; with the cluster name as its value. If you don&amp;rsquo;t have the tag, you can add it via the AWS Console by navigating to IAM-&amp;gt;Identity providers-&amp;gt;Your OIDC-&amp;gt;Tags.&lt;/p&gt;
@@ -623,7 +774,7 @@ It performs the required cluster configuration, creates an FSx file system and i
 &lt;p&gt;In the following two sections we will be using this PVC to create a notebook server with Amazon FSx mounted as the workspace volume, download training data into this filesystem and then deploy a TFJob to train a model using this data.&lt;/p&gt;
 &lt;h3 id=&#34;31-connect-to-the-kubeflow-dashboard&#34;&gt;3.1 Connect to the Kubeflow dashboard&lt;/h3&gt;
 &lt;p&gt;Once you have everything setup, Port Forward as needed and Login to the Kubeflow dashboard. At this point, you can also check the &lt;code&gt;Volumes&lt;/code&gt; tab in Kubeflow and you should be able to see your PVC is available for use within Kubeflow.
-For more details on how to access your Kubeflow dashboard, refer to one of the &lt;a href=&#34;https://wenjinsitu.github.io/kubeflow-manifests/main/docs/deployment/&#34;&gt;deployment option guides&lt;/a&gt; based on your setup. If you used the vanilla deployment, see &lt;a href=&#34;https://wenjinsitu.github.io/kubeflow-manifests/main/docs/deployment/vanilla/guide/#connect-to-your-kubeflow-cluster&#34;&gt;Connect to your Kubeflow cluster&lt;/a&gt;.&lt;/p&gt;
+For more details on how to access your Kubeflow dashboard, refer to one of the &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/&#34;&gt;deployment option guides&lt;/a&gt; based on your setup. If you used the vanilla deployment, see &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/vanilla/guide/#connect-to-your-kubeflow-cluster&#34;&gt;Connect to your Kubeflow cluster&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;32-note-about-permissions&#34;&gt;3.2 Note about permissions&lt;/h3&gt;
 &lt;p&gt;This step may not be necessary but you might need to specify some additional directory permissions on your worker node before you can use these as mount points. By default, new Amazon FSx file systems are owned by root:root, and only the root user (UID 0) has read-write-execute permissions. If your containers are not running as root, you must change the Amazon FSx file system permissions to allow other users to modify the file system. The set-permission-job.yaml is an example of how you could set these permissions to be able to use the fsx as your workspace in your kubeflow notebook. Modify it accordingly if you run into similar permission issues with any other job pod.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;yq e &lt;span class=&#34;s1&#34;&gt;&amp;#39;.metadata.name = env(CLAIM_NAME)&amp;#39;&lt;/span&gt; -i &lt;span class=&#34;nv&#34;&gt;$GITHUB_STORAGE_DIR&lt;/span&gt;/notebook-sample/set-permission-job.yaml
@@ -675,7 +826,7 @@ Source: &lt;a href=&#34;https://www.tensorflow.org/tutorials/load_data/images&#3
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubectl describe tfjob image-classification-pvc -n &lt;span class=&#34;nv&#34;&gt;$PVC_NAMESPACE&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubectl logs -n &lt;span class=&#34;nv&#34;&gt;$PVC_NAMESPACE&lt;/span&gt; image-classification-pvc-worker-0 -f
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;40-cleanup&#34;&gt;4.0 Cleanup&lt;/h2&gt;
-&lt;p&gt;This section cleans up the resources created in this guide. To clean up other resources, such as the Kubeflow deployment, see &lt;a href=&#34;https://wenjinsitu.github.io/kubeflow-manifests/main/docs/deployment/uninstall-kubeflow/&#34;&gt;Uninstall Kubeflow&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;This section cleans up the resources created in this guide. To clean up other resources, such as the Kubeflow deployment, see &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/uninstall-kubeflow/&#34;&gt;Uninstall Kubeflow&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;41-clean-up-the-tfjob&#34;&gt;4.1 Clean up the TFJob&lt;/h3&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubectl delete tfjob -n &lt;span class=&#34;nv&#34;&gt;$PVC_NAMESPACE&lt;/span&gt; image-classification-pvc
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;42-delete-the-kubeflow-notebook&#34;&gt;4.2 Delete the Kubeflow Notebook&lt;/h3&gt;
@@ -699,10 +850,10 @@ Source: &lt;a href=&#34;https://www.tensorflow.org/tutorials/load_data/images&#3
     
     <item>
       <title>Docs: CloudWatch</title>
-      <link>https://wenjinsitu.github.io/kubeflow-manifests/main/docs/deployment/add-ons/cloudwatch/guide/</link>
+      <link>https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/add-ons/cloudwatch/guide/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://wenjinsitu.github.io/kubeflow-manifests/main/docs/deployment/add-ons/cloudwatch/guide/</guid>
+      <guid>https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/add-ons/cloudwatch/guide/</guid>
       <description>
         
         
