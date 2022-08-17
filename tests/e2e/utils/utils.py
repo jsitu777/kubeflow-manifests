@@ -12,6 +12,7 @@ import yaml
 import boto3
 import mysql.connector
 import subprocess
+import tempfile
 
 
 def safe_open(filepath, mode="r"):
@@ -121,10 +122,6 @@ def load_json_file(filepath):
         return json.load(file)
 
 
-def get_aws_account_id():
-    return boto3.client("sts").get_caller_identity().get("Account")
-
-
 def get_eks_client(region):
     return boto3.client("eks", region_name=region)
 
@@ -184,6 +181,82 @@ def curl_file_to_path(file, path):
     subprocess.call(cmd)
 
 
+def apply_kustomize(path, crd_required=None):
+    """
+    Equivalent to:
+
+    while ! kustomize build <PATH> | kubectl apply -f -; do echo "Retrying to apply resources"; sleep 30; done
+
+    but creates a temporary file instead of piping.
+    """
+    with tempfile.NamedTemporaryFile() as tmp:
+        build_retcode = subprocess.call(f"kustomize build {path} -o {tmp.name}".split())
+        assert build_retcode == 0
+        apply_retcode = subprocess.call(f"kubectl apply -f {tmp.name}".split())
+        # to deal with runtime crds
+        if apply_retcode == 1 and crd_required is not None:
+            retcode = kubectl_wait_crd(crd=crd_required)
+            assert retcode == 0
+            apply_retcode = subprocess.call(f"kubectl apply -f {tmp.name}".split())
+        assert apply_retcode == 0
+
+def install_helm(chart_name, path):
+    """
+    Equivalent to:
+
+    helm install <chart_name> <path>
+    
+    """
+
+    with tempfile.NamedTemporaryFile() as tmp:
+        install_retcode = subprocess.call(f"helm install {chart_name} {path}".split())
+        assert install_retcode == 0
+
+def delete_kustomize(path):
+    """
+    Equivalent to:
+
+    kustomize build <PATH> | kubectl delete -f -
+
+    but creates a temporary file instead of piping.
+    """
+    with tempfile.NamedTemporaryFile() as tmp:
+        build_retcode = subprocess.call(f"kustomize build {path} -o {tmp.name}".split())
+        assert build_retcode == 0
+    
+        delete_retcode = subprocess.call(f"kubectl delete -f {tmp.name}".split())
+
+def uninstall_helm(chart_name, namespace = None):
+    """
+    Equivalent to:
+
+    helm uninstall <chart_name>
+
+    """
+    if namespace: 
+        uninstall_retcode = subprocess.call(f"helm uninstall {chart_name} -n {namespace}".split())
+    else:
+        uninstall_retcode = subprocess.call(f"helm uninstall {chart_name}".split())
+    assert uninstall_retcode == 0
+
+
+
+def kubectl_wait_pods(pods, namespace=None, timeout=120, condition='ready', identifier='app'):
+    if namespace:
+        
+        cmd = f"kubectl wait --for=condition={condition} pod -l '{identifier} in ({pods})' --timeout={timeout}s -n {namespace}"
+        
+    else:
+        cmd = f"kubectl wait --for=condition={condition} pod -l '{identifier} in ({pods})' --timeout={timeout}s"
+    print(f"running command: {cmd}")
+    return os.system(cmd)
+
+def kubectl_wait_crd(crd, timeout=60, condition='established'):
+    cmd = f"kubectl wait --for condition={condition} --timeout={timeout}s crd/{crd}".split()
+    print(f"running command: {cmd}")
+    return subprocess.call(cmd)
+
+
 def kubectl_apply(path, namespace=None):
     if namespace:
         cmd = f"kubectl apply -f {path} -n {namespace}".split()
@@ -196,6 +269,24 @@ def kubectl_delete(path):
     cmd = f"kubectl delete -f {path}".split()
     subprocess.call(cmd)
 
+def kubectl_delete_crd(crd):
+    cmd = f"kubectl delete crd {crd}".split()
+    print(f"running command: {cmd}")
+    subprocess.call(cmd)
+
+def kubectl_get_cronjob(cronjob, namespace=None):
+    if namespace:
+        cmd = f"kubectl get cronjob {cronjob} -n {namespace}".split()
+    else:
+        cmd = f"kubectl get cronjob {cronjob}".split()
+    print(f"running command: {cmd}")
+    return subprocess.call(cmd)
+
+def kubectl_get_namespace(namespace):
+    
+    cmd = f"kubectl get namespace {namespace}".split()
+    print(f"running command: {cmd}")
+    return subprocess.call(cmd)
 
 def kubectl_apply_kustomize(path):
     cmd = f"kubectl apply -k {path}".split()
@@ -212,6 +303,11 @@ def load_yaml_file(file_path: str):
         content = file.read()
 
     return yaml.safe_load(content)
+
+def load_multiple_yaml_files(file_path: str):
+    with open(file_path, "r") as file:
+        content = file.read()
+    return yaml.safe_load_all(content)
 
 
 def write_yaml_file(yaml_content, file_path: str):
