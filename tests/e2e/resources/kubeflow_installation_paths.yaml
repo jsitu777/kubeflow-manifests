@@ -1,0 +1,123 @@
+#level 1
+#cert-manager
+cert_manager: 
+  kustomize: "../../upstream/common/cert-manager/cert-manager/base"
+  helm: "../../charts/common/cert-manager"
+
+#kubeflow-roles
+kubeflow_roles:
+  kustomize: "../../upstream/common/kubeflow-roles/base"
+  helm: "../../charts/common/kubeflow-roles"
+
+#level 2
+#kubeflow-issuer
+kubeflow_issuer:
+  kustomize: "../../upstream/common/cert-manager/kubeflow-issuer/base"
+  helm: "../../charts/common/kubeflow-issuer"
+#istio
+istio_crd:
+  kustomize: "../../upstream/common/istio-1-14/istio-crds/base"
+istio_namespace:
+  kustomize: "../../upstream/common/istio-1-14/istio-namespace/base"
+istio_base:
+  kustomize: "../../upstream/common/istio-1-14/istio-install/base"
+istio:
+  helm: "../../charts/common/istio-1-14"
+
+#level 3
+#dex
+dex:
+  kustomize: "../../upstream/common/dex/overlays/istio"
+  helm: "../../charts/common/dex"
+#kubeflow-namespace
+kubeflow_namespace:
+  kustomize: "../../upstream/common/kubeflow-namespace/base"
+  helm: "../../charts/common/kubeflow-namespace"
+#cluster-local-gateway
+cluster_local_gateway:
+  kustomize: "../../upstream/common/istio-1-14/cluster-local-gateway/base"
+  helm: "../../charts/common/cluster-local-gateway"
+#knative
+knative_serving:
+  kustomize: "../../upstream/common/knative/knative-serving/overlays/gateways"
+  helm: "../../charts/common/knative-serving"
+knative_eventing:
+  kustomize: "../../upstream/common/knative/knative-eventing/base"
+  helm: "../../charts/common/knative-eventing"
+
+#level 4
+#oidc-authservice
+oidc_authservice:
+  kustomize: "../../upstream/common/oidc-authservice/base"
+  helm: "../../charts/common/oidc-authservice"
+#kubeflow-istio-resources
+kubeflow_istio_resources:
+  kustomize: "../../upstream/common/istio-1-14/kubeflow-istio-resources/base"
+  helm: "../../charts/common/kubeflow-istio-resources"
+#kserve
+kserve:
+  kustomize: "../../awsconfigs/apps/kserve"
+  helm: "../../charts/common/kserve"
+#models-web-app
+models_web_app:
+  kustomize: "../../upstream/contrib/kserve/models-web-app/overlays/kubeflow"
+  helm: "../../charts/apps/models-web-app"
+
+#level 5
+#central-dashboard
+central_dashboard:
+  kustomize: "../../upstream/apps/centraldashboard/upstream/overlays/kserve"
+  helm: "../../charts/apps/central-dashboard"
+
+#pipelines
+kubeflow_pipelines_crd:
+  kustomize: "../../upstream/apps/pipeline/upstream/third-party/metacontroller/base/crd.yaml"
+kubeflow_pipelines:
+  kustomize: "../../upstream/apps/pipeline/upstream/env/cert-manager/platform-agnostic-multi-user"
+  helm: "../../charts/apps/kubeflow-pipelines"
+
+#notebook
+#admission-webhook
+admission_webhook:
+  kustomize: "../../upstream/apps/admission-webhook/upstream/overlays/cert-manager"
+  helm: "../../charts/common/admission-webhook"
+#jupyter-web-app
+jupyter_web_app:
+  kustomize: "../../awsconfigs/apps/jupyter-web-app"
+  helm: "../../charts/apps/jupyter-web-app"
+notebook_controller:
+  kustomize: "../../upstream/apps/jupyter/notebook-controller/upstream/overlays/kubeflow"
+  helm: "../../charts/apps/notebook-controller"
+#volume-web-app
+volumes_web_app:
+  kustomize: "../../upstream/apps/volumes-web-app/upstream/overlays/istio"
+  helm: "../../charts/apps/volumes-web-app"
+#training-operator
+training_operator:
+  kustomize: "../../upstream/apps/training-operator/upstream/overlays/kubeflow"
+  helm: "../../charts/apps/training-operator"
+#katib
+katib:
+  kustomize: "../../upstream/apps/katib/upstream/installs/katib-with-kubeflow"
+  helm: "../../charts/apps/katib"
+#tensorboard
+tensorboard_controller:
+  kustomize: "../../upstream/apps/tensorboard/tensorboard-controller/upstream/overlays/kubeflow"
+  helm: "../../charts/apps/tensorboard-controller"
+tensorboards_web_app:
+  kustomize:  "../../upstream/apps/tensorboard/tensorboards-web-app/upstream/overlays/istio"
+  helm:  "../../charts/apps/tensorboards-web-app"
+#profiles and kfam
+profiles_and_kfam:
+  kustomize: "../../upstream/apps/profiles/upstream/overlays/kubeflow"
+  helm: "../../charts/common/profiles-and-kfam"
+#user namespace
+user_namespace:
+  kustomize: "../../upstream/common/user-namespace/base"
+  helm: "../../charts/common/user-namespace"
+#AWS Telemetry (Optional)
+aws_telemetry:
+  kustomize: "../../awsconfigs/common/aws-telemetry"
+  helm: "../../charts/common/aws-telemetry"
+
+
