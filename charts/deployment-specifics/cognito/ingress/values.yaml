@@ -1,0 +1,9 @@
+clustername: #cluester-1
+cognitoUserpool:
+  ARN: #arn:aws:cognito-idp:ca-central-1:12345678:userpool/ca-central-1_1234abcd
+  appClientId: #1a2b3c4d5e6f7g8h
+  domain: #auth.platform.example.people.aws.dev
+
+route53:
+  subDomain:
+    certArn: #arn:aws:acm:ca-central-1:12345678:certificate/1234abcd-e1f2-1234
