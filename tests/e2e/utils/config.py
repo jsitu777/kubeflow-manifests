@@ -93,8 +93,10 @@ def configure_resource_fixture(
     successful_creation = False
 
     def delete():
+        """
         if successful_creation and keep_successfully_created_resource(request):
             return
+        """
         on_delete()
 
     request.addfinalizer(delete)

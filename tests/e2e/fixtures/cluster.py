@@ -4,15 +4,13 @@ EKS cluster fixture module
 
 import subprocess
 import pytest
+from e2e.conftest import clean_up_eks_cluster
 
-from e2e.utils.utils import (
-    rand_name,
-    get_eks_client,
-)
+from e2e.utils.utils import rand_name
 from e2e.utils.config import configure_resource_fixture
 
 # Todo load from yaml and replace values
-def create_cluster(cluster_name, region, cluster_version="1.19"):
+def create_cluster(cluster_name, region, cluster_version="1.21"):
     cmd = []
     cmd += "eksctl create cluster".split()
     cmd += f"--name {cluster_name}".split()
@@ -20,7 +18,7 @@ def create_cluster(cluster_name, region, cluster_version="1.19"):
     cmd += f"--region {region}".split()
     cmd += "--node-type m5.xlarge".split()
     cmd += "--nodes 5".split()
-    cmd += "--nodes-min 1".split()
+    cmd += "--nodes-min 5".split()
     cmd += "--nodes-max 10".split()
     cmd += "--managed".split()
 
@@ -47,16 +45,9 @@ def associate_iam_oidc_provider(cluster_name, region):
 
     subprocess.call(cmd)
 
-def get_oidc_provider(cluster_name, region):
-    eks_client = get_eks_client(region)
-    https_oidc_provider = eks_client.describe_cluster(
-        name=cluster_name,
-    ).get('cluster').get('identity').get('oidc').get('issuer')
-    oidc_provider = https_oidc_provider.replace("https://", "", 1)
-    return oidc_provider
 
 def create_iam_service_account(
-    service_account_name, namespace, cluster_name, region, iam_policy_arns=[], iam_role_arn=None, iam_role_name=None,
+    service_account_name, namespace, cluster_name, region, iam_policy_arns=[], iam_role_arn=None
 ):
     cmd = []
     cmd += "eksctl create iamserviceaccount".split()
@@ -70,9 +61,6 @@ def create_iam_service_account(
 
     if iam_role_arn != None:
         cmd += f"--attach-role-arn {iam_role_arn}".split()
-
-    if iam_role_name != None:
-        cmd += f"--role-name {iam_role_name}".split()
 
     cmd += "--override-existing-serviceaccounts".split()
     cmd += "--approve".split()
@@ -125,7 +113,11 @@ def cluster(metadata, region, request):
 
     def on_delete():
         name = metadata.get("cluster_name") or cluster_name
-        delete_cluster(name, region)
+        if clean_up_eks_cluster(request):
+            delete_cluster(name, region)
+        else:
+            return
+        
 
     return configure_resource_fixture(
         metadata, request, cluster_name, "cluster_name", on_create, on_delete
