@@ -53,6 +53,11 @@ def pytest_addoption(parser):
         action="store",
         help="helm or kustomize, default is set to kustomize"
     )
+    parser.addoption(
+        "--deployment_option",
+        action="store",
+        help="vanilla/cognito/rds-and-s3/rds-only/s3-only, default is set to vanilla"
+    )
 
     parser.addoption(
         "--aws_telemetry_option",
@@ -85,10 +90,16 @@ def get_secretkey(request):
     return secret_key
 
 def get_installation_option(request):
-    installation_option = request.config.getoption("--installation")
+    installation_option = request.config.getoption("--installation_option")
     if not installation_option:
         installation_option = "kustomize"
     return installation_option
+
+def get_depployment_option(request):
+    deployment_option = request.config.getoption("--deployment_option")
+    if not deployment_option:
+        deployment_option = "vanilla"
+    return deployment_option
 
 def get_aws_telemetry_option(request):
     aws_telemetry_option = request.config.getoption("--aws_telemetry")
@@ -126,6 +137,21 @@ def installation_option(metadata, request):
     metadata.insert("installation_option", installation_option)
     
     return installation_option
+
+@pytest.fixture(scope="class")
+def deployment_option(metadata, request):
+    """
+    Test deployment option.
+    """
+    if metadata.get("deployment_option"):
+        return metadata.get("deployment_option")
+
+    deployment_option = request.config.getoption("--deployment_option")
+    if not deployment_option:
+        deployment_option = 'vanilla'
+    metadata.insert("deployment_option", deployment_option)
+    
+    return deployment_option
 
 @pytest.fixture(scope="class")
 def aws_telemetry_option(metadata, request):

@@ -75,6 +75,15 @@ kubeflow_pipelines_crd:
 kubeflow_pipelines:
   kustomize: "../../upstream/apps/pipeline/upstream/env/cert-manager/platform-agnostic-multi-user"
   helm: "../../charts/apps/kubeflow-pipelines"
+kubeflow_pipelines_rds_and_s3:
+  kustomize: "../../awsconfigs/apps/pipeline"
+  helm: "../../charts/deployment-specifics/rds-s3/rds-and-s3/kubeflow-pipelines"
+kubeflow_pipelines_rds_only:
+  kustomize: "../../awsconfigs/apps/pipeline/rds"
+  helm: "../../charts/deployment-specifics/rds-s3/rds-only/kubeflow-pipelines"
+kubeflow_pipelines_s3_only:
+  kustomize: "../../awsconfigs/apps/pipeline/s3"
+  helm: "../../charts/deployment-specifics/rds-s3/s3-only/kubeflow-pipelines"
 
 #notebook
 #admission-webhook
@@ -100,6 +109,10 @@ training_operator:
 katib:
   kustomize: "../../upstream/apps/katib/upstream/installs/katib-with-kubeflow"
   helm: "../../charts/apps/katib"
+katib_external_db:
+  kustomize: "../../awsconfigs/apps/katib-external-db-with-kubeflow"
+  helm: "../../charts/deployment-specifics/rds-s3/katib-external-db-with-kubeflow/katib"
+
 #tensorboard
 tensorboard_controller:
   kustomize: "../../upstream/apps/tensorboard/tensorboard-controller/upstream/overlays/kubeflow"
@@ -119,5 +132,25 @@ user_namespace:
 aws_telemetry:
   kustomize: "../../awsconfigs/common/aws-telemetry"
   helm: "../../charts/common/aws-telemetry"
-
-
+#Ingress
+ingress:
+  kustomize: "../../awsconfigs/common/istio-ingress/overlays/cognito"
+  helm: "../../charts/deployment-specifics/cognito/ingress"
+#ALB Controller
+alb_controller:
+  kustomize: "../../awsconfigs/common/aws-alb-ingress-controller/base"
+  helm: "../../charts/deployment-specifics/cognito/aws-load-balancer-controller"
+#AWS Authservice
+aws_authservice:
+  kustomize: "../../awsconfigs/common/aws-authservice/base"
+  helm: "../../charts/deployment-specifics/cognito/aws-authservice"
+#AWS Secret Manager
+aws_secrets_manager_rds_and_s3:
+  kustomize: "../../awsconfigs/common/aws-secrets-manager"
+  helm: "../../charts/deployment-specifics/rds-s3/rds-and-s3/aws-secrets-manager"
+aws_secrets_manager_rds_only:
+  kustomize: "../../awsconfigs/common/aws-secrets-manager/rds"
+  helm: "../../charts/deployment-specifics/rds-s3/rds-only/aws-secrets-manager"
+aws_secrets_manager_s3_only:
+  kustomize: "../../awsconfigs/common/aws-secrets-manager/s3"
+  helm: "../../charts/deployment-specifics/rds-s3/s3-only/aws-secrets-manager"

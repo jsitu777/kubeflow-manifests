@@ -8,11 +8,15 @@ import time
 INSTALLATION_PATH_FILE = "./resources/kubeflow_installation_paths.yaml"
 path_dic = load_yaml_file(INSTALLATION_PATH_FILE)
 
-def install_kubeflow(installation_option,aws_telemetry_option):
-    #print_banner(f"You are installing kubeflow with {args.installation_option}")
+def install_kubeflow(installation_option,aws_telemetry_option,deployment_option):
+    
     INSTALLATION_OPTION = installation_option
     AWS_TELEMETRY_OPTION = aws_telemetry_option
+    DEPLOYMENT_OPTION = deployment_option
+    print_banner(f"You are installing kubeflow {DEPLOYMENT_OPTION} deployment with {INSTALLATION_OPTION}")
+    
     build_certManager(INSTALLATION_OPTION)
+    
     
     if INSTALLATION_OPTION == "helm":
         print("==========Installing Kubeflow-Roles==========")
@@ -24,11 +28,14 @@ def install_kubeflow(installation_option,aws_telemetry_option):
         apply_kustomize(path_dic["kubeflow_roles"]["kustomize"])
         print("==========Installing Kubeflow-Issuer==========")
         apply_kustomize(path_dic["kubeflow_issuer"]["kustomize"])
-   
+    
+
     build_istio(INSTALLATION_OPTION)
-    build_dex(INSTALLATION_OPTION)
+    if DEPLOYMENT_OPTION != "cognito":
+        build_dex(INSTALLATION_OPTION)
     
     print("==========Installing Kubeflow-Namespace==========")
+    
     
     if INSTALLATION_OPTION == "helm":
         install_helm("kubeflow-namespace", path_dic["kubeflow_namespace"]["helm"])
@@ -39,7 +46,8 @@ def install_kubeflow(installation_option,aws_telemetry_option):
     build_clusterLocalGateway(INSTALLATION_OPTION)
     build_knativeServing(INSTALLATION_OPTION)
     build_knativeEventing(INSTALLATION_OPTION)
-    build_oidcAuthService(INSTALLATION_OPTION)
+    if DEPLOYMENT_OPTION != "cognito":
+        build_oidcAuthService(INSTALLATION_OPTION)
     print("==========Installing Kubeflow-Istio-Resources==========")
     
     
@@ -48,19 +56,32 @@ def install_kubeflow(installation_option,aws_telemetry_option):
     else:
         apply_kustomize(path_dic["kubeflow_istio_resources"]["kustomize"])
     
+
     build_kserve(INSTALLATION_OPTION)
     build_models_web_app(INSTALLATION_OPTION)
     build_centralDashboard(INSTALLATION_OPTION)
-    build_kubeflowPipelines(INSTALLATION_OPTION)
+    build_kubeflowPipelines(INSTALLATION_OPTION, DEPLOYMENT_OPTION)
     build_notebook(INSTALLATION_OPTION)
     build_volumesWebApp(INSTALLATION_OPTION)
     build_trainingOperator(INSTALLATION_OPTION)
-    build_katib(INSTALLATION_OPTION)
+    build_katib(INSTALLATION_OPTION, DEPLOYMENT_OPTION)
     build_tensorBoard(INSTALLATION_OPTION)
-    build_profile(INSTALLATION_OPTION)
+    build_profile(INSTALLATION_OPTION, DEPLOYMENT_OPTION)
+
+
+    #cognito specific
+    if DEPLOYMENT_OPTION == "cognito":
+        build_alb_controller(INSTALLATION_OPTION)
+        build_ingress(INSTALLATION_OPTION)
+        build_aws_authservice(INSTALLATION_OPTION)
+
+    #rds/s3 specific
+    if DEPLOYMENT_OPTION == "rds-and-s3" or DEPLOYMENT_OPTION == "rds-only" or DEPLOYMENT_OPTION == "s3-only":
+        build_aws_secrets_manager(INSTALLATION_OPTION,DEPLOYMENT_OPTION)
+   
     if AWS_TELEMETRY_OPTION == "enable":
         build_aws_telemetry(INSTALLATION_OPTION)
-
+    
 def build_aws_telemetry(INSTALLATION_OPTION):
     print("==========Installing AWS-Telemtry==========")
     if INSTALLATION_OPTION == "helm":
@@ -72,6 +93,27 @@ def build_aws_telemetry(INSTALLATION_OPTION):
     assert retcode == 0
     print ("aws-telemetry is running!")
     
+def build_aws_secrets_manager(INSTALLATION_OPTION,DEPLOYMENT_OPTION):
+    print("==========Installing AWS-Secret-Manager==========")
+    print("Deployment Option:")
+    print(DEPLOYMENT_OPTION)
+    if INSTALLATION_OPTION == "helm":
+        if DEPLOYMENT_OPTION == "rds-and-s3":
+            install_helm("aws-secrets-manager", path_dic["aws_secrets_manager_rds_and_s3"]["helm"])
+        elif DEPLOYMENT_OPTION == "rds-only":
+            install_helm("aws-secrets-manager", path_dic["aws_secrets_manager_rds_only"]["helm"])
+        else:
+            install_helm("aws-secrets-manager", path_dic["aws_secrets_manager_s3_only"]["helm"])
+
+    else:
+        if DEPLOYMENT_OPTION == "rds-and-s3":
+            apply_kustomize(path_dic["aws_secrets_manager_rds_and_s3"]["kustomize"])
+        elif DEPLOYMENT_OPTION == "rds-only":
+            apply_kustomize(path_dic["aws_secrets_manager_rds_only"]["kustomize"])
+        else:
+            apply_kustomize(path_dic["aws_secrets_manager_s3_only"]["kustomize"])
+    print("Waiting for AWS-Secrets-Manager pods to be ready ...")
+    print("All AWS-Secrets-Manager pods are running!")
 
 def build_certManager(INSTALLATION_OPTION):
     print("==========Installing Cert-Manager==========")
@@ -197,25 +239,48 @@ def build_centralDashboard(INSTALLATION_OPTION):
     assert retcode == 0
     print("All central-dashboard pods are running!")
 
-def build_kubeflowPipelines(INSTALLATION_OPTION):
+def build_kubeflowPipelines(INSTALLATION_OPTION, DEPLOYMENT_OPTION):
     print("==========Installing Kubeflow-Pipelines==========")
+    print("Deployment Option:")
+    print(DEPLOYMENT_OPTION)
     if INSTALLATION_OPTION == "helm":
-        install_helm("kubeflow-pipelines", path_dic["kubeflow_pipelines"]["helm"])
+        #rds/s3/
+        if DEPLOYMENT_OPTION == 'rds-and-s3':
+            install_helm("kubeflow-pipelines", path_dic["kubeflow_pipelines_rds_and_s3"]["helm"])
+        elif DEPLOYMENT_OPTION == 'rds-only':
+            install_helm("kubeflow-pipelines", path_dic["kubeflow_pipelines_rds_only"]["helm"])
+        elif DEPLOYMENT_OPTION == 's3-only':
+            install_helm("kubeflow-pipelines", path_dic["kubeflow_pipelines_s3_only"]["helm"])
+        else:
+            #vanilla/cognito
+            install_helm("kubeflow-pipelines", path_dic["kubeflow_pipelines"]["helm"])
+
     else:
         kubectl_apply(path_dic["kubeflow_pipelines_crd"]["kustomize"])
         print("Waiting for crd/compositecontrollers.metacontroller.k8s.io to be available ...")
         retcode = kubectl_wait_crd(crd="compositecontrollers.metacontroller.k8s.io")
         assert retcode == 0
-        apply_kustomize(path_dic["kubeflow_pipelines"]["kustomize"])
+        if DEPLOYMENT_OPTION == 'rds-and-s3':
+            apply_kustomize(path_dic["kubeflow_pipelines_rds_and_s3"]["kustomize"])
+        elif DEPLOYMENT_OPTION == 'rds-only':
+            apply_kustomize(path_dic["kubeflow_pipelines_rds_only"]["kustomize"])
+        elif DEPLOYMENT_OPTION == 's3-only':
+            apply_kustomize(path_dic["kubeflow_pipelines_s3_only"]["kustomize"])
+        else:
+            #vanilla/cognito
+            apply_kustomize(path_dic["kubeflow_pipelines"]["kustomize"])
 
     print("Waiting for kubeflow-pipelines pods to be ready ...")
     retcode = kubectl_wait_pods(pods='cache-server, kubeflow-pipelines-profile-controller, \
                                       metacontroller, metadata-envoy-deployment, metadata-grpc-deployment, \
                                       metadata-writer, minio, ml-pipeline, ml-pipeline-persistenceagent, \
                                       ml-pipeline-scheduleworkflow, ml-pipeline-ui, ml-pipeline-viewer-crd, \
-                                      ml-pipeline-visualizationserver, mysql, workflow-controller', 
+                                      ml-pipeline-visualizationserver, workflow-controller', 
                                  namespace='kubeflow', timeout=240)
     assert retcode == 0
+    #if not using rds
+    if DEPLOYMENT_OPTION != 'rds_only' and DEPLOYMENT_OPTION != 'rds_and_s3':
+        retcode = kubectl_wait_pods(pods='mysql', namespace='kubeflow', timeout=240) 
     print("All kubeflow-pipelines pods are running!")
 
 def build_notebook(INSTALLATION_OPTION):
@@ -288,19 +353,34 @@ def build_trainingOperator(INSTALLATION_OPTION):
     assert retcode == 0
     print("All training-operator pods are running!")
 
-def build_katib(INSTALLATION_OPTION):
-    print("==========Installing Katib==========")
+def build_katib(INSTALLATION_OPTION, DEPLOYMENT_OPTION):
+    print("==========Installing Katib ==========")
+    print("Deployment Option:")
+    print(DEPLOYMENT_OPTION)
     if INSTALLATION_OPTION == "helm":
-        install_helm("katib",path_dic["katib"]["helm"])
+        if DEPLOYMENT_OPTION == 'rds-and-s3' or DEPLOYMENT_OPTION == 'rds-only':
+            install_helm("katib",path_dic["katib_external_db"]["helm"])
+        else:
+            install_helm("katib",path_dic["katib"]["helm"])
     else:
-        apply_kustomize(path_dic["katib"]["kustomize"])
+        if DEPLOYMENT_OPTION == 'rds-and-s3' or DEPLOYMENT_OPTION ==  'rds-only':
+            apply_kustomize(path_dic["katib_external_db"]["kustomize"])
+        else:
+            apply_kustomize(path_dic["katib"]["kustomize"])
     print("Waiting for katib pods to be ready ...")
-    retcode = kubectl_wait_pods(pods='controller, db-manager, mysql, ui', 
-                                namespace='kubeflow', timeout=240,identifier='katib.kubeflow.org/component')
+    retcode = kubectl_wait_pods(pods='controller, db-manager, ui', 
+                                namespace='kubeflow', timeout=240, identifier='katib.kubeflow.org/component')
     assert retcode == 0
+
+    #if rds is not using, check for mysql pod as well
+    if DEPLOYMENT_OPTION != 'rds-and-s3' and DEPLOYMENT_OPTION != 'rds-only':
+        retcode = kubectl_wait_pods(pods='mysql', 
+                                namespace='kubeflow', timeout=240, identifier='katib.kubeflow.org/component')
+        assert retcode == 0
+
     print("All katib pods are running!")
 
-def build_profile(INSTALLATION_OPTION):
+def build_profile(INSTALLATION_OPTION, DEPLOYMENT_OPTION):
     print("==========Installing Profiles==========")
     ##profile-and-kfam
     
@@ -313,18 +393,49 @@ def build_profile(INSTALLATION_OPTION):
     assert retcode == 0
     
     ##user_namespace
+    if DEPLOYMENT_OPTION != "cognito":
+        if INSTALLATION_OPTION == "helm":
+            install_helm("user-namespace", path_dic["user_namespace"]["helm"])
+        else:
+            apply_kustomize(path_dic["user_namespace"]["kustomize"])
+        print("Waiting for user-namespace pods to be ready ...")
+        ##It needs some time for the pod to show up before validating
+        retcode = kubectl_get_namespace("kubeflow-user-example-com")
+        assert retcode == 0
+        time.sleep(15)
+        retcode = kubectl_wait_pods(pods='ml-pipeline-ui-artifact, ml-pipeline-visualizationserver', namespace='kubeflow-user-example-com')
+        assert retcode == 0
+        print("All user-profile pods are running!")
+
+def build_ingress(INSTALLATION_OPTION):
+    print("==========Installing Ingress==========")
     if INSTALLATION_OPTION == "helm":
-        install_helm("user-namespace", path_dic["user_namespace"]["helm"])
+        install_helm("ingress", path_dic["ingress"]["helm"])
     else:
-        apply_kustomize(path_dic["user_namespace"]["kustomize"])
-    print("Waiting for user-namespace pods to be ready ...")
-    ##It needs some time for the pod to show up before validating
-    retcode = kubectl_get_namespace("kubeflow-user-example-com")
+        apply_kustomize(path_dic["ingress"]["kustomize"])
+    print("Ingress is configured! ")
+
+def build_alb_controller(INSTALLATION_OPTION):
+    print("==========Installing ALB Controller==========")
+    if INSTALLATION_OPTION == "helm":
+        install_helm("alb-controller", path_dic["alb_controller"]["helm"], namespace='kube-system')
+    else:
+        apply_kustomize(path_dic["alb_controller"]["kustomize"],crd_required='ingressclassparams.elbv2.k8s.aws')
+    print("Waiting for alb_controller pods to be ready ...")
+    retcode = kubectl_wait_pods(pods='aws-load-balancer-controller', identifier='app.kubernetes.io/name', namespace='kube-system')
     assert retcode == 0
-    time.sleep(15)
-    retcode = kubectl_wait_pods(pods='ml-pipeline-ui-artifact, ml-pipeline-visualizationserver', namespace='kubeflow-user-example-com')
+    print("All alb-controller pods are running!")
+
+def build_aws_authservice(INSTALLATION_OPTION):
+    print("==========Installing AWS Authservice==========")
+    if INSTALLATION_OPTION == "helm":
+        install_helm("aws-authservice", path_dic["aws_authservice"]["helm"])
+    else:
+        apply_kustomize(path_dic["aws_authservice"]["kustomize"])
+    print("Waiting for aws-authservice pods to be ready ...")
+    retcode = kubectl_wait_pods(pods='aws-authservice', namespace='istio-system')
     assert retcode == 0
-    print("All user-profile pods are running!")
+    print("All aws-authservice pods are running!")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
@@ -344,8 +455,17 @@ if __name__ == "__main__":
         help=f"Usage tracking (enable/disable), default is set to {AWS_TELEMETRY_DEFAULT}",
         required=False,
     )
+    DEPLOYMENT_OPTION_DEFAULT="vanilla"
+    parser.add_argument(
+        "--deployment_option",
+        type=str,
+        default=DEPLOYMENT_OPTION_DEFAULT,
+        help=f"Kubeflow deployment options (vanilla/cognito/rds-s3/rds-only/s3-only/cognito-rds-s3), default is set to {DEPLOYMENT_OPTION_DEFAULT}",
+        required=False,
+    )
 
     args, _ = parser.parse_known_args()
     INSTALLATION_OPTION=args.installation_option
-    AWS_TELEMETRY_OPTION=args.aws_telemetry
-    install_kubeflow(INSTALLATION_OPTION,AWS_TELEMETRY_OPTION)
+    AWS_TELEMETRY_OPTION=args.aws_telemetry_option
+    DEPLOYMENT_OPTION=args.deployment_option
+    install_kubeflow(INSTALLATION_OPTION,AWS_TELEMETRY_OPTION,DEPLOYMENT_OPTION)

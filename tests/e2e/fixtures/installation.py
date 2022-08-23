@@ -7,6 +7,7 @@ import tempfile
 import time
 import pytest
 import os
+from e2e.conftest import keep_successfully_created_resource
 
 from e2e.utils.config import configure_resource_fixture
 from e2e.utils.constants import KUBEFLOW_VERSION
@@ -35,7 +36,7 @@ def clone_upstream():
 
 @pytest.fixture(scope="class")
 def installation(
-    metadata, aws_telemetry_option, cluster, clone_upstream, configure_manifests, installation_path, installation_option, request
+    metadata, aws_telemetry_option, deployment_option, cluster, clone_upstream, configure_manifests, installation_path, installation_option, request
 ):
     """
     This fixture is created once for each test class.
@@ -48,15 +49,13 @@ def installation(
     """
 
     def on_create():
-        print("my installation_option")
-        print(installation_option)
-        print("my aws-telemetry_option")
-        print(aws_telemetry_option)
-        install_kubeflow(installation_option, aws_telemetry_option)
+        install_kubeflow(installation_option, aws_telemetry_option, deployment_option)
 
 
     def on_delete():
-        uninstall_kubeflow(installation_option, aws_telemetry_option)
+        if keep_successfully_created_resource == False:
+            print("Start to Uninstall KF")
+            uninstall_kubeflow(installation_option, aws_telemetry_option, deployment_option)
 
 
 
