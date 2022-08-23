@@ -200,7 +200,7 @@ def apply_kustomize(path, crd_required=None):
             apply_retcode = subprocess.call(f"kubectl apply -f {tmp.name}".split())
         assert apply_retcode == 0
 
-def install_helm(chart_name, path):
+def install_helm(chart_name, path, namespace=None):
     """
     Equivalent to:
 
@@ -209,7 +209,10 @@ def install_helm(chart_name, path):
     """
 
     with tempfile.NamedTemporaryFile() as tmp:
-        install_retcode = subprocess.call(f"helm install {chart_name} {path}".split())
+        if namespace: 
+            install_retcode = subprocess.call(f"helm install {chart_name} {path} -n {namespace}".split())
+        else:
+            install_retcode = subprocess.call(f"helm install {chart_name} {path}".split())
         assert install_retcode == 0
 
 def delete_kustomize(path):
