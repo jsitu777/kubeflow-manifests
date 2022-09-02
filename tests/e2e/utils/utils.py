@@ -244,7 +244,7 @@ def uninstall_helm(chart_name, namespace = None):
 
 
 
-def kubectl_wait_pods(pods, namespace=None, timeout=120, condition='ready', identifier='app'):
+def kubectl_wait_pods(pods, namespace=None, identifier='app', timeout=240, condition='ready'):
     if namespace:
         
         cmd = f"kubectl wait --for=condition={condition} pod -l '{identifier} in ({pods})' --timeout={timeout}s -n {namespace}"
@@ -348,3 +348,10 @@ def get_security_group_id_from_name(
         ]
     )
     return response["SecurityGroups"][0]["GroupId"]
+
+def write_env_to_yaml(env_dict,yaml_file_path,module):
+    print(f"Editing {yaml_file_path} with appropriate values...")
+    content = load_yaml_file(yaml_file_path)
+    for key, value in env_dict.items():
+        content[module][key] = value
+    write_yaml_file(content,yaml_file_path)

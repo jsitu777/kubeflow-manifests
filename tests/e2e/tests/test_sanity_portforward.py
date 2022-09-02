@@ -39,12 +39,13 @@ from kubernetes.client.exceptions import ApiException as K8sApiException
 
 
 CUSTOM_RESOURCE_TEMPLATES_FOLDER = "./resources/custom-resource-templates"
-INSTALLATION_PATH_FILE = "./resources/kubeflow_installation_paths.yaml"
+INSTALLATION_PATH_FILE = "./resources/installation_config/vanilla.yaml"
 
 
 @pytest.fixture(scope="class")
-def installation_path(installation_option,aws_telemetry_option):
+def installation_path(installation_option,aws_telemetry_option,deployment_option):
     print(f"Installation Option: {installation_option}")
+    print(f"Deployment Option: {deployment_option}")
     print(f"AWS-telemetry Option: {aws_telemetry_option}")
     return INSTALLATION_PATH_FILE
 
