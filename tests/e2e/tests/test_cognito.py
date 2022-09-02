@@ -22,8 +22,6 @@ def installation_path(installation_option,aws_telemetry_option,deployment_option
     print(f"Deployment Option: {deployment_option}")
     print(f"AWS-telemetry Option: {aws_telemetry_option}")
     return INSTALLATION_PATH_FILE
-    #def kustomize_path():
-    #return "../../deployments/cognito"
 
 
 @pytest.fixture(scope="class")
@@ -43,9 +41,10 @@ class TestCognito:
     def test_url_is_up(self, setup, cognito_bootstrap):
         subdomain_name = cognito_bootstrap["route53"]["subDomain"]["name"]
         kubeflow_endpoint = "https://kubeflow." + subdomain_name
-        print("kubeflow_endpoint")
+        print("kubeflow_endpoint:")
         print(kubeflow_endpoint)
         #wait a bit till website is accessible
+        print("Wait for 60s for website to be available...")
         time.sleep(60)
         response = requests.get(kubeflow_endpoint)
         assert response.status_code == 200

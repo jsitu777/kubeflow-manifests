@@ -95,7 +95,9 @@ def cognito_bootstrap(
 
     def on_delete():
         cfg = metadata.get("cognito_dependencies") or cognito_deps
-        if keep_successfully_created_resource == False:
+        print("keep Success Option for Cognito Fixture:")
+        print(keep_successfully_created_resource(request))
+        if keep_successfully_created_resource(request) == False:
             print("start to uninstall Cognito Dependencies...")
             delete_cognito_dependency_resources(cfg)
 
