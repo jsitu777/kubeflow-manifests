@@ -270,8 +270,8 @@ user-namespace:
 aws-secrets-manager:
   installation_options:
     kustomize: 
-      - "../../awsconfigs/common/aws-secrets-manager/s3"
-    helm: "../../charts/deployment-specifics/rds-s3/s3-only/aws-secrets-manager"
+      - "../../awsconfigs/common/aws-secrets-manager/rds"
+    helm: "../../charts/deployment-specifics/rds-s3/rds-only/aws-secrets-manager"
   namespace: 'kubeflow'
   validations:
     identifier: 'app'
@@ -281,6 +281,5 @@ aws-secrets-manager:
 aws-telemetry:
   installation_options:
     kustomize: 
-      - "../../awsconfigs/common/aws-secrets-manager/rds"
-    helm: "../../charts/deployment-specifics/rds-s3/rds-only/aws-secrets-manager"
-  namespace: 'aws-telemetry'
+      - "../../awsconfigs/common/aws-telemetry"
+    helm: "../../charts/common/aws-telemetry"

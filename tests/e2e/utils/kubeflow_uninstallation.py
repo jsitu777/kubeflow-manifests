@@ -7,8 +7,11 @@ import os
 import subprocess
 
 
-INSTALLATION_PATH_FILE = "./resources/installation_config/kubeflow_installation_paths.yaml"
-path_dic = load_yaml_file(INSTALLATION_PATH_FILE)
+INSTALLATION_PATH_FILE_VANILLA = "./resources/installation_config/vanilla.yaml"
+INSTALLATION_PATH_FILE_COGNITO = "./resources/installation_config/cognito.yaml"
+INSTALLATION_PATH_FILE_RDS_AND_S3 = "./resources/installation_config/rds-and-s3.yaml"
+INSTALLATION_PATH_FILE_RDS_ONLY = "./resources/installation_config/rds-only.yaml"
+INSTALLATION_PATH_FILE_S3_ONLY = "./resources/installation_config/s3-only.yaml"
 
 Uninstall_Sequence = [  "aws-authservice",
                         "ingress",
@@ -38,65 +41,82 @@ Uninstall_Sequence = [  "aws-authservice",
                         "istio-1-14",
                         "kubeflow-issuer",
                         "kubeflow-roles",
-                        "cert-manager"]
+                        "cert-manager"
+                        ]
 
 
 def uninstall_kubeflow(installation_option,aws_telemetry_option,deployment_option):
     INSTALLATION_OPTION = installation_option
     AWS_TELEMETRY_OPTION = aws_telemetry_option
     DEPLOYMENT_OPTION = deployment_option
-    print_banner(f"You are uninstalling kubeflow {DEPLOYMENT_OPTION} deployment with {INSTALLATION_OPTION}")
 
+    if DEPLOYMENT_OPTION == "vanilla":
+        path_dic = load_yaml_file(INSTALLATION_PATH_FILE_VANILLA)
+    elif DEPLOYMENT_OPTION == "cognito":
+        path_dic = load_yaml_file(INSTALLATION_PATH_FILE_COGNITO)
+    elif DEPLOYMENT_OPTION == "rds-and-s3":
+        path_dic = load_yaml_file(INSTALLATION_PATH_FILE_RDS_AND_S3)
+    elif DEPLOYMENT_OPTION == "rds-only":
+        path_dic = load_yaml_file(INSTALLATION_PATH_FILE_RDS_ONLY)
+    else:
+        path_dic = load_yaml_file(INSTALLATION_PATH_FILE_S3_ONLY)
+
+    print_banner(f"You are uninstalling kubeflow {DEPLOYMENT_OPTION} deployment with {INSTALLATION_OPTION}")
+    
     for component in Uninstall_Sequence:
-        if component == "alb-load-balancer":
-            namespace = "kube-system"
-        elif component == "cert-manager":
+        if component == "cert-manager":
             namespace = "cert-manager"
         else:
             namespace=None
-        delete_component(INSTALLATION_OPTION,DEPLOYMENT_OPTION, component, namespace=namespace)
+        delete_component(INSTALLATION_OPTION,
+                         DEPLOYMENT_OPTION, 
+                         path_dic, 
+                         component,
+                         namespace)
 
     if AWS_TELEMETRY_OPTION == "enable":
         delete_component(INSTALLATION_OPTION,
                     DEPLOYMENT_OPTION,
-                    "aws-telemetry")
+                    path_dic,
+                    "aws-telemetry",
+                    namespace=None)
     
 def delete_component(INSTALLATION_OPTION, 
-                    DEPLOYMENT_OPTION, 
-                    component_name=None, 
-                    installation_path=None, 
-                    namespace=None):
+                    DEPLOYMENT_OPTION,
+                    path_dic, 
+                    component_name,
+                    namespace 
+                    ):
     print(f"==========uninstallating {component_name}...==========")
-    if path_dic[component_name][INSTALLATION_OPTION][DEPLOYMENT_OPTION] == None:
+    if component_name not in path_dic:
         print (f"component {component_name} is not applicable for deployment option: {DEPLOYMENT_OPTION}")
         return
     else:
-        installation_path = path_dic[component_name][INSTALLATION_OPTION][DEPLOYMENT_OPTION]
+        installation_path = path_dic[component_name]["installation_options"][INSTALLATION_OPTION]
+        
         if INSTALLATION_OPTION == 'helm':
+
             uninstall_helm(component_name, namespace)
             if os.path.isdir(f"{installation_path}/crds"):
                 print(f"deleting {component_name} crds ...")
-                kubectl_delete(f"{component_name}/crds")
+                kubectl_delete(f"{installation_path}/crds")
                 #clear up implicit crd resources for Dex
         #kustomize
         else:
-            if isinstance(installation_path, list):
-                installation_path.reverse()
-                for kustomize_path in installation_path:
-                    delete_kustomize(kustomize_path)
-            else:
-                delete_kustomize(installation_path)
+            installation_path.reverse()
+            for kustomize_path in installation_path:
+                delete_kustomize(kustomize_path)
     
-    if component_name == "dex" or installation_path == path_dic["dex"]["kustomize"]:
-                kubectl_delete_crd("authrequests.dex.coreos.com")
-                kubectl_delete_crd("connectors.dex.coreos.com")
-                kubectl_delete_crd("devicerequests.dex.coreos.com")
-                kubectl_delete_crd("devicetokens.dex.coreos.com")
-                kubectl_delete_crd("oauth2clients.dex.coreos.com")
-                kubectl_delete_crd("offlinesessionses.dex.coreos.com")
-                kubectl_delete_crd("passwords.dex.coreos.com")
-                kubectl_delete_crd("refreshtokens.dex.coreos.com")
-                kubectl_delete_crd("signingkeies.dex.coreos.com")
+    if component_name == "dex":
+        kubectl_delete_crd("authrequests.dex.coreos.com")
+        kubectl_delete_crd("connectors.dex.coreos.com")
+        kubectl_delete_crd("devicerequests.dex.coreos.com")
+        kubectl_delete_crd("devicetokens.dex.coreos.com")
+        kubectl_delete_crd("oauth2clients.dex.coreos.com")
+        kubectl_delete_crd("offlinesessionses.dex.coreos.com")
+        kubectl_delete_crd("passwords.dex.coreos.com")
+        kubectl_delete_crd("refreshtokens.dex.coreos.com")
+        kubectl_delete_crd("signingkeies.dex.coreos.com")
         
     print(f"All {component_name} resources are cleared!")
 

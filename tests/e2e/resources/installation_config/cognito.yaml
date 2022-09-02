@@ -5,8 +5,8 @@ cert-manager:
     kustomize: 
       - "../../upstream/common/cert-manager/cert-manager/base"
     helm: "../../charts/common/cert-manager"
-  namespace: 'cert-manager'
   validations:
+    namespace: 'cert-manager'
     identifier: 'app.kubernetes.io/instance'
     common_label: 'cert-manager'
 
@@ -16,7 +16,6 @@ kubeflow-roles:
     kustomize: 
       - "../../upstream/common/kubeflow-roles/base"
     helm: "../../charts/common/kubeflow-roles"
-  namespace: 'kubeflow'
   
 #level 2
 #kubeflow-issuer
@@ -25,7 +24,6 @@ kubeflow-issuer:
     kustomize: 
       - "../../upstream/common/cert-manager/kubeflow-issuer/base"
     helm: "../../charts/common/kubeflow-issuer"
-  namespace: 'cert-manager'
 
 #istio
 istio-1-14:
@@ -35,8 +33,8 @@ istio-1-14:
         - "../../upstream/common/istio-1-14/istio-namespace/base"
         - "../../upstream/common/istio-1-14/istio-install/base"
     helm: "../../charts/common/istio-1-14"
-  namespace: 'istio-system'
   validations: 
+    namespace: 'istio-system'
     identifier: 'app'
     common_label: 'istio-ingressgateway, istiod'
 
@@ -46,7 +44,6 @@ kubeflow-namespace:
     kustomize: 
       - "../../upstream/common/kubeflow-namespace/base"
     helm: "../../charts/common/kubeflow-namespace"
-  namespace: 'kubeflow'
 
 #cluster-local-gateway
 cluster-local-gateway:
@@ -54,8 +51,8 @@ cluster-local-gateway:
     kustomize:
       - "../../upstream/common/istio-1-14/cluster-local-gateway/base"
     helm: "../../charts/common/cluster-local-gateway"
-  namespace: 'istio-system'
   validations: 
+    namespace: 'istio-system'
     identifier: 'app'
     common_label: 'cluster-local-gateway'
 
@@ -66,8 +63,8 @@ knative-serving:
       - "../../upstream/common/knative/knative-serving/overlays/gateways"
     helm: "../../charts/common/knative-serving"
   crd_required: 'images.caching.internal.knative.dev'
-  namespace: 'knative-serving'
   validations: 
+    namespace: 'knative-serving'
     identifier: 'app.kubernetes.io/name'
     common_label: 'knative-serving'
 
@@ -76,8 +73,8 @@ knative-eventing:
     kustomize:
       - "../../upstream/common/knative/knative-eventing/base"
     helm: "../../charts/common/knative-eventing"
-  namespace: 'knative-eventing'
   validations:
+    namespace: 'knative-eventing'
     identifier: 'app.kubernetes.io/name'
     common_label: 'knative-eventing'
 
@@ -88,7 +85,6 @@ kubeflow-istio-resources:
     kustomize: 
       - "../../upstream/common/istio-1-14/kubeflow-istio-resources/base"
     helm: "../../charts/common/kubeflow-istio-resources"
-  namespace: 'kubeflow'
 
 #kserve
 kserve:
@@ -96,9 +92,9 @@ kserve:
     kustomize: 
       - "../../awsconfigs/apps/kserve"
     helm: "../../charts/common/kserve"
-  namespace: 'kubeflow'
   crd_required: 'clusterservingruntimes.serving.kserve.io'
   validations:
+    namespace: 'kubeflow'
     identifier: 'app'
     common_label: 'kserve'
 
@@ -108,8 +104,8 @@ models-web-app:
     kustomize:
       - "../../upstream/contrib/kserve/models-web-app/overlays/kubeflow"
     helm: "../../charts/apps/models-web-app"
-  namespace: 'kubeflow'
   validations:
+    namespace: 'kubeflow'
     identifier: 'kustomize.component'
     common_label: 'kserve-models-web-app'
 
@@ -120,8 +116,8 @@ central-dashboard:
     kustomize: 
       - "../../upstream/apps/centraldashboard/upstream/overlays/kserve"
     helm: "../../charts/apps/central-dashboard"
-  namespace: 'kubeflow'
   validations:
+    namespace: 'kubeflow'
     identifier: 'app'
     common_label: 'centraldashboard'
 
@@ -131,9 +127,9 @@ kubeflow-pipelines:
     kustomize: 
       - "../../upstream/apps/pipeline/upstream/env/cert-manager/platform-agnostic-multi-user"   
     helm: "../../charts/apps/kubeflow-pipelines"
-  namespace: 'kubeflow'
   crd_required: 'compositecontrollers.metacontroller.k8s.io'
   validations:
+    namespace: 'kubeflow'
     identifier: 'application-crd-id'
     common_label: 'kubeflow-pipelines'
 
@@ -144,8 +140,8 @@ admission-webhook:
     kustomize:
       - "../../upstream/apps/admission-webhook/upstream/overlays/cert-manager"
     helm: "../../charts/common/admission-webhook"
-  namespace: 'kubeflow'
   validations:
+    namespace: 'kubeflow'
     identifier: 'app'
     common_label: 'poddefaults'
 
@@ -155,8 +151,8 @@ jupyter-web-app:
     kustomize: 
       - "../../awsconfigs/apps/jupyter-web-app"
     helm: "../../charts/apps/jupyter-web-app"
-  namespace: 'kubeflow'
   validations:
+    namespace: 'kubeflow'
     identifier: 'app'
     common_label: 'jupyter-web-app'
 
@@ -166,8 +162,8 @@ notebook-controller:
     kustomize: 
       - "../../upstream/apps/jupyter/notebook-controller/upstream/overlays/kubeflow"
     helm: "../../charts/apps/notebook-controller"
-  namespace: 'kubeflow'
   validations:
+    namespace: 'kubeflow'
     identifier: 'app'
     common_label: 'notebook-controller'
 
@@ -177,8 +173,8 @@ volumes-web-app:
     kustomize: 
       - "../../upstream/apps/volumes-web-app/upstream/overlays/istio"
     helm: "../../charts/apps/volumes-web-app"
-  namespace: 'kubeflow'
-  validations:
+  validations: 
+    namespace: 'kubeflow'
     identifier: 'app'
     common_label: 'volumes-web-app'
 
@@ -188,8 +184,8 @@ training-operator:
     kustomize: 
       - "../../upstream/apps/training-operator/upstream/overlays/kubeflow"
     helm: "../../charts/apps/training-operator"
-  namespace: 'kubeflow'
   validations:
+    namespace: 'kubeflow'
     identifier: 'control-plane'
     common_label: 'kubeflow-training-operator'
 
@@ -199,8 +195,8 @@ katib:
     kustomize: 
       - "../../upstream/apps/katib/upstream/installs/katib-with-kubeflow"
     helm: "../../charts/apps/katib"
-  namespace: 'kubeflow'
   validations:
+    namespace: 'kubeflow'
     identifier: 'katib.kubeflow.org/component'
     common_label: 'controller, db-manager, ui'
 
@@ -210,8 +206,8 @@ tensorboard-controller:
     kustomize: 
       - "../../upstream/apps/tensorboard/tensorboard-controller/upstream/overlays/kubeflow"
     helm: "../../charts/apps/tensorboard-controller"
-  namespace: 'kubeflow'
   validations:
+    namespace: 'kubeflow'
     identifier: 'app'
     common_label: 'tensorboard-controller'
 
@@ -220,8 +216,8 @@ tensorboards-web-app:
     kustomize:  
       - "../../upstream/apps/tensorboard/tensorboards-web-app/upstream/overlays/istio"
     helm: "../../charts/apps/tensorboards-web-app"
-  namespace: 'kubeflow'
   validations:
+    namespace: 'kubeflow'
     identifier: 'app'
     common_label: 'tensorboards-web-app'
 
@@ -231,8 +227,8 @@ profiles-and-kfam:
     kustomize: 
       - "../../upstream/apps/profiles/upstream/overlays/kubeflow"
     helm: "../../charts/common/profiles-and-kfam"
-  namespace: 'kubeflow'
   validations:
+    namespace: 'kubeflow'
     identifier: 'kustomize.component'
     common_label: 'profiles'
 
@@ -242,7 +238,6 @@ ingress:
     kustomize: 
       - "../../awsconfigs/common/istio-ingress/overlays/cognito"
     helm: "../../charts/deployment-specifics/cognito/ingress"
-  namespace: 'istio-system'
 
 
 #ALB Controller
@@ -251,8 +246,9 @@ alb-controller:
     kustomize: 
       - "../../awsconfigs/common/aws-alb-ingress-controller/base"
     helm: "../../charts/deployment-specifics/cognito/aws-load-balancer-controller"
-  namespace: 'kube-system'
+  crd_required: 'ingressclassparams.elbv2.k8s.aws'
   validations:
+    namespace: 'kube-system'
     common_label: 'aws-load-balancer-controller'
     identifier: 'app.kubernetes.io/name'
 
@@ -263,8 +259,8 @@ aws-authservice:
     kustomize: 
       - "../../awsconfigs/common/aws-authservice/base"
     helm: "../../charts/deployment-specifics/cognito/aws-authservice"
-  namespace: 'istio-system'
   validations:
+    namespace: 'istio-system'
     common_label: 'aws-authservice'
     identifier: 'app'
 
@@ -274,4 +270,3 @@ aws-telemetry:
     kustomize: 
       - "../../awsconfigs/common/aws-telemetry"
     helm: "../../charts/common/aws-telemetry"
-  namespace: 'aws-telemetry'
