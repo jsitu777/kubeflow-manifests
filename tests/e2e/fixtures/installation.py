@@ -49,6 +49,7 @@ def installation(
     """
 
     def on_create():
+        #print("skip KF installation...")
         install_kubeflow(installation_option, aws_telemetry_option, deployment_option)
         
 

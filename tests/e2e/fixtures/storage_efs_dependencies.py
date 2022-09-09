@@ -6,7 +6,7 @@ import stat
 import sys
 
 from e2e.utils.config import metadata
-from e2e.fixtures.kustomize import kustomize, configure_manifests
+from e2e.fixtures.installation import kustomize, configure_manifests
 from e2e.conftest import region
 from e2e.fixtures.cluster import cluster
 from e2e.utils.utils import rand_name
