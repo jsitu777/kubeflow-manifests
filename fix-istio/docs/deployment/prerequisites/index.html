@@ -49,11 +49,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jsitu777.github.io/kubeflow-manifests/fix-istio/docs/deployment/prerequisites/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2022-09-08T18:02:09-07:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
+<meta property="article:modified_time" content="2022-09-08T19:19:52-07:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
 
 <meta itemprop="name" content="Prerequisites">
 <meta itemprop="description" content="Everything you need to get started with Kubeflow on AWS">
-<meta itemprop="dateModified" content="2022-09-08T18:02:09-07:00" />
+<meta itemprop="dateModified" content="2022-09-08T19:19:52-07:00" />
 <meta itemprop="wordCount" content="397">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Prerequisites"/>
@@ -416,7 +416,7 @@
 <p>Clone the <a href="https://github.com/awslabs/kubeflow-manifests"><code>awslabs/kubeflow-manifests</code></a> and the <a href="https://github.com/kubeflow/manifests"><code>kubeflow/manifests</code></a> repositories and check out the release branches of your choosing.</p>
 <p>Substitute the value for <code>KUBEFLOW_RELEASE_VERSION</code>(e.g. v1.6.0) and <code>AWS_RELEASE_VERSION</code>(e.g. v1.5.1-aws-b1.0.1) with the tag or branch you want to use below. Read more about <a href="https://jsitu777.github.io/kubeflow-manifests/fix-istio/docs/about/releases/">releases and versioning</a> if you are unsure about what these values should be.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">KUBEFLOW_RELEASE_VERSION</span><span class="o">=</span>v1.6.0
-</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">AWS_RELEASE_VERSION</span><span class="o">=</span>v1.5.1-aws-b1.0.1
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">AWS_RELEASE_VERSION</span><span class="o">=</span>main
 </span></span><span class="line"><span class="cl">git clone https://github.com/awslabs/kubeflow-manifests.git <span class="o">&amp;&amp;</span> <span class="nb">cd</span> kubeflow-manifests
 </span></span><span class="line"><span class="cl">git checkout <span class="si">${</span><span class="nv">AWS_RELEASE_VERSION</span><span class="si">}</span>
 </span></span><span class="line"><span class="cl">git clone --branch <span class="si">${</span><span class="nv">KUBEFLOW_RELEASE_VERSION</span><span class="si">}</span> https://github.com/kubeflow/manifests.git upstream
@@ -424,7 +424,7 @@
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified September 8, 2022: <a href="https://github.com/awslabs/kubeflow-manifests//commit/07ec01a34d297bd4b14b78b3e19de7803a2c710a">fix istio upstream by patching and enable gateway (07ec01a)</a>
+  Last modified September 8, 2022: <a href="https://github.com/awslabs/kubeflow-manifests//commit/d2a1f0ffe217a54c2e4ebb155cb7e4f8195a9b3f">change aws-lab branch to main (d2a1f0f)</a>
 </div>
 
 </div>
