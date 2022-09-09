@@ -266,7 +266,7 @@ aws-secrets-manager:
   installation_options:
     kustomize: 
       - "../../awsconfigs/common/aws-secrets-manager"
-    helm: "../../charts/deployment-specifics/rds-s3/aws-secrets-manager"
+    helm: "../../charts/deployment-specifics/rds-s3/rds-and-s3/aws-secrets-manager"
   validations:
     namespace: 'kubeflow'
     identifier: 'app'

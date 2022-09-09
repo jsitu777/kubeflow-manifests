@@ -4,7 +4,7 @@ cert-manager:
   installation_options:  
     kustomize: 
       - "../../upstream/common/cert-manager/cert-manager/base"
-    helm: "../../charts/common/cert-manager"
+    helm: "remote repo"
   validations:
     namespace: 'cert-manager'
     identifier: 'app.kubernetes.io/instance'
@@ -31,7 +31,7 @@ istio-1-14:
     kustomize: 
         - "../../upstream/common/istio-1-14/istio-crds/base"
         - "../../upstream/common/istio-1-14/istio-namespace/base"
-        - "../../upstream/common/istio-1-14/istio-install/base"
+        - "../../awsconfigs/common/istio"
     helm: "../../charts/common/istio-1-14"
   validations: 
     identifier: 'app'
@@ -148,7 +148,7 @@ kubeflow-pipelines:
   installation_options:
     kustomize: 
       - "../../upstream/apps/pipeline/upstream/env/cert-manager/platform-agnostic-multi-user"   
-    helm: "../../charts/apps/kubeflow-pipelines"
+    helm: "../../charts/apps/kubeflow-pipelines/vanilla"
   crd_required: 'compositecontrollers.metacontroller.k8s.io'
   validations:
     identifier: 'application-crd-id'
@@ -216,7 +216,7 @@ katib:
   installation_options:
     kustomize: 
       - "../../upstream/apps/katib/upstream/installs/katib-with-kubeflow"
-    helm: "../../charts/apps/katib"
+    helm: "../../charts/apps/katib/vanilla"
   validations:
     identifier: 'katib.kubeflow.org/component'
     common_label: 'controller, db-manager, ui'
@@ -260,6 +260,12 @@ user-namespace:
     kustomize: 
       - "../../upstream/common/user-namespace/base"
     helm: "../../charts/common/user-namespace"
+
+ack-sagemaker-controller:
+  installation_options:
+    kustomize: 
+      - ../../awsconfigs/common/ack-sagemaker-controller
+    helm: "remote repo"
 
 #AWS Telemetry (Optional)
 aws-telemetry:
