@@ -16,6 +16,7 @@ INSTALLATION_PATH_FILE_S3_ONLY = "./resources/installation_config/s3-only.yaml"
 Uninstall_Sequence = [  "aws-authservice",
                         "ingress",
                         "alb-controller",
+                        #"ack-sagemaker-controller",
                         "user-namespace",
                         "profiles-and-kfam",
                         "tensorboard-controller",

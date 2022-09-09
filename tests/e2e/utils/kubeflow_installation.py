@@ -38,6 +38,7 @@ Install_Sequence = [    "cert-manager",
                         "tensorboard-controller",
                         "profiles-and-kfam",
                         "user-namespace",
+                        #"ack-sagemaker-controller",
                         "ingress",
                         "alb-controller",
                         "aws-authservice"]
@@ -72,10 +73,13 @@ def install_kubeflow(installation_option,aws_telemetry_option,deployment_option)
                         )
 
     if AWS_TELEMETRY_OPTION == "enable":
+        print("skip")
+        """
         build_component(INSTALLATION_OPTION,
                         DEPLOYMENT_OPTION,
                         "aws-telemetry",
                         path_dic)
+        """
 
 def build_component(INSTALLATION_OPTION, 
                     DEPLOYMENT_OPTION, 
@@ -94,11 +98,7 @@ def build_component(INSTALLATION_OPTION,
         if INSTALLATION_OPTION == "helm":
             #cert-manager official chart command call
             if component_name == 'cert-manager':
-                cmd = f"helm install cert-manager {installation_path} \
-                        --namespace cert-manager \
-                        --create-namespace \
-                        --set installCRDs=true".split()
-                build_retcode = subprocess.call(cmd)
+                build_retcode = build_certmanager()
                 assert build_retcode == 0
             else: 
                 install_helm(component_name, installation_path, namespace)
@@ -121,6 +121,18 @@ def build_component(INSTALLATION_OPTION,
         retcode = kubectl_wait_pods(common_label, namespace, identifier)
         assert retcode == 0
     print(f"All {component_name} pods are running!")
+
+def build_certmanager():
+    retcode = subprocess.call(f"helm repo add jetstack https://charts.jetstack.io".split())
+    assert retcode == 0
+    retcode = subprocess.call(f"helm repo update".split())
+    assert retcode == 0
+    cmd = f"helm install cert-manager jetstack/cert-manager \
+                        --namespace cert-manager \
+                        --create-namespace \
+                        --version v1.9.1 \
+                        --set installCRDs=true".split()
+    return subprocess.call(cmd)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
