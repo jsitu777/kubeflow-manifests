@@ -31,7 +31,7 @@ spec:
             configMapKeyRef:
               key: ISTIO_GATEWAY
               name: notebook-controller-config-kkt88f2bhb
-        image: docker.io/kubeflownotebookswg/notebook-controller:v1.6.0-rc.1
+        image: docker.io/kubeflownotebookswg/notebook-controller:v1.6.0
         imagePullPolicy: Always
         livenessProbe:
           httpGet:

@@ -3081,13 +3081,19 @@ spec:
                     lastProbeTime:
                       format: date-time
                       type: string
+                    lastTransitionTime:
+                      format: date-time
+                      type: string
                     message:
                       type: string
                     reason:
                       type: string
+                    status:
+                      type: string
                     type:
                       type: string
                   required:
+                  - status
                   - type
                   type: object
                 type: array
@@ -6204,13 +6210,19 @@ spec:
                     lastProbeTime:
                       format: date-time
                       type: string
+                    lastTransitionTime:
+                      format: date-time
+                      type: string
                     message:
                       type: string
                     reason:
                       type: string
+                    status:
+                      type: string
                     type:
                       type: string
                   required:
+                  - status
                   - type
                   type: object
                 type: array
@@ -9327,13 +9339,19 @@ spec:
                     lastProbeTime:
                       format: date-time
                       type: string
+                    lastTransitionTime:
+                      format: date-time
+                      type: string
                     message:
                       type: string
                     reason:
                       type: string
+                    status:
+                      type: string
                     type:
                       type: string
                   required:
+                  - status
                   - type
                   type: object
                 type: array
