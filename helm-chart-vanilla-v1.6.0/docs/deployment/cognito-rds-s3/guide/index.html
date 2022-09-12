@@ -49,11 +49,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jsitu777.github.io/kubeflow-manifests/helm-chart-vanilla-v1.6.0/docs/deployment/cognito-rds-s3/guide/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2022-09-09T12:51:33-07:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
+<meta property="article:modified_time" content="2022-09-12T16:56:49-07:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
 
 <meta itemprop="name" content="Cognito, RDS, and S3">
 <meta itemprop="description" content="Deploying Kubeflow with Amazon Cognito, RDS and S3">
-<meta itemprop="dateModified" content="2022-09-09T12:51:33-07:00" />
+<meta itemprop="dateModified" content="2022-09-12T16:56:49-07:00" />
 <meta itemprop="wordCount" content="535">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Cognito, RDS, and S3"/>
@@ -406,7 +406,7 @@
 </span></span><span class="line"><span class="cl"><span class="c1"># Istio</span>
 </span></span><span class="line"><span class="cl">kustomize build upstream/common/istio-1-14/istio-crds/base <span class="p">|</span> kubectl apply -f -
 </span></span><span class="line"><span class="cl">kustomize build upstream/common/istio-1-14/istio-namespace/base <span class="p">|</span> kubectl apply -f -
-</span></span><span class="line"><span class="cl">kustomize build upstream/common/istio-1-14/istio-install/base <span class="p">|</span> kubectl apply -f -
+</span></span><span class="line"><span class="cl">kustomize build awsconfigs/common/istio <span class="p">|</span> kubectl apply -f -
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># Cert-Manager</span>
 </span></span><span class="line"><span class="cl">kustomize build upstream/common/cert-manager/cert-manager/base <span class="p">|</span> kubectl apply -f -
@@ -485,7 +485,7 @@
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified September 9, 2022: <a href="https://github.com/awslabs/kubeflow-manifests//commit/a007efc3cb6d472cd42d34cd6724e50c35edfd28">Merge branch &#39;main&#39; into helm-chart-vanilla-v1.6.0 (a007efc)</a>
+  Last modified September 12, 2022: <a href="https://github.com/awslabs/kubeflow-manifests//commit/5afc807bfd51fb43f798dc1516e7eee09fcd3679">Merge branch &#39;main&#39; into helm-chart-vanilla-v1.6.0 (5afc807)</a>
 </div>
 
 </div>
