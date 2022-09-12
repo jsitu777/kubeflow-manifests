@@ -1,0 +1,24 @@
+Kustomization Filepaths:
+#Vanilla
+  # Istio
+  - ../../upstream/common/istio-1-14/istio-crds/base
+  - ../../upstream/common/istio-1-14/istio-namespace/base
+  - ../../awsconfigs/common/istio
+
+  
+  
+Helm Chart Names:
+
+# Istio
+  - istio-1-14
+  - istio-1-14
+  - istio-1-14
+
+Output Helm Filepaths: 
+
+
+# Istio
+  - ../../charts/common
+  - ../../charts/common
+  - ../../charts/common
+
