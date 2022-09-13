@@ -49,8 +49,7 @@ def installation(
     """
 
     def on_create():
-        #print("skip KF installation...")
-        install_kubeflow(installation_option, aws_telemetry_option, deployment_option)
+        install_kubeflow(installation_option, aws_telemetry_option, deployment_option, cluster)
         
 
 
@@ -59,7 +58,7 @@ def installation(
         print(keep_successfully_created_resource(request))
         if keep_successfully_created_resource(request) == False:
             print("Start to Uninstall KubeFlow...")
-            uninstall_kubeflow(installation_option, aws_telemetry_option, deployment_option)
+            uninstall_kubeflow(installation_option, aws_telemetry_option, deployment_option, cluster)
 
 
 

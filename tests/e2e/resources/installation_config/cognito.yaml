@@ -4,7 +4,7 @@ cert-manager:
   installation_options:  
     kustomize: 
       - "../../upstream/common/cert-manager/cert-manager/base"
-    helm: "../../charts/common/cert-manager"
+    helm: "remote repo"
   validations:
     namespace: 'cert-manager'
     identifier: 'app.kubernetes.io/instance'
@@ -126,7 +126,7 @@ kubeflow-pipelines:
   installation_options:
     kustomize: 
       - "../../upstream/apps/pipeline/upstream/env/cert-manager/platform-agnostic-multi-user"   
-    helm: "../../charts/apps/kubeflow-pipelines"
+    helm: "../../charts/apps/kubeflow-pipelines/vanilla"
   crd_required: 'compositecontrollers.metacontroller.k8s.io'
   validations:
     namespace: 'kubeflow'
@@ -194,7 +194,7 @@ katib:
   installation_options:
     kustomize: 
       - "../../upstream/apps/katib/upstream/installs/katib-with-kubeflow"
-    helm: "../../charts/apps/katib"
+    helm: "../../charts/apps/katib/vanilla"
   validations:
     namespace: 'kubeflow'
     identifier: 'katib.kubeflow.org/component'
@@ -237,7 +237,7 @@ ingress:
   installation_options:
     kustomize: 
       - "../../awsconfigs/common/istio-ingress/overlays/cognito"
-    helm: "../../charts/deployment-specifics/cognito/ingress"
+    helm: "../../charts/common/ingress/cognito"
 
 
 #ALB Controller
@@ -245,7 +245,7 @@ alb-controller:
   installation_options:
     kustomize: 
       - "../../awsconfigs/common/aws-alb-ingress-controller/base"
-    helm: "../../charts/deployment-specifics/cognito/aws-load-balancer-controller"
+    helm: "remote repo"
   crd_required: 'ingressclassparams.elbv2.k8s.aws'
   validations:
     namespace: 'kube-system'
@@ -258,7 +258,7 @@ aws-authservice:
   installation_options:
     kustomize: 
       - "../../awsconfigs/common/aws-authservice/base"
-    helm: "../../charts/deployment-specifics/cognito/aws-authservice"
+    helm: "../../charts/common/aws-authservice/cognito"
   validations:
     namespace: 'istio-system'
     common_label: 'aws-authservice'
