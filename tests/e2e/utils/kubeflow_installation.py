@@ -41,7 +41,7 @@ Install_Sequence = [    "cert-manager",
                         "user-namespace",
                         #"ack-sagemaker-controller",
                         "ingress",
-                        "alb-controller",
+                        "aws-load-balancer-controller",
                         "aws-authservice"
                         ]
 
@@ -102,7 +102,7 @@ def build_component(INSTALLATION_OPTION,
             if component_name == 'cert-manager':
                 build_retcode = build_certmanager()
                 assert build_retcode == 0
-            elif component_name == 'alb-controller':
+            elif component_name == 'aws-load-balancer-controller':
                 build_retcode = build_alb_controller(cluster_name)
                 assert build_retcode == 0
             else: 

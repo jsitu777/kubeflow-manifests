@@ -13,9 +13,9 @@ INSTALLATION_PATH_FILE_RDS_AND_S3 = "./resources/installation_config/rds-and-s3.
 INSTALLATION_PATH_FILE_RDS_ONLY = "./resources/installation_config/rds-only.yaml"
 INSTALLATION_PATH_FILE_S3_ONLY = "./resources/installation_config/s3-only.yaml"
 
-Uninstall_Sequence = [  "aws-authservice",
-                        "ingress",
-                        "alb-controller",
+Uninstall_Sequence = [  #"aws-authservice",
+                        #"ingress",
+                        "aws-load-balancer-controller",
                         #"ack-sagemaker-controller",
                         "user-namespace",
                         "profiles-and-kfam",
@@ -67,6 +67,8 @@ def uninstall_kubeflow(installation_option,aws_telemetry_option,deployment_optio
     for component in Uninstall_Sequence:
         if component == "cert-manager":
             namespace = "cert-manager"
+        elif component == "aws-load-balancer-controller":
+            namespace = "kube-system"
         else:
             namespace=None
         delete_component(INSTALLATION_OPTION,
@@ -118,10 +120,12 @@ def delete_component(INSTALLATION_OPTION,
         kubectl_delete_crd("passwords.dex.coreos.com")
         kubectl_delete_crd("refreshtokens.dex.coreos.com")
         kubectl_delete_crd("signingkeies.dex.coreos.com")
+    
+    if component_name == "aws-load-balancer-controller":
+        kubectl_delete_crd("ingressclassparams.elbv2.k8s.aws")
+        kubectl_delete_crd("targetgroupbindings.elbv2.k8s.aws")
         
     print(f"All {component_name} resources are cleared!")
-
-
 
 
 
