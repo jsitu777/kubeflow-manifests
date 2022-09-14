@@ -1,4 +1,8 @@
-CognitoAppClientId: 37b31u31k69nsu2i4vali0sng3
-CognitoUserPoolArn: arn:aws:cognito-idp:eu-central-1:351537711515:userpool/eu-central-1_sp2bcYy9S
-CognitoUserPoolDomain: auth.platformrpj1oy0i0v.jsitu.people.aws.dev
-certArn: arn:aws:acm:eu-central-1:351537711515:certificate/a345d81b-b2b2-4c73-8613-4166fc5330b0
+alb:
+  cognito:
+    appClientId: 
+    UserPoolArn:
+    UserPoolDomain:
+  certArn:
+  scheme: internet-facing
+
