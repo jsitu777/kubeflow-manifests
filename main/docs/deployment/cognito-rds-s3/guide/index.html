@@ -28,7 +28,7 @@
       "datePublished": "0001-01-01 00:00:00 \u002b0000 UTC",
       "dateModified" : "0001-01-01 00:00:00 \u002b0000 UTC",
       "url" : "https:\/\/jsitu777.github.io\/kubeflow-manifests\/main\/docs\/deployment\/cognito-rds-s3\/guide\/",
-      "wordCount" : "498",
+      "wordCount" : "211",
       "keywords" : [ "Kubeflow" ]
   }
   </script>
@@ -49,12 +49,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/cognito-rds-s3/guide/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2022-09-20T17:44:21-07:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
+<meta property="article:modified_time" content="2022-09-21T11:33:28-07:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
 
 <meta itemprop="name" content="Manifest Deployment Guide">
 <meta itemprop="description" content="Deploying Kubeflow with Amazon Cognito, RDS and S3">
-<meta itemprop="dateModified" content="2022-09-20T17:44:21-07:00" />
-<meta itemprop="wordCount" content="498">
+<meta itemprop="dateModified" content="2022-09-21T11:33:28-07:00" />
+<meta itemprop="wordCount" content="211">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Manifest Deployment Guide"/>
 <meta name="twitter:description" content="Deploying Kubeflow with Amazon Cognito, RDS and S3"/>
@@ -228,14 +228,21 @@
   <label for="m-kubeflow-manifestsmaindocsdeploymentcognito-check"><a href="/kubeflow-manifests/main/docs/deployment/cognito/" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-kubeflow-manifestsmaindocsdeploymentcognito"><span class="">Cognito</span></a></label>
   
   <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-kubeflow-manifestsmaindocsdeploymentcognitoguide-automated-li">
-  <input type="checkbox" id="m-kubeflow-manifestsmaindocsdeploymentcognitoguide-automated-check"/>
-  <label for="m-kubeflow-manifestsmaindocsdeploymentcognitoguide-automated-check"><a href="/kubeflow-manifests/main/docs/deployment/cognito/guide-automated/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-kubeflow-manifestsmaindocsdeploymentcognitoguide-automated"><span class="">Automated Deployment Guide</span></a></label>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-kubeflow-manifestsmaindocsdeploymentcognitomanifest-li">
+  <input type="checkbox" id="m-kubeflow-manifestsmaindocsdeploymentcognitomanifest-check"/>
+  <label for="m-kubeflow-manifestsmaindocsdeploymentcognitomanifest-check"><a href="/kubeflow-manifests/main/docs/deployment/cognito/manifest/" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-kubeflow-manifestsmaindocsdeploymentcognitomanifest"><span class="">Manifest Deployment Guides</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-kubeflow-manifestsmaindocsdeploymentcognitoguide-li">
-  <input type="checkbox" id="m-kubeflow-manifestsmaindocsdeploymentcognitoguide-check"/>
-  <label for="m-kubeflow-manifestsmaindocsdeploymentcognitoguide-check"><a href="/kubeflow-manifests/main/docs/deployment/cognito/guide/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-kubeflow-manifestsmaindocsdeploymentcognitoguide"><span class="">Manifest Deployment Guide</span></a></label>
+  <ul class="ul-4 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-kubeflow-manifestsmaindocsdeploymentcognitomanifestguide-automated-li">
+  <input type="checkbox" id="m-kubeflow-manifestsmaindocsdeploymentcognitomanifestguide-automated-check"/>
+  <label for="m-kubeflow-manifestsmaindocsdeploymentcognitomanifestguide-automated-check"><a href="/kubeflow-manifests/main/docs/deployment/cognito/manifest/guide-automated/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-kubeflow-manifestsmaindocsdeploymentcognitomanifestguide-automated"><span class="">Automated Deployment Guide</span></a></label>
   
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-kubeflow-manifestsmaindocsdeploymentcognitomanifestguide-li">
+  <input type="checkbox" id="m-kubeflow-manifestsmaindocsdeploymentcognitomanifestguide-check"/>
+  <label for="m-kubeflow-manifestsmaindocsdeploymentcognitomanifestguide-check"><a href="/kubeflow-manifests/main/docs/deployment/cognito/manifest/guide/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-kubeflow-manifestsmaindocsdeploymentcognitomanifestguide"><span class="">Manual Deployment Guide</span></a></label>
+  
+</li>
+  </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-kubeflow-manifestsmaindocsdeploymentcognitoguide-terraform-li">
   <input type="checkbox" id="m-kubeflow-manifestsmaindocsdeploymentcognitoguide-terraform-check"/>
   <label for="m-kubeflow-manifestsmaindocsdeploymentcognitoguide-terraform-check"><a href="/kubeflow-manifests/main/docs/deployment/cognito/guide-terraform/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-kubeflow-manifestsmaindocsdeploymentcognitoguide-terraform"><span class="">Terraform Deployment Guide</span></a></label>
@@ -272,10 +279,6 @@
   <input type="checkbox" id="m-kubeflow-manifestsmaindocsadd-onsload-balancerguide-check"/>
   <label for="m-kubeflow-manifestsmaindocsadd-onsload-balancerguide-check"><a href="/kubeflow-manifests/main/docs/add-ons/load-balancer/guide/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-kubeflow-manifestsmaindocsadd-onsload-balancerguide"><span class="">Load Balancer</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-kubeflow-manifestsmaindocsadd-onsprometheusguide-li">
-  <input type="checkbox" id="m-kubeflow-manifestsmaindocsadd-onsprometheusguide-check"/>
-  <label for="m-kubeflow-manifestsmaindocsadd-onsprometheusguide-check"><a href="/kubeflow-manifests/main/docs/add-ons/prometheus/guide/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-kubeflow-manifestsmaindocsadd-onsprometheusguide"><span class="">Prometheus</span></a></label>
-  
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-kubeflow-manifestsmaindocsadd-onsstorageefsguide-li">
   <input type="checkbox" id="m-kubeflow-manifestsmaindocsadd-onsstorageefsguide-check"/>
   <label for="m-kubeflow-manifestsmaindocsadd-onsstorageefsguide-check"><a href="/kubeflow-manifests/main/docs/add-ons/storage/efs/guide/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-kubeflow-manifestsmaindocsadd-onsstorageefsguide"><span class="">EFS</span></a></label>
@@ -287,6 +290,10 @@
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-kubeflow-manifestsmaindocsadd-onscloudwatchguide-li">
   <input type="checkbox" id="m-kubeflow-manifestsmaindocsadd-onscloudwatchguide-check"/>
   <label for="m-kubeflow-manifestsmaindocsadd-onscloudwatchguide-check"><a href="/kubeflow-manifests/main/docs/add-ons/cloudwatch/guide/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-kubeflow-manifestsmaindocsadd-onscloudwatchguide"><span class="">CloudWatch</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-kubeflow-manifestsmaindocsadd-onsprometheusguide-li">
+  <input type="checkbox" id="m-kubeflow-manifestsmaindocsadd-onsprometheusguide-check"/>
+  <label for="m-kubeflow-manifestsmaindocsadd-onsprometheusguide-check"><a href="/kubeflow-manifests/main/docs/add-ons/prometheus/guide/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-kubeflow-manifestsmaindocsadd-onsprometheusguide"><span class="">Prometheus</span></a></label>
   
 </li>
   </ul>
@@ -307,10 +314,25 @@
   <input type="checkbox" id="m-kubeflow-manifestsmaindocscomponent-guidespipelines-check"/>
   <label for="m-kubeflow-manifestsmaindocscomponent-guidespipelines-check"><a href="/kubeflow-manifests/main/docs/component-guides/pipelines/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-kubeflow-manifestsmaindocscomponent-guidespipelines"><span class="">Pipelines</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-kubeflow-manifestsmaindocscomponent-guideskserve-li">
-  <input type="checkbox" id="m-kubeflow-manifestsmaindocscomponent-guideskserve-check"/>
-  <label for="m-kubeflow-manifestsmaindocscomponent-guideskserve-check"><a href="/kubeflow-manifests/main/docs/component-guides/kserve/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-kubeflow-manifestsmaindocscomponent-guideskserve"><span class="">KServe</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-kubeflow-manifestsmaindocscomponent-guidestraining-li">
+  <input type="checkbox" id="m-kubeflow-manifestsmaindocscomponent-guidestraining-check"/>
+  <label for="m-kubeflow-manifestsmaindocscomponent-guidestraining-check"><a href="/kubeflow-manifests/main/docs/component-guides/training/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-kubeflow-manifestsmaindocscomponent-guidestraining"><span class="">Training Operators</span></a></label>
   
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-kubeflow-manifestsmaindocscomponent-guideskserve-li">
+  <input type="checkbox" id="m-kubeflow-manifestsmaindocscomponent-guideskserve-check"/>
+  <label for="m-kubeflow-manifestsmaindocscomponent-guideskserve-check"><a href="/kubeflow-manifests/main/docs/component-guides/kserve/" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-kubeflow-manifestsmaindocscomponent-guideskserve"><span class="">KServe</span></a></label>
+  
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-kubeflow-manifestsmaindocscomponent-guideskservetutorial-li">
+  <input type="checkbox" id="m-kubeflow-manifestsmaindocscomponent-guideskservetutorial-check"/>
+  <label for="m-kubeflow-manifestsmaindocscomponent-guideskservetutorial-check"><a href="/kubeflow-manifests/main/docs/component-guides/kserve/tutorial/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-kubeflow-manifestsmaindocscomponent-guideskservetutorial"><span class="">KServe with Kubeflow on AWS</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-kubeflow-manifestsmaindocscomponent-guideskserveaws-deep-learning-containers-li">
+  <input type="checkbox" id="m-kubeflow-manifestsmaindocscomponent-guideskserveaws-deep-learning-containers-check"/>
+  <label for="m-kubeflow-manifestsmaindocscomponent-guideskserveaws-deep-learning-containers-check"><a href="/kubeflow-manifests/main/docs/component-guides/kserve/aws-deep-learning-containers/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-kubeflow-manifestsmaindocscomponent-guideskserveaws-deep-learning-containers"><span class="">KServe with AWS Deep Learning Containers</span></a></label>
+  
+</li>
+  </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-kubeflow-manifestsmaindocscomponent-guidesprofiles-li">
   <input type="checkbox" id="m-kubeflow-manifestsmaindocscomponent-guidesprofiles-check"/>
   <label for="m-kubeflow-manifestsmaindocscomponent-guidesprofiles-check"><a href="/kubeflow-manifests/main/docs/component-guides/profiles/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-kubeflow-manifestsmaindocscomponent-guidesprofiles"><span class="">Profiles</span></a></label>
@@ -427,7 +449,10 @@
 
 		
 	</header>    
-	<p>This guide describes how to deploy Kubeflow on Amazon EKS using Cognito for your identity provider, RDS for your database, and S3 for your artifact storage.</p>
+	<blockquote>
+<p>Note: Helm installation option is still in preview.</p>
+</blockquote>
+<p>This guide describes how to deploy Kubeflow on Amazon EKS using Cognito for your identity provider, RDS for your database, and S3 for your artifact storage.</p>
 <h2 id="1-prerequisites">1. Prerequisites</h2>
 <p>Refer to the <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/prerequisites/">general prerequisites guide</a> and the <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/rds-s3/guide/">RDS and S3 setup guide</a> in order to:</p>
 <ol>
@@ -442,7 +467,7 @@
 </ol>
 <h2 id="configure-custom-domain-and-cognito">Configure Custom Domain and Cognito</h2>
 <ol>
-<li>Follow the <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/cognito/guide/">Cognito setup guide</a> from <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/cognito/guide/#10-custom-domain-and-certificates">Section 1.0 (Custom domain)</a> up to <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/cognito/guide/#30-configure-ingress">Section 3.0 (Configure ingress)</a> in order to:
+<li>Follow the <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/cognito/manifest/guide/">Cognito setup guide</a> from <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/cognito/manifest/guide/#10-custom-domain-and-certificates">Section 1.0 (Custom domain)</a> up to <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/cognito/manifest/guide/#30-configure-ingress">Section 3.0 (Configure ingress)</a> in order to:
 <ol>
 <li>Create a custom domain</li>
 <li>Create TLS certificates for the domain</li>
@@ -452,83 +477,67 @@
 </li>
 <li>Deploy Kubeflow.
 <ol>
-<li>Install individual components:
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"><span class="c1"># Kubeflow namespace</span>
-</span></span><span class="line"><span class="cl">kustomize build upstream/common/kubeflow-namespace/base <span class="p">|</span> kubectl apply -f -
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Kubeflow Roles</span>
-</span></span><span class="line"><span class="cl">kustomize build upstream/common/kubeflow-roles/base <span class="p">|</span> kubectl apply -f -
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Istio</span>
-</span></span><span class="line"><span class="cl">kustomize build upstream/common/istio-1-14/istio-crds/base <span class="p">|</span> kubectl apply -f -
-</span></span><span class="line"><span class="cl">kustomize build upstream/common/istio-1-14/istio-namespace/base <span class="p">|</span> kubectl apply -f -
-</span></span><span class="line"><span class="cl">kustomize build awsconfigs/common/istio <span class="p">|</span> kubectl apply -f -
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Cert-Manager</span>
-</span></span><span class="line"><span class="cl">kustomize build upstream/common/cert-manager/cert-manager/base <span class="p">|</span> kubectl apply -f -
-</span></span><span class="line"><span class="cl">kustomize build upstream/common/cert-manager/kubeflow-issuer/base <span class="p">|</span> kubectl apply -f -
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># KNative</span>
-</span></span><span class="line"><span class="cl">kustomize build upstream/common/knative/knative-serving/overlays/gateways <span class="p">|</span> kubectl apply -f -
-</span></span><span class="line"><span class="cl">kustomize build upstream/common/knative/knative-eventing/base <span class="p">|</span> kubectl apply -f -
-</span></span><span class="line"><span class="cl">kustomize build upstream/common/istio-1-14/cluster-local-gateway/base <span class="p">|</span> kubectl apply -f -
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Kubeflow Istio Resources</span>
-</span></span><span class="line"><span class="cl">kustomize build upstream/common/istio-1-14/kubeflow-istio-resources/base <span class="p">|</span> kubectl apply -f -
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># KServe</span>
-</span></span><span class="line"><span class="cl">kustomize build awsconfigs/apps/kserve <span class="p">|</span> kubectl apply -f -
-</span></span><span class="line"><span class="cl">kustomize build upstream/contrib/kserve/models-web-app/overlays/kubeflow <span class="p">|</span> kubectl apply -f -
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Central Dashboard</span>
-</span></span><span class="line"><span class="cl">kustomize build upstream/apps/centraldashboard/upstream/overlays/kserve <span class="p">|</span> kubectl apply -f -
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Notebooks</span>
-</span></span><span class="line"><span class="cl">kustomize build upstream/apps/jupyter/notebook-controller/upstream/overlays/kubeflow <span class="p">|</span> kubectl apply -f -
-</span></span><span class="line"><span class="cl">kustomize build awsconfigs/apps/jupyter-web-app <span class="p">|</span> kubectl apply -f -
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Admission Webhook</span>
-</span></span><span class="line"><span class="cl">kustomize build upstream/apps/admission-webhook/upstream/overlays/cert-manager <span class="p">|</span> kubectl apply -f -
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Profiles + KFAM</span>
-</span></span><span class="line"><span class="cl">kustomize build upstream/apps/profiles/upstream/overlays/kubeflow <span class="p">|</span> kubectl apply -f -
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Volumes Web App</span>
-</span></span><span class="line"><span class="cl">kustomize build upstream/apps/volumes-web-app/upstream/overlays/istio <span class="p">|</span> kubectl apply -f -
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Tensorboard</span>
-</span></span><span class="line"><span class="cl">kustomize build upstream/apps/tensorboard/tensorboards-web-app/upstream/overlays/istio <span class="p">|</span> kubectl apply -f -
-</span></span><span class="line"><span class="cl">kustomize build upstream/apps/tensorboard/tensorboard-controller/upstream/overlays/kubeflow <span class="p">|</span> kubectl apply -f -
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Training Operator</span>
-</span></span><span class="line"><span class="cl">kustomize build upstream/apps/training-operator/upstream/overlays/kubeflow <span class="p">|</span> kubectl apply -f -
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># AWS Telemetry - This is an optional component. See usage tracking documentation for more information.</span>
-</span></span><span class="line"><span class="cl">kustomize build awsconfigs/common/aws-telemetry <span class="p">|</span> kubectl apply -f -
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># AWS Secret Manager</span>
-</span></span><span class="line"><span class="cl">kustomize build awsconfigs/common/aws-secrets-manager <span class="p">|</span> kubectl apply -f -
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Kubeflow Pipelines</span>
-</span></span><span class="line"><span class="cl">kustomize build awsconfigs/apps/pipeline <span class="p">|</span> kubectl apply -f -
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Katib</span>
-</span></span><span class="line"><span class="cl">kustomize build awsconfigs/apps/katib-external-db-with-kubeflow <span class="p">|</span> kubectl apply -f -
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Configured for AWS Cognito</span>
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Ingress</span>
-</span></span><span class="line"><span class="cl">kustomize build awsconfigs/common/istio-ingress/overlays/cognito <span class="p">|</span> kubectl apply -f -
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># ALB controller</span>
-</span></span><span class="line"><span class="cl">kustomize build awsconfigs/common/aws-alb-ingress-controller/base <span class="p">|</span> kubectl apply -f -
-</span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"><span class="c1"># Authservice</span>
-</span></span><span class="line"><span class="cl">kustomize build awsconfigs/common/aws-authservice/base <span class="p">|</span> kubectl apply -f -        
-</span></span></code></pre></div></li>
+<li>Install Kubeflow using the following command:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs" id="tabs-5" role="tablist"><li class="nav-item">
+      <a class="nav-link active tab-Kustomize"
+        id="tabs-5-0-tab" data-toggle="tab" href="#tabs-5-0" role="tab" onclick="handleClick(&#34;Kustomize&#34;);"
+        aria-controls="tabs-5-0" aria-selected="true">
+        Kustomize
+      </a>
+    </li><li class="nav-item">
+      <a class="nav-link tab-Helm"
+        id="tabs-5-1-tab" data-toggle="tab" href="#tabs-5-1" role="tab" onclick="handleClick(&#34;Helm&#34;);"
+        aria-controls="tabs-5-1" aria-selected="false">
+        Helm
+      </a>
+    </li></ul>
+
+
+<div class="tab-content" id="tabs-5-content"><div class="tab-pane fade show active"
+        id="tabs-5-0" role="tabpanel" aria-labelled-by="tabs-5-0-tab"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">make</span> <span class="nx">deploy-kubeflow</span> <span class="nx">INSTALLATION_OPTION</span><span class="p">=</span><span class="nx">kustomize</span> <span class="nx">DEPLOYMENT_OPTION</span><span class="p">=</span><span class="nx">cognito-rds-s3</span></span></span></code></pre></div></div>
+  <div class="tab-pane fade"
+        id="tabs-5-1" role="tabpanel" aria-labelled-by="tabs-5-1-tab"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="l">make deploy-kubeflow INSTALLATION_OPTION=helm DEPLOYMENT_OPTION=cognito-rds-s3</span></span></span></code></pre></div></div>
+  
+</div>
+</li>
 </ol>
 </li>
-<li>Follow the rest of the Cognito guide from <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/cognito/guide/#50-updating-the-domain-with-alb-address">section 5.0 (Updating the domain with ALB address)</a> in order to:
+<li>Follow the rest of the Cognito guide from <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/cognito/manifest/guide/#50-updating-the-domain-with-alb-address">section 5.0 (Updating the domain with ALB address)</a> in order to:
 <ol>
 <li>Add/Update the DNS records in a custom domain with the ALB address</li>
 <li>Create a user in a Cognito user pool</li>
@@ -541,7 +550,7 @@
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified September 20, 2022: <a href="https://github.com/awslabs/kubeflow-manifests//commit/f33e55dae9589ba45fd3136d66d47a486453a878">update kubeflow-pipeline and jupyter-web-app helm charts (#390) (f33e55d)</a>
+  Last modified September 21, 2022: <a href="https://github.com/awslabs/kubeflow-manifests//commit/b40def070f774749a30529219ce3edaace9c6718">Update notebook images to include kserve instead of kfserving. Also update repo name.  (#405) (b40def0)</a>
 </div>
 
 </div>

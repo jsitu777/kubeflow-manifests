@@ -15,9 +15,9 @@
            "@id": "https:\/\/jsitu777.github.io\/kubeflow-manifests\/main"
       },
       "articleSection" : "docs",
-      "name" : "Manifest Deployment Guide",
-      "headline" : "Manifest Deployment Guide",
-      "description" : "Deploy the vanilla version of Kubeflow on AWS using Kustomize or Helm",
+      "name" : "Automated Deployment Guide",
+      "headline" : "Automated Deployment Guide",
+      "description" : "Deploying Kubeflow with AWS Cognito as identity provider using setup scripts",
       "inLanguage" : "en-US",
       "author" : "",
       "creator" : "",
@@ -27,8 +27,8 @@
       "copyrightYear" : "0001",
       "datePublished": "0001-01-01 00:00:00 \u002b0000 UTC",
       "dateModified" : "0001-01-01 00:00:00 \u002b0000 UTC",
-      "url" : "https:\/\/jsitu777.github.io\/kubeflow-manifests\/main\/docs\/deployment\/vanilla\/guide\/",
-      "wordCount" : "347",
+      "url" : "https:\/\/jsitu777.github.io\/kubeflow-manifests\/main\/docs\/deployment\/cognito\/manifest\/guide-automated\/",
+      "wordCount" : "635",
       "keywords" : [ "Kubeflow" ]
   }
   </script>
@@ -42,22 +42,22 @@
 <meta name="msapplication-TileColor" content="#4279f4">
 <meta name="theme-color" content="#4279f4">
 
-<title>Manifest Deployment Guide | Kubeflow on AWS</title>
-<meta name="description" content="Deploy the vanilla version of Kubeflow on AWS using Kustomize or Helm">
-<meta property="og:title" content="Manifest Deployment Guide" />
-<meta property="og:description" content="Deploy the vanilla version of Kubeflow on AWS using Kustomize or Helm" />
+<title>Automated Deployment Guide | Kubeflow on AWS</title>
+<meta name="description" content="Deploying Kubeflow with AWS Cognito as identity provider using setup scripts">
+<meta property="og:title" content="Automated Deployment Guide" />
+<meta property="og:description" content="Deploying Kubeflow with AWS Cognito as identity provider using setup scripts" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/vanilla/guide/" /><meta property="article:section" content="docs" />
+<meta property="og:url" content="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/cognito/manifest/guide-automated/" /><meta property="article:section" content="docs" />
 
 <meta property="article:modified_time" content="2022-09-21T11:33:28-07:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
 
-<meta itemprop="name" content="Manifest Deployment Guide">
-<meta itemprop="description" content="Deploy the vanilla version of Kubeflow on AWS using Kustomize or Helm">
+<meta itemprop="name" content="Automated Deployment Guide">
+<meta itemprop="description" content="Deploying Kubeflow with AWS Cognito as identity provider using setup scripts">
 <meta itemprop="dateModified" content="2022-09-21T11:33:28-07:00" />
-<meta itemprop="wordCount" content="347">
+<meta itemprop="wordCount" content="635">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Manifest Deployment Guide"/>
-<meta name="twitter:description" content="Deploy the vanilla version of Kubeflow on AWS using Kustomize or Helm"/>
+<meta name="twitter:title" content="Automated Deployment Guide"/>
+<meta name="twitter:description" content="Deploying Kubeflow with AWS Cognito as identity provider using setup scripts"/>
 
 
 
@@ -193,14 +193,14 @@
   <input type="checkbox" id="m-kubeflow-manifestsmaindocsdeploymentcreate-eks-cluster-check"/>
   <label for="m-kubeflow-manifestsmaindocsdeploymentcreate-eks-cluster-check"><a href="/kubeflow-manifests/main/docs/deployment/create-eks-cluster/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-kubeflow-manifestsmaindocsdeploymentcreate-eks-cluster"><span class="">Create an EKS Cluster</span></a></label>
   
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-kubeflow-manifestsmaindocsdeploymentvanilla-li">
-  <input type="checkbox" id="m-kubeflow-manifestsmaindocsdeploymentvanilla-check" checked/>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-kubeflow-manifestsmaindocsdeploymentvanilla-li">
+  <input type="checkbox" id="m-kubeflow-manifestsmaindocsdeploymentvanilla-check"/>
   <label for="m-kubeflow-manifestsmaindocsdeploymentvanilla-check"><a href="/kubeflow-manifests/main/docs/deployment/vanilla/" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-kubeflow-manifestsmaindocsdeploymentvanilla"><span class="">Vanilla Installation</span></a></label>
   
   <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-kubeflow-manifestsmaindocsdeploymentvanillaguide-li">
-  <input type="checkbox" id="m-kubeflow-manifestsmaindocsdeploymentvanillaguide-check" checked/>
-  <label for="m-kubeflow-manifestsmaindocsdeploymentvanillaguide-check"><a href="/kubeflow-manifests/main/docs/deployment/vanilla/guide/" class="align-left pl-0  active td-sidebar-link td-sidebar-link__page" id="m-kubeflow-manifestsmaindocsdeploymentvanillaguide"><span class="td-sidebar-nav-active-item">Manifest Deployment Guide</span></a></label>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-kubeflow-manifestsmaindocsdeploymentvanillaguide-li">
+  <input type="checkbox" id="m-kubeflow-manifestsmaindocsdeploymentvanillaguide-check"/>
+  <label for="m-kubeflow-manifestsmaindocsdeploymentvanillaguide-check"><a href="/kubeflow-manifests/main/docs/deployment/vanilla/guide/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-kubeflow-manifestsmaindocsdeploymentvanillaguide"><span class="">Manifest Deployment Guide</span></a></label>
   
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-kubeflow-manifestsmaindocsdeploymentvanillaguide-terraform-li">
   <input type="checkbox" id="m-kubeflow-manifestsmaindocsdeploymentvanillaguide-terraform-check"/>
@@ -223,19 +223,19 @@
   
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-kubeflow-manifestsmaindocsdeploymentcognito-li">
-  <input type="checkbox" id="m-kubeflow-manifestsmaindocsdeploymentcognito-check"/>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-kubeflow-manifestsmaindocsdeploymentcognito-li">
+  <input type="checkbox" id="m-kubeflow-manifestsmaindocsdeploymentcognito-check" checked/>
   <label for="m-kubeflow-manifestsmaindocsdeploymentcognito-check"><a href="/kubeflow-manifests/main/docs/deployment/cognito/" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-kubeflow-manifestsmaindocsdeploymentcognito"><span class="">Cognito</span></a></label>
   
   <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-kubeflow-manifestsmaindocsdeploymentcognitomanifest-li">
-  <input type="checkbox" id="m-kubeflow-manifestsmaindocsdeploymentcognitomanifest-check"/>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-kubeflow-manifestsmaindocsdeploymentcognitomanifest-li">
+  <input type="checkbox" id="m-kubeflow-manifestsmaindocsdeploymentcognitomanifest-check" checked/>
   <label for="m-kubeflow-manifestsmaindocsdeploymentcognitomanifest-check"><a href="/kubeflow-manifests/main/docs/deployment/cognito/manifest/" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-kubeflow-manifestsmaindocsdeploymentcognitomanifest"><span class="">Manifest Deployment Guides</span></a></label>
   
   <ul class="ul-4 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-kubeflow-manifestsmaindocsdeploymentcognitomanifestguide-automated-li">
-  <input type="checkbox" id="m-kubeflow-manifestsmaindocsdeploymentcognitomanifestguide-automated-check"/>
-  <label for="m-kubeflow-manifestsmaindocsdeploymentcognitomanifestguide-automated-check"><a href="/kubeflow-manifests/main/docs/deployment/cognito/manifest/guide-automated/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-kubeflow-manifestsmaindocsdeploymentcognitomanifestguide-automated"><span class="">Automated Deployment Guide</span></a></label>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-kubeflow-manifestsmaindocsdeploymentcognitomanifestguide-automated-li">
+  <input type="checkbox" id="m-kubeflow-manifestsmaindocsdeploymentcognitomanifestguide-automated-check" checked/>
+  <label for="m-kubeflow-manifestsmaindocsdeploymentcognitomanifestguide-automated-check"><a href="/kubeflow-manifests/main/docs/deployment/cognito/manifest/guide-automated/" class="align-left pl-0  active td-sidebar-link td-sidebar-link__page" id="m-kubeflow-manifestsmaindocsdeploymentcognitomanifestguide-automated"><span class="td-sidebar-nav-active-item">Automated Deployment Guide</span></a></label>
   
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-kubeflow-manifestsmaindocsdeploymentcognitomanifestguide-li">
   <input type="checkbox" id="m-kubeflow-manifestsmaindocsdeploymentcognitomanifestguide-check"/>
@@ -369,10 +369,10 @@
           <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
             
 <div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
-<a href="https://github.com/awslabs/kubeflow-manifests//tree/main/website/content/en/docs/deployment/vanilla/guide.md" class="td-page-meta--view" target="_blank" rel="noopener"><i class="fa fa-file-alt fa-fw"></i> View page source</a>
-  <a href="https://github.com/awslabs/kubeflow-manifests//edit/main/website/content/en/docs/deployment/vanilla/guide.md" class="td-page-meta--edit" target="_blank" rel="noopener"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-  <a href="https://github.com/awslabs/kubeflow-manifests//new/main/website/content/en/docs/deployment/vanilla/guide.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" class="td-page-meta--child" target="_blank" rel="noopener"><i class="fa fa-edit fa-fw"></i> Create child page</a>
-  <a href="https://github.com/awslabs/kubeflow-manifests//issues/new?title=Manifest%20Deployment%20Guide" class="td-page-meta--issue" target="_blank" rel="noopener"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
+<a href="https://github.com/awslabs/kubeflow-manifests//tree/main/website/content/en/docs/deployment/cognito/manifest/guide-automated.md" class="td-page-meta--view" target="_blank" rel="noopener"><i class="fa fa-file-alt fa-fw"></i> View page source</a>
+  <a href="https://github.com/awslabs/kubeflow-manifests//edit/main/website/content/en/docs/deployment/cognito/manifest/guide-automated.md" class="td-page-meta--edit" target="_blank" rel="noopener"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+  <a href="https://github.com/awslabs/kubeflow-manifests//new/main/website/content/en/docs/deployment/cognito/manifest/guide-automated.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" class="td-page-meta--child" target="_blank" rel="noopener"><i class="fa fa-edit fa-fw"></i> Create child page</a>
+  <a href="https://github.com/awslabs/kubeflow-manifests//issues/new?title=Automated%20Deployment%20Guide" class="td-page-meta--issue" target="_blank" rel="noopener"><i class="fab fa-github fa-fw"></i> Create documentation issue</a>
   <a href="https://github.com/awslabs/kubeflow-manifests/issues/new" class="td-page-meta--project-issue" target="_blank" rel="noopener"><i class="fas fa-tasks fa-fw"></i> Create project issue</a>
   
 </div>
@@ -383,15 +383,8 @@
 <div class="td-toc"><nav id="TableOfContents">
   <ul>
     <li><a href="#prerequisites">Prerequisites</a></li>
-    <li><a href="#build-manifests-and-install-kubeflow">Build Manifests and install Kubeflow</a>
-      <ul>
-        <li><a href="#install-with-a-single-command">Install with a single command</a></li>
-        <li><a href="#connect-to-your-kubeflow-cluster">Connect to your Kubeflow cluster</a></li>
-        <li><a href="#connect-to-your-kubeflow-dashboard">Connect to your Kubeflow Dashboard</a></li>
-        <li><a href="#uninstall-kubeflow-on-aws">Uninstall Kubeflow on AWS</a></li>
-        <li><a href="#optional-delete-amazon-eks-cluster">(Optional) Delete Amazon EKS cluster</a></li>
-      </ul>
-    </li>
+    <li><a href="#create-required-resources-and-deploy-kubeflow">Create required resources and deploy Kubeflow</a></li>
+    <li><a href="#uninstall-kubeflow">Uninstall Kubeflow</a></li>
   </ul>
 </nav></div>
 
@@ -431,17 +424,20 @@
     <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/">Deployment Options</a>
   </li>
   <li class="breadcrumb-item">
-    <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/vanilla/">Vanilla Installation</a>
+    <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/cognito/">Cognito</a>
+  </li>
+  <li class="breadcrumb-item">
+    <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/cognito/manifest/">Manifest Deployment Guides</a>
   </li>
   <li class="breadcrumb-item active" aria-current="page">
-    <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/vanilla/guide/">Manifest Deployment Guide</a>
+    <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/cognito/manifest/guide-automated/">Automated Deployment Guide</a>
   </li>
   </ol>
 </nav>
             
 <div class="td-content">
-	<h1>Manifest Deployment Guide</h1>
-	<div class="lead">Deploy the vanilla version of Kubeflow on AWS using Kustomize or Helm</div>
+	<h1>Automated Deployment Guide</h1>
+	<div class="lead">Deploying Kubeflow with AWS Cognito as identity provider using setup scripts</div>
 	<header class="article-meta">
 		
 
@@ -460,94 +456,90 @@
 	<blockquote>
 <p>Note: Helm installation option is still in preview.</p>
 </blockquote>
-<p>This guide describes how to deploy Kubeflow on Amazon EKS. This vanilla version has minimal changes to the upstream Kubeflow manifests.</p>
+<p>This guide describes how to deploy Kubeflow on AWS EKS using Cognito as identity provider. Kubeflow uses Istio to manage internal traffic. In this guide we will be creating an Ingress to manage external traffic to the Kubernetes services and an Application Load Balancer (ALB) to provide public DNS and enable TLS authentication at the load balancer. We will also be creating a custom domain to host Kubeflow since certificates (needed for TLS) for ALB&rsquo;s public DNS names are not supported.</p>
 <h2 id="prerequisites">Prerequisites</h2>
-<p>Be sure that you have satisfied the installation prerequisites before working through this guide. You need to:</p>
-<ul>
-<li><a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/prerequisites/">Set up your deployment environment</a></li>
-<li><a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/create-eks-cluster/">Create an EKS Cluster</a></li>
-</ul>
-<h2 id="build-manifests-and-install-kubeflow">Build Manifests and install Kubeflow</h2>
-<blockquote>
-<p>⚠️ Warning: We use a default email (<code>user@example.com</code>) and password (<code>12341234</code>) for our guides. For any production Kubeflow deployment, you should change the default password by following the steps in <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/connect-kubeflow-dashboard/#change-the-default-user-password-kustomize">Change default user password</a>.</p>
-</blockquote>
-<hr>
-<h3 id="install-with-a-single-command">Install with a single command</h3>
-<p>Install all Kubeflow official components (residing under <code>apps</code>) and all common services (residing under <code>common</code>) using either Kustomize or Helm with a single command:</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<ul class="nav nav-tabs" id="tabs-3" role="tablist"><li class="nav-item">
-      <a class="nav-link active tab-Kustomize"
-        id="tabs-3-0-tab" data-toggle="tab" href="#tabs-3-0" role="tab" onclick="handleClick(&#34;Kustomize&#34;);"
-        aria-controls="tabs-3-0" aria-selected="true">
-        Kustomize
-      </a>
-    </li><li class="nav-item">
-      <a class="nav-link tab-Helm"
-        id="tabs-3-1-tab" data-toggle="tab" href="#tabs-3-1" role="tab" onclick="handleClick(&#34;Helm&#34;);"
-        aria-controls="tabs-3-1" aria-selected="false">
-        Helm
-      </a>
-    </li></ul>
-
-
-<div class="tab-content" id="tabs-3-content"><div class="tab-pane fade show active"
-        id="tabs-3-0" role="tabpanel" aria-labelled-by="tabs-3-0-tab"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">make</span> <span class="nx">deploy-kubeflow</span> <span class="nx">INSTALLATION_OPTION</span><span class="p">=</span><span class="nx">kustomize</span> <span class="nx">DEPLOYMENT_OPTION</span><span class="p">=</span><span class="nx">vanilla</span></span></span></code></pre></div></div>
-  <div class="tab-pane fade"
-        id="tabs-3-1" role="tabpanel" aria-labelled-by="tabs-3-1-tab"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="l">make deploy-kubeflow INSTALLATION_OPTION=helm DEPLOYMENT_OPTION=vanilla</span></span></span></code></pre></div></div>
-  
-</div>
-
-<h3 id="connect-to-your-kubeflow-cluster">Connect to your Kubeflow cluster</h3>
-<p>After installation, it will take some time for all Pods to become ready. Make sure all Pods are ready before trying to connect, otherwise you might get unexpected errors. To check that all Kubeflow-related Pods are ready, use the following commands:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">kubectl get pods -n cert-manager
-</span></span><span class="line"><span class="cl">kubectl get pods -n istio-system
-</span></span><span class="line"><span class="cl">kubectl get pods -n auth
-</span></span><span class="line"><span class="cl">kubectl get pods -n knative-eventing
-</span></span><span class="line"><span class="cl">kubectl get pods -n knative-serving
-</span></span><span class="line"><span class="cl">kubectl get pods -n kubeflow
-</span></span><span class="line"><span class="cl">kubectl get pods -n kubeflow-user-example-com
-</span></span></code></pre></div><h3 id="connect-to-your-kubeflow-dashboard">Connect to your Kubeflow Dashboard</h3>
-<p>You can now start experimenting and running your end-to-end ML workflows with Kubeflow on AWS!</p>
-<p>For information on connecting to your Kubeflow dashboard depending on your deployment environment, see  <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/connect-kubeflow-dashboard/">Connect to your Kubeflow Dashboard</a>.</p>
-<h3 id="uninstall-kubeflow-on-aws">Uninstall Kubeflow on AWS</h3>
-<p>Uninstall Kubeflow on AWS with a single command.</p>
-<blockquote>
-<p>Note: Make sure you have the correct INSTALLATION_OPTION and DEPLOYMENT_OPTION environment variables set for your chosen installation</p>
-</blockquote>
+<p>This guide assumes you have Python 3.8 installed and that you have completed the <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/prerequisites/">prerequisites</a>.</p>
+<h2 id="create-required-resources-and-deploy-kubeflow">Create required resources and deploy Kubeflow</h2>
+<ol>
+<li>
+<p>The following steps automate <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/cognito/manifest/guide/#10-custom-domain-and-certificates">section 1.0(Custom domain and certificates)</a> (creating a custom domain to host Kubeflow and TLS certificates for the domain), <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/cognito/manifest/guide/#20-cognito-user-pool">section 2.0(Cognito user pool)</a> (creating a Cognito Userpool used for user authentication) and<a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/cognito/manifest/guide/#30-configure-ingress">section 3.0(Configure Ingress)</a> (configuring ingress and load balancer controller manifests) of the cognito guide.</p>
+<ol>
+<li>Install dependencies for the scripts
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">pip install -r tests/e2e/requirements.txt
+</span></span></code></pre></div></li>
+<li>Substitute values in <code>tests/e2e/utils/cognito_bootstrap/config.yaml</code>.
+<ol>
+<li>Registed root domain in <code>route53.rootDomain.name</code>. Lets assume this domain is <code>example.com</code>
+<ol>
+<li>If your domain is managed in route53, enter the Hosted zone ID found under Hosted zone details in <code>route53.rootDomain.hostedZoneId</code>. Skip this step if your domain is managed by other domain provider.</li>
+</ol>
+</li>
+<li>Name of the sudomain you want to host Kubeflow (e.g. <code>platform.example.com</code>) in <code>route53.subDomain.name</code>. Please read <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/add-ons/load-balancer/guide/#create-domain-and-certificates">this section</a> to understand why we use a subdomain.</li>
+<li>Cluster name and region where kubeflow will be deployed in <code>cluster.name</code> and <code>cluster.region</code> (e.g. us-west-2) respectively.</li>
+<li>Name of cognito userpool in <code>cognitoUserpool.name</code> e.g. kubeflow-users.</li>
+<li>The config file will look something like:
+<ol>
+<li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="w"> </span><span class="nt">cognitoUserpool</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">kubeflow-users</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="nt">cluster</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">kube-eks-cluster</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="nt">region</span><span class="p">:</span><span class="w"> </span><span class="l">us-west-2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="nt">route53</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="nt">rootDomain</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">         </span><span class="nt">hostedZoneId</span><span class="p">:</span><span class="w"> </span><span class="l">XXXX</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">         </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">example.com</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="nt">subDomain</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">         </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">platform.example.com</span><span class="w">
+</span></span></span></code></pre></div></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Run the script to create the resources
+<ol>
+<li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"> <span class="nb">cd</span> tests/e2e
+</span></span><span class="line"><span class="cl"> <span class="nv">PYTHONPATH</span><span class="o">=</span>.. python utils/cognito_bootstrap/cognito_pre_deployment.py
+</span></span><span class="line"><span class="cl"> <span class="nb">cd</span> -
+</span></span></code></pre></div></li>
+</ol>
+</li>
+<li>The script will update the config file with the resource names/ids/ARNs it created. It will look something like:
+<ol>
+<li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="w"> </span><span class="nt">cognitoUserpool</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="nt">ARN</span><span class="p">:</span><span class="w"> </span><span class="l">arn:aws:cognito-idp:us-west-2:123456789012:userpool/us-west-2_yasI9dbxF</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="nt">appClientId</span><span class="p">:</span><span class="w"> </span><span class="l">5jmk7ljl2a74jk3n0a0fvj3l31</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="nt">domainAliasTarget</span><span class="p">:</span><span class="w"> </span><span class="l">xxxxxxxxxx.cloudfront.net</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="nt">domain</span><span class="p">:</span><span class="w"> </span><span class="l">auth.platform.example.com</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">kubeflow-users</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="nt">kubeflow</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="nt">alb</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">         </span><span class="nt">serviceAccount</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">             </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">alb-ingress-controller</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">             </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l">kubeflow</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">             </span><span class="nt">policyArn</span><span class="p">:</span><span class="w"> </span><span class="l">arn:aws:iam::123456789012:policy/alb_ingress_controller_kube-eks-clusterxxx</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="nt">cluster</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">kube-eks-cluster</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="nt">region</span><span class="p">:</span><span class="w"> </span><span class="l">us-west-2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="nt">route53</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="nt">rootDomain</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">         </span><span class="nt">certARN</span><span class="p">:</span><span class="w"> </span><span class="l">arn:aws:acm:us-east-1:123456789012:certificate/9d8c4bbc-3b02-4a48-8c7d-d91441c6e5af</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">         </span><span class="nt">hostedZoneId</span><span class="p">:</span><span class="w"> </span><span class="l">XXXXX</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">         </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">example.com</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="nt">subDomain</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">         </span><span class="nt">us-west-2-certARN</span><span class="p">:</span><span class="w"> </span><span class="l">arn:aws:acm:us-west-2:123456789012:certificate/d1d7b641c238-4bc7-f525-b7bf-373cc726</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">         </span><span class="nt">hostedZoneId</span><span class="p">:</span><span class="w"> </span><span class="l">XXXXX</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">         </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">platform.example.com</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">         </span><span class="nt">us-east-1-certARN</span><span class="p">:</span><span class="w"> </span><span class="l">arn:aws:acm:us-east-1:123456789012:certificate/373cc726-f525-4bc7-b7bf-d1d7b641c238</span><span class="w">
+</span></span></span></code></pre></div></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Install Kubeflow using the following command:
 
 
 
@@ -599,19 +591,178 @@
 
 
 <div class="tab-content" id="tabs-5-content"><div class="tab-pane fade show active"
-        id="tabs-5-0" role="tabpanel" aria-labelled-by="tabs-5-0-tab"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">make</span> <span class="nx">delete-kubeflow</span> <span class="nx">INSTALLATION_OPTION</span><span class="p">=</span><span class="nx">kustomize</span> <span class="nx">DEPLOYMENT_OPTION</span><span class="p">=</span><span class="nx">vanilla</span></span></span></code></pre></div></div>
+        id="tabs-5-0" role="tabpanel" aria-labelled-by="tabs-5-0-tab"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">make</span> <span class="nx">deploy-kubeflow</span> <span class="nx">INSTALLATION_OPTION</span><span class="p">=</span><span class="nx">kustomize</span> <span class="nx">DEPLOYMENT_OPTION</span><span class="p">=</span><span class="nx">cognito</span></span></span></code></pre></div></div>
   <div class="tab-pane fade"
-        id="tabs-5-1" role="tabpanel" aria-labelled-by="tabs-5-1-tab"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="l">make delete-kubeflow INSTALLATION_OPTION=helm DEPLOYMENT_OPTION=vanilla</span></span></span></code></pre></div></div>
+        id="tabs-5-1" role="tabpanel" aria-labelled-by="tabs-5-1-tab"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="l">make deploy-kubeflow INSTALLATION_OPTION=helm DEPLOYMENT_OPTION=cognito</span></span></span></code></pre></div></div>
+  
+</div>
+</p>
+</li>
+<li>
+<p>Updating the domain with ALB address</p>
+<ol>
+<li>Check if ALB is provisioned. It takes around 3-5 minutes
+<ol>
+<li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"> kubectl get ingress -n istio-system
+</span></span><span class="line"><span class="cl"> Warning: extensions/v1beta1 Ingress is deprecated in v1.14+, unavailable in v1.22+<span class="p">;</span> use networking.k8s.io/v1 Ingress
+</span></span><span class="line"><span class="cl"> NAME            CLASS    HOSTS   ADDRESS                                                              PORTS   AGE
+</span></span><span class="line"><span class="cl"> istio-ingress   &lt;none&gt;   *       k8s-istiosys-istioing-xxxxxx-110050202.us-west-2.elb.amazonaws.com   <span class="m">80</span>      15d
+</span></span></code></pre></div></li>
+<li>If <code>ADDRESS</code> is empty after a few minutes, check the logs of alb-ingress-controller by following <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/troubleshooting-aws/#alb-fails-to-provision">this guide</a></li>
+</ol>
+</li>
+<li>Substitute the ALB address under <code>kubeflow.alb.dns</code> in <code>tests/e2e/utils/cognito_bootstrap/config.yaml</code>. The kubeflow section of the config file will look like:
+<ol>
+<li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="w"> </span><span class="nt">kubeflow</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">     </span><span class="nt">alb</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">         </span><span class="nt">dns</span><span class="p">:</span><span class="w"> </span><span class="l">ebde55ee-istiosystem-istio-2af2-1100502020.us-west-2.elb.amazonaws.com</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">         </span><span class="nt">serviceAccount</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">             </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">alb-ingress-controller</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">             </span><span class="nt">policyArn</span><span class="p">:</span><span class="w"> </span><span class="l">arn:aws:iam::123456789012:policy/alb_ingress_controller_kube-eks-clusterxxx</span><span class="w">
+</span></span></span></code></pre></div></li>
+</ol>
+</li>
+<li>Run the following script to update the subdomain with ALB address
+<ol>
+<li>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl"> <span class="nb">cd</span> tests/e2e
+</span></span><span class="line"><span class="cl"> <span class="nv">PYTHONPATH</span><span class="o">=</span>.. python utils/cognito_bootstrap/cognito_post_deployment.py
+</span></span><span class="line"><span class="cl"> <span class="nb">cd</span> -
+</span></span></code></pre></div></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>Follow the rest of the cognito guide from <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/cognito/manifest/guide/#60-connecting-to-central-dashboard">section 6.0(Connecting to central dashboard)</a> to:</p>
+<ol>
+<li>Create a user in Cognito user pool</li>
+<li>Create a profile for the user from the user pool</li>
+<li>Connect to the central dashboard</li>
+</ol>
+</li>
+</ol>
+<h2 id="uninstall-kubeflow">Uninstall Kubeflow</h2>
+<blockquote>
+<p>Note: Delete all the resources you might have created in your profile namespaces before running these steps.</p>
+</blockquote>
+<ol>
+<li>
+<p>Run the following commands to delete the profiles, ingress and corresponding ingress managed load balancer</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> kubectl delete profiles --all
+</span></span><span class="line"><span class="cl"> kubectl delete ingress -n istio-system istio-ingress
+</span></span></code></pre></div></li>
+<li>
+<p>Delete the kubeflow deployment</p>
+</li>
+</ol>
+<blockquote>
+<p>Note: Make sure you have the correct INSTALLATION_OPTION and DEPLOYMENT_OPTION environment variables set for your chosen installation.</p>
+</blockquote>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ul class="nav nav-tabs" id="tabs-8" role="tablist"><li class="nav-item">
+      <a class="nav-link active tab-Kustomize"
+        id="tabs-8-0-tab" data-toggle="tab" href="#tabs-8-0" role="tab" onclick="handleClick(&#34;Kustomize&#34;);"
+        aria-controls="tabs-8-0" aria-selected="true">
+        Kustomize
+      </a>
+    </li><li class="nav-item">
+      <a class="nav-link tab-Helm"
+        id="tabs-8-1-tab" data-toggle="tab" href="#tabs-8-1" role="tab" onclick="handleClick(&#34;Helm&#34;);"
+        aria-controls="tabs-8-1" aria-selected="false">
+        Helm
+      </a>
+    </li></ul>
+
+
+<div class="tab-content" id="tabs-8-content"><div class="tab-pane fade show active"
+        id="tabs-8-0" role="tabpanel" aria-labelled-by="tabs-8-0-tab"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">make</span> <span class="nx">delete-kubeflow</span> <span class="nx">INSTALLATION_OPTION</span><span class="p">=</span><span class="nx">kustomize</span> <span class="nx">DEPLOYMENT_OPTION</span><span class="p">=</span><span class="nx">cognito</span></span></span></code></pre></div></div>
+  <div class="tab-pane fade"
+        id="tabs-8-1" role="tabpanel" aria-labelled-by="tabs-8-1-tab"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="l">make delete-kubeflow INSTALLATION_OPTION=helm DEPLOYMENT_OPTION=cognito</span></span></span></code></pre></div></div>
   
 </div>
 
+<ol>
+<li>To delete the rest of resources(subdomain, certificates etc.), run the following commands from the root of your repository:
 <blockquote>
-<p>Note: This will not delete your Amazon EKS cluster.</p>
+<p>Note: Make sure that you have the configuration file created by the script in <code>tests/e2e/utils/cognito_bootstrap/config.yaml</code>. If you did not use the script, plug in the name, ARN, or ID of the resources that you created in a yaml file in <code>tests/e2e/utils/cognito_bootstrap/config.yaml</code> by referring to the following sample:</p>
 </blockquote>
-<h3 id="optional-delete-amazon-eks-cluster">(Optional) Delete Amazon EKS cluster</h3>
-<p>If you created a dedicated Amazon EKS cluster for Kubeflow using <code>eksctl</code>, you can delete it with the following command:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">eksctl delete cluster --region <span class="nv">$CLUSTER_REGION</span> --name <span class="nv">$CLUSTER_NAME</span>
-</span></span></code></pre></div><p>For more detailed information on deletion options, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/delete-cluster.html">Deleting an Amazon EKS cluster</a>.</p>
+<ul>
+<li>Sample config file:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">cognitoUserpool</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ARN</span><span class="p">:</span><span class="w"> </span><span class="l">arn:aws:cognito-idp:us-west-2:123456789012:userpool/us-west-2_yasI9dbxF</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">appClientId</span><span class="p">:</span><span class="w"> </span><span class="l">5jmk7ljl2a74jk3n0a0fvj3l31</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">domainAliasTarget</span><span class="p">:</span><span class="w"> </span><span class="l">xxxxxxxxxx.cloudfront.net</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">domain</span><span class="p">:</span><span class="w"> </span><span class="l">auth.platform.example.com</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">kubeflow-users</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">kubeflow</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">alb</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">serviceAccount</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">alb-ingress-controller</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l">kubeflow</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="nt">policyArn</span><span class="p">:</span><span class="w"> </span><span class="l">arn:aws:iam::123456789012:policy/alb_ingress_controller_kube-eks-clusterxxx</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">cluster</span><span class="p">:</span><span class="w">  
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">kube-eks-cluster</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">region</span><span class="p">:</span><span class="w"> </span><span class="l">us-west-2</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">route53</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">rootDomain</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">certARN</span><span class="p">:</span><span class="w"> </span><span class="l">arn:aws:acm:us-east-1:123456789012:certificate/9d8c4bbc-3b02-4a48-8c7d-d91441c6e5af</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">hostedZoneId</span><span class="p">:</span><span class="w"> </span><span class="l">XXXXX</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">example.com</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">subDomain</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">us-west-2-certARN</span><span class="p">:</span><span class="w"> </span><span class="l">arn:aws:acm:us-west-2:123456789012:certificate/d1d7b641c238-4bc7-f525-b7bf-373cc726</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">hostedZoneId</span><span class="p">:</span><span class="w"> </span><span class="l">XXXXX</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">platform.example.com</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">us-east-1-certARN</span><span class="p">:</span><span class="w"> </span><span class="l">arn:aws:acm:us-east-1:123456789012:certificate/373cc726-f525-4bc7-b7bf-d1d7b641c238</span><span class="w">
+</span></span></span></code></pre></div><ul>
+<li>Run the following command to install the script dependencies and delete the resources:</li>
+</ul>
+<blockquote>
+<p>Note: You can rerun the script incase some resources fail to delete</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> tests/e2e
+</span></span><span class="line"><span class="cl">pip install -r requirements.txt
+</span></span><span class="line"><span class="cl"><span class="nv">PYTHONPATH</span><span class="o">=</span>.. python utils/cognito_bootstrap/cognito_resources_cleanup.py
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> -
+</span></span></code></pre></div></li>
+</ol>
 
 	
 	
