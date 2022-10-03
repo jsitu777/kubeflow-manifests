@@ -1388,8 +1388,8 @@ public.ecr.aws/kubeflow-on-aws/notebook-servers/jupyter-pytorch:1.12.0-cpu-py38-
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Launch Ubuntu 18.04 cloud9 instance 
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;clone-repository&#34;&gt;Clone repository&lt;/h2&gt;
 &lt;p&gt;Clone the &lt;a href=&#34;https://github.com/awslabs/kubeflow-manifests&#34;&gt;&lt;code&gt;awslabs/kubeflow-manifests&lt;/code&gt;&lt;/a&gt; and the &lt;a href=&#34;https://github.com/kubeflow/manifests&#34;&gt;&lt;code&gt;kubeflow/manifests&lt;/code&gt;&lt;/a&gt; repositories and check out the release branches of your choosing.&lt;/p&gt;
-&lt;p&gt;Substitute the value for &lt;code&gt;KUBEFLOW_RELEASE_VERSION&lt;/code&gt;(e.g. v1.6.0) and &lt;code&gt;AWS_RELEASE_VERSION&lt;/code&gt;(e.g. v1.6.0-aws-b1.0.0) with the tag or branch you want to use below. Read more about &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/about/releases/&#34;&gt;releases and versioning&lt;/a&gt; if you are unsure about what these values should be.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;KUBEFLOW_RELEASE_VERSION&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;v1.6.0
+&lt;p&gt;Substitute the value for &lt;code&gt;KUBEFLOW_RELEASE_VERSION&lt;/code&gt;(e.g. v1.6.1-rc.0) and &lt;code&gt;AWS_RELEASE_VERSION&lt;/code&gt;(e.g. v1.6.0-aws-b1.0.0) with the tag or branch you want to use below. Read more about &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/about/releases/&#34;&gt;releases and versioning&lt;/a&gt; if you are unsure about what these values should be.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;KUBEFLOW_RELEASE_VERSION&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;v1.6.1-rc.0
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;AWS_RELEASE_VERSION&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;main
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone https://github.com/awslabs/kubeflow-manifests.git &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; kubeflow-manifests
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git checkout &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;AWS_RELEASE_VERSION&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;
@@ -2861,32 +2861,76 @@ Take note of your &lt;code&gt;S3 bucket name&lt;/code&gt; to use in the followin
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
-&lt;li&gt;Substitute values for setting up Ingress.
+&lt;li&gt;Substitute values for setting up Ingress.&lt;/li&gt;
+&lt;/ol&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;ul class=&#34;nav nav-tabs&#34; id=&#34;tabs-7&#34; role=&#34;tablist&#34;&gt;&lt;li class=&#34;nav-item&#34;&gt;
+      &lt;a class=&#34;nav-link active tab-Kustomize&#34;
+        id=&#34;tabs-7-0-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-7-0&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Kustomize&amp;#34;);&#34;
+        aria-controls=&#34;tabs-7-0&#34; aria-selected=&#34;true&#34;&gt;
+        Kustomize
+      &lt;/a&gt;
+    &lt;/li&gt;&lt;li class=&#34;nav-item&#34;&gt;
+      &lt;a class=&#34;nav-link tab-Helm&#34;
+        id=&#34;tabs-7-1-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-7-1&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Helm&amp;#34;);&#34;
+        aria-controls=&#34;tabs-7-1&#34; aria-selected=&#34;false&#34;&gt;
+        Helm
+      &lt;/a&gt;
+    &lt;/li&gt;&lt;/ul&gt;
+
+
+&lt;div class=&#34;tab-content&#34; id=&#34;tabs-7-content&#34;&gt;&lt;div class=&#34;tab-pane fade show active&#34;
+        id=&#34;tabs-7-0&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-7-0-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;printf&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;CognitoUserPoolArn=&amp;#39;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;CognitoUserPoolArn&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;CognitoAppClientId=&amp;#39;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;CognitoAppClientId&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;CognitoUserPoolDomain=&amp;#39;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;CognitoUserPoolDomain&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;certArn=&amp;#39;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;certArn&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;awsconfigs&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;common&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;istio-ingress&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;overlays&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cognito&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;params&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;env&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&#34;tab-pane fade&#34;
+        id=&#34;tabs-7-1&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-7-1-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;l&#34;&gt;yq e &amp;#39;.alb.certArn = env(certArn)&amp;#39; -i charts/common/ingress/cognito/values.yaml&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;l&#34;&gt;yq e &amp;#39;.alb.cognito.UserPoolArn = env(CognitoUserPoolArn)&amp;#39; -i charts/common/ingress/cognito/values.yaml&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;l&#34;&gt;yq e &amp;#39;.alb.cognito.UserPoolDomain = env(CognitoUserPoolDomain)&amp;#39; -i charts/common/ingress/cognito/values.yaml&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;&lt;/span&gt;&lt;span class=&#34;l&#34;&gt;yq e &amp;#39;.alb.cognito.appClientId = env(CognitoAppClientId)&amp;#39; -i charts/common/ingress/cognito/values.yaml&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+  
+&lt;/div&gt;
+
 &lt;ol&gt;
 &lt;li&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;nb&#34;&gt;printf&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt; CognitoUserPoolArn=&amp;#39;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$CognitoUserPoolArn&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt; CognitoAppClientId=&amp;#39;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$CognitoAppClientId&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt; CognitoUserPoolDomain=&amp;#39;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$CognitoUserPoolDomain&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt; certArn=&amp;#39;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$certArn&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt; &amp;#39;&lt;/span&gt; &amp;gt; awsconfigs/common/istio-ingress/overlays/cognito/params.env
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;Substitute values for setting up AWS authservice.
-&lt;ol&gt;
-&lt;li&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt; &lt;span class=&#34;nb&#34;&gt;printf&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt; LOGOUT_URL=&amp;#39;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$CognitoLogoutURL&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt; &amp;#39;&lt;/span&gt; &amp;gt; awsconfigs/common/aws-authservice/base/params.env
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;Follow the &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/add-ons/load-balancer/guide/#configure-load-balancer-controller&#34;&gt;Configure Load Balancer Controller&lt;/a&gt; section of the load balancer guide to setup the resources required the load balancer controller.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;40-building-manifests-and-deploying-kubeflow&#34;&gt;4.0 Building manifests and deploying Kubeflow&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Install with a single command:
+&lt;p&gt;Substitute values for setting up AWS authservice.
 
 
 
@@ -2938,9 +2982,76 @@ Take note of your &lt;code&gt;S3 bucket name&lt;/code&gt; to use in the followin
 
 
 &lt;div class=&#34;tab-content&#34; id=&#34;tabs-8-content&#34;&gt;&lt;div class=&#34;tab-pane fade show active&#34;
-        id=&#34;tabs-8-0&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-8-0-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;deploy-kubeflow&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;INSTALLATION_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;kustomize&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;DEPLOYMENT_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cognito&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+        id=&#34;tabs-8-0&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-8-0-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;printf&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;LOGOUT_URL=&amp;#39;&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;CognitoLogoutURL&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;awsconfigs&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;common&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;aws-authservice&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;base&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;/&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;params&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;env&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
   &lt;div class=&#34;tab-pane fade&#34;
-        id=&#34;tabs-8-1&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-8-1-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;l&#34;&gt;make deploy-kubeflow INSTALLATION_OPTION=helm DEPLOYMENT_OPTION=cognito&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+        id=&#34;tabs-8-1&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-8-1-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;l&#34;&gt;yq e &amp;#39;.LOGOUT_URL = env(CognitoLogoutURL)&amp;#39; -i charts/common/aws-authservice/values.yaml&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+  
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Follow the &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/add-ons/load-balancer/guide/#configure-load-balancer-controller&#34;&gt;Configure Load Balancer Controller&lt;/a&gt; section of the load balancer guide to setup the resources required the load balancer controller.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;40-building-manifests-and-deploying-kubeflow&#34;&gt;4.0 Building manifests and deploying Kubeflow&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Install with a single command:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;ul class=&#34;nav nav-tabs&#34; id=&#34;tabs-10&#34; role=&#34;tablist&#34;&gt;&lt;li class=&#34;nav-item&#34;&gt;
+      &lt;a class=&#34;nav-link active tab-Kustomize&#34;
+        id=&#34;tabs-10-0-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-10-0&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Kustomize&amp;#34;);&#34;
+        aria-controls=&#34;tabs-10-0&#34; aria-selected=&#34;true&#34;&gt;
+        Kustomize
+      &lt;/a&gt;
+    &lt;/li&gt;&lt;li class=&#34;nav-item&#34;&gt;
+      &lt;a class=&#34;nav-link tab-Helm&#34;
+        id=&#34;tabs-10-1-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-10-1&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Helm&amp;#34;);&#34;
+        aria-controls=&#34;tabs-10-1&#34; aria-selected=&#34;false&#34;&gt;
+        Helm
+      &lt;/a&gt;
+    &lt;/li&gt;&lt;/ul&gt;
+
+
+&lt;div class=&#34;tab-content&#34; id=&#34;tabs-10-content&#34;&gt;&lt;div class=&#34;tab-pane fade show active&#34;
+        id=&#34;tabs-10-0&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-10-0-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;deploy-kubeflow&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;INSTALLATION_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;kustomize&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;DEPLOYMENT_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cognito&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&#34;tab-pane fade&#34;
+        id=&#34;tabs-10-1&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-10-1-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;l&#34;&gt;make deploy-kubeflow INSTALLATION_OPTION=helm DEPLOYMENT_OPTION=cognito&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
   
 &lt;/div&gt;
 &lt;/li&gt;
@@ -3322,14 +3433,14 @@ region: us-east-1
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To verify the installation, you can run the &lt;code&gt;list-metrics&lt;/code&gt; command and check that metrics have been created. It may take up to 15 minutes for the metrics to populate.&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;aws cloudwatch list-metrics --namespace ContainerInsights --region &lt;span class=&#34;nv&#34;&gt;$CLUSTER_REGION&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;An example of the logs that will be available after installation are the logs of the Pods on your cluster. This way, the Pod logs can still be accessed past their default storage time. This also allows for an easy way to view logs for all Pods on your cluster without having to directly connect to your EKS cluster.&lt;/p&gt;
-&lt;p&gt;The logs can be accessed by through CloudWatch log groups &lt;img src=&#34;../../../../images/cloudwatch/cloudwatch-logs.png&#34; alt=&#34;cloudwatch&#34;&gt;&lt;/p&gt;
-&lt;p&gt;To view individual Pod logs, select &lt;code&gt;/aws/containerinsights/YOUR_CLUSTER_NAME/application&lt;/code&gt;. &lt;img src=&#34;../../../../images/cloudwatch/cloudwatch-application-logs.png&#34; alt=&#34;application&#34;&gt;&lt;/p&gt;
-&lt;p&gt;The following image is an example of the &lt;code&gt;jupyter-web-app&lt;/code&gt; Pod logs available through CloudWatch. &lt;img src=&#34;../../../../images/cloudwatch/cloudwatch-pod-logs.png&#34; alt=&#34;jupyter-logs&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The logs can be accessed by through CloudWatch log groups &lt;img src=&#34;../../../images/cloudwatch/cloudwatch-logs.png&#34; alt=&#34;cloudwatch&#34;&gt;&lt;/p&gt;
+&lt;p&gt;To view individual Pod logs, select &lt;code&gt;/aws/containerinsights/YOUR_CLUSTER_NAME/application&lt;/code&gt;. &lt;img src=&#34;../../../images/cloudwatch/cloudwatch-application-logs.png&#34; alt=&#34;application&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The following image is an example of the &lt;code&gt;jupyter-web-app&lt;/code&gt; Pod logs available through CloudWatch. &lt;img src=&#34;../../../images/cloudwatch/cloudwatch-pod-logs.png&#34; alt=&#34;jupyter-logs&#34;&gt;&lt;/p&gt;
 &lt;p&gt;For a full list of metrics that are provided by default, see &lt;a href=&#34;https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Container-Insights-metrics-EKS.html&#34;&gt;Amazon EKS and Kubernetes Container Insights metrics&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;The metrics are grouped by varying parameters such as Cluster, Namespace, or PodName.
-&lt;img src=&#34;../../../../images/cloudwatch/cloudwatch-metrics.png&#34; alt=&#34;cloudwatch-metrics&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;../../../images/cloudwatch/cloudwatch-metrics.png&#34; alt=&#34;cloudwatch-metrics&#34;&gt;&lt;/p&gt;
 &lt;p&gt;The following image is an example of the graphed metrics for the &lt;code&gt;istio-system&lt;/code&gt; namespace that deals with internet traffic.
-&lt;img src=&#34;../../../../images/cloudwatch/cloudwatch-namespace-metrics.png&#34; alt=&#34;cloudwatch-namespace-metrics&#34;&gt;&lt;/p&gt;
+&lt;img src=&#34;../../../images/cloudwatch/cloudwatch-namespace-metrics.png&#34; alt=&#34;cloudwatch-namespace-metrics&#34;&gt;&lt;/p&gt;
 &lt;p&gt;See &lt;a href=&#34;https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/viewing_metrics_with_cloudwatch.html&#34;&gt;Viewing available metrics&lt;/a&gt; for more information on CloudWatch metrics. Select the ContainerInsights metric namespace.&lt;/p&gt;
 &lt;p&gt;You can see the full list of logs and metrics through the &lt;a href=&#34;https://console.aws.amazon.com/cloudwatch/&#34;&gt;Amazon CloudWatch AWS Console&lt;/a&gt;.&lt;/p&gt;
 &lt;h2 id=&#34;uninstall&#34;&gt;Uninstall&lt;/h2&gt;
