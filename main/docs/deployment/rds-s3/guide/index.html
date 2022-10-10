@@ -28,7 +28,7 @@
       "datePublished": "0001-01-01 00:00:00 \u002b0000 UTC",
       "dateModified" : "0001-01-01 00:00:00 \u002b0000 UTC",
       "url" : "https:\/\/jsitu777.github.io\/kubeflow-manifests\/main\/docs\/deployment\/rds-s3\/guide\/",
-      "wordCount" : "2192",
+      "wordCount" : "2204",
       "keywords" : [ "Kubeflow" ]
   }
   </script>
@@ -49,12 +49,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/rds-s3/guide/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2022-10-03T15:38:07-04:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
+<meta property="article:modified_time" content="2022-10-07T16:58:12-07:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
 
 <meta itemprop="name" content="Manifest Deployment Guide">
 <meta itemprop="description" content="Deploying Kubeflow with RDS and S3 using Kustomize or Helm">
-<meta itemprop="dateModified" content="2022-10-03T15:38:07-04:00" />
-<meta itemprop="wordCount" content="2192">
+<meta itemprop="dateModified" content="2022-10-07T16:58:12-07:00" />
+<meta itemprop="wordCount" content="2204">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Manifest Deployment Guide"/>
 <meta name="twitter:description" content="Deploying Kubeflow with RDS and S3 using Kustomize or Helm"/>
@@ -904,7 +904,7 @@ Take note of your <code>S3 bucket name</code> to use in the following steps.</p>
 <p>For example, use the following command to retrieve the value of a Secret named <code>rds-secret</code>:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">aws secretsmanager get-secret-value <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>    --region <span class="nv">$CLUSTER_REGION</span> <span class="se">\
-</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --secret-id rds-secret <span class="se">\
+</span></span></span><span class="line"><span class="cl"><span class="se"></span>    --secret-id <span class="nv">$RDS_SECRET_NAME</span> <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>    --query <span class="s1">&#39;SecretString&#39;</span> <span class="se">\
 </span></span></span><span class="line"><span class="cl"><span class="se"></span>    --output text
 </span></span></code></pre></div><ol start="2">
@@ -915,11 +915,14 @@ Take note of your <code>S3 bucket name</code> to use in the following steps.</p>
 </span></span><span class="line"><span class="cl">+--------------------+
 </span></span><span class="line"><span class="cl"><span class="p">|</span> Database           <span class="p">|</span>
 </span></span><span class="line"><span class="cl">+--------------------+
+</span></span><span class="line"><span class="cl"><span class="p">|</span> cachedb            <span class="p">|</span>
 </span></span><span class="line"><span class="cl"><span class="p">|</span> information_schema <span class="p">|</span>
 </span></span><span class="line"><span class="cl"><span class="p">|</span> kubeflow           <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> metadb             <span class="p">|</span>
 </span></span><span class="line"><span class="cl"><span class="p">|</span> mlpipeline         <span class="p">|</span>
 </span></span><span class="line"><span class="cl"><span class="p">|</span> mysql              <span class="p">|</span>
 </span></span><span class="line"><span class="cl"><span class="p">|</span> performance_schema <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> sys                <span class="p">|</span>
 </span></span><span class="line"><span class="cl">+--------------------+
 </span></span></code></pre></div><ol start="3">
 <li>Verify that the database <code>mlpipeline</code> has the following tables:</li>
@@ -938,6 +941,7 @@ Take note of your <code>S3 bucket name</code> to use in the following steps.</p>
 </span></span><span class="line"><span class="cl"><span class="p">|</span> resource_references  <span class="p">|</span>
 </span></span><span class="line"><span class="cl"><span class="p">|</span> run_details          <span class="p">|</span>
 </span></span><span class="line"><span class="cl"><span class="p">|</span> run_metrics          <span class="p">|</span>
+</span></span><span class="line"><span class="cl"><span class="p">|</span> tasks                <span class="p">|</span>
 </span></span><span class="line"><span class="cl">+----------------------+
 </span></span></code></pre></div><ol start="4">
 <li>
@@ -1055,7 +1059,7 @@ Take note of your <code>S3 bucket name</code> to use in the following steps.</p>
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified October 3, 2022: <a href="https://github.com/awslabs/kubeflow-manifests//commit/af4134bc2d1789a248e76fe46eeae7730b772cd9">Quick fix - Changed path to images in Deployment Add-ons &gt; Cloudwatch (#453) (af4134b)</a>
+  Last modified October 7, 2022: <a href="https://github.com/awslabs/kubeflow-manifests//commit/54834fd03d0e241c7908b4a5e2d22e9a15267dbb">Upgrade to ACK 0.4.5 (#458) (54834fd)</a>
 </div>
 
 </div>
