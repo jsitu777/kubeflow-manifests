@@ -28,7 +28,7 @@
       "datePublished": "0001-01-01 00:00:00 \u002b0000 UTC",
       "dateModified" : "0001-01-01 00:00:00 \u002b0000 UTC",
       "url" : "https:\/\/jsitu777.github.io\/kubeflow-manifests\/main\/docs\/deployment\/cognito-rds-s3\/guide\/",
-      "wordCount" : "401",
+      "wordCount" : "377",
       "keywords" : [ "Kubeflow" ]
   }
   </script>
@@ -49,12 +49,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/cognito-rds-s3/guide/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2022-10-11T11:48:55-07:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
+<meta property="article:modified_time" content="2022-10-13T19:29:52-04:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
 
 <meta itemprop="name" content="Manifest Deployment Guide">
 <meta itemprop="description" content="Deploying Kubeflow with Amazon Cognito, RDS and S3">
-<meta itemprop="dateModified" content="2022-10-11T11:48:55-07:00" />
-<meta itemprop="wordCount" content="401">
+<meta itemprop="dateModified" content="2022-10-13T19:29:52-04:00" />
+<meta itemprop="wordCount" content="377">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Manifest Deployment Guide"/>
 <meta name="twitter:description" content="Deploying Kubeflow with Amazon Cognito, RDS and S3"/>
@@ -384,7 +384,7 @@
 
 <div class="td-toc"><nav id="TableOfContents">
   <ul>
-    <li><a href="#1-prerequisites">1. Prerequisites</a></li>
+    <li><a href="#prerequisites">Prerequisites</a></li>
     <li><a href="#configure-custom-domain-and-cognito">Configure Custom Domain and Cognito</a></li>
     <li><a href="#uninstall-kubeflow">Uninstall Kubeflow</a></li>
   </ul>
@@ -456,7 +456,7 @@
 <p>Note: Helm installation option is still in preview.</p>
 </blockquote>
 <p>This guide describes how to deploy Kubeflow on Amazon EKS using Cognito for your identity provider, RDS for your database, and S3 for your artifact storage.</p>
-<h2 id="1-prerequisites">1. Prerequisites</h2>
+<h2 id="prerequisites">Prerequisites</h2>
 <p>Refer to the <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/prerequisites/">general prerequisites guide</a> and the <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/rds-s3/guide/">RDS and S3 setup guide</a> in order to:</p>
 <ol>
 <li>Install the CLI tools</li>
@@ -470,7 +470,8 @@
 </ol>
 <h2 id="configure-custom-domain-and-cognito">Configure Custom Domain and Cognito</h2>
 <ol>
-<li>Follow the Section 2.0 of <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/cognito/manifest/guide-automated/#20-create-required-resources">Cognito setup guide</a> in order to:
+<li>
+<p>Follow the Section 2.0 of <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/cognito/manifest/guide-automated/#20-create-required-resources">Cognito setup guide</a> in order to:</p>
 <ol>
 <li>Create a custom domain</li>
 <li>Create TLS certificates for the domain</li>
@@ -478,7 +479,8 @@
 <li>Configure Ingress</li>
 </ol>
 </li>
-<li>Deploy Kubeflow.
+<li>
+<p>Deploy Kubeflow.</p>
 <ol>
 <li>Install Kubeflow using the following command:
 
@@ -540,7 +542,8 @@
 </li>
 </ol>
 </li>
-<li>Follow the rest of the Cognito guide from <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/cognito/manifest/guide-automated/#40-updating-the-domain-with-alb-address">section 4.0 (Updating the domain with ALB address)</a> in order to:
+<li>
+<p>Follow the rest of the Cognito guide from <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/cognito/manifest/guide/#50-update-the-domain-with-the-alb-address">section 5.0 (Updating the domain with ALB address)</a> in order to:</p>
 <ol>
 <li>Add/Update the DNS records in a custom domain with the ALB address</li>
 <li>Create a user in a Cognito user pool</li>
@@ -559,12 +562,9 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> kubectl delete profiles --all
 </span></span></code></pre></div></li>
 <li>
-<p>Delete the kubeflow deployment</p>
-</li>
-</ol>
-<blockquote>
-<p>Note: Make sure you have the correct INSTALLATION_OPTION and DEPLOYMENT_OPTION environment variables set for your chosen installation.</p>
-</blockquote>
+<p>Delete the kubeflow deployment:</p>
+
+    
 
 
 
@@ -581,6 +581,7 @@
 
 
 
+    
 
 
 
@@ -597,10 +598,7 @@
 
 
 
-
-
-
-<ul class="nav nav-tabs" id="tabs-5" role="tablist"><li class="nav-item">
+    <ul class="nav nav-tabs" id="tabs-5" role="tablist"><li class="nav-item">
       <a class="nav-link active tab-Kustomize"
         id="tabs-5-0-tab" data-toggle="tab" href="#tabs-5-0" role="tab" onclick="handleClick(&#34;Kustomize&#34;);"
         aria-controls="tabs-5-0" aria-selected="true">
@@ -616,21 +614,20 @@
 
 
 <div class="tab-content" id="tabs-5-content"><div class="tab-pane fade show active"
-        id="tabs-5-0" role="tabpanel" aria-labelled-by="tabs-5-0-tab"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">make</span> <span class="nx">delete-kubeflow</span> <span class="nx">INSTALLATION_OPTION</span><span class="p">=</span><span class="nx">kustomize</span> <span class="nx">DEPLOYMENT_OPTION</span><span class="p">=</span><span class="nx">cognito-rds-s3</span></span></span></code></pre></div></div>
+        id="tabs-5-0" role="tabpanel" aria-labelled-by="tabs-5-0-tab"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-toml" data-lang="toml"><span class="line"><span class="cl"><span class="nx">make</span> <span class="nx">delete-kubeflow</span> <span class="nx">INSTALLATION_OPTION</span><span class="p">=</span><span class="nx">kustomize</span> <span class="nx">DEPLOYMENT_OPTION</span><span class="p">=</span><span class="nx">cognito-rds-s3</span>
+</span></span><span class="line"><span class="cl">    </span></span></code></pre></div></div>
   <div class="tab-pane fade"
-        id="tabs-5-1" role="tabpanel" aria-labelled-by="tabs-5-1-tab"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="l">make delete-kubeflow INSTALLATION_OPTION=helm DEPLOYMENT_OPTION=cognito-rds-s3</span></span></span></code></pre></div></div>
+        id="tabs-5-1" role="tabpanel" aria-labelled-by="tabs-5-1-tab"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="l">make delete-kubeflow INSTALLATION_OPTION=helm DEPLOYMENT_OPTION=cognito-rds-s3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span></span></span></code></pre></div></div>
   
 </div>
 
-<ol>
+</li>
 <li>
-<p>To delete the rest of resources(subdomain, certificates etc.), run the following commands from the root of your repository:</p>
-<blockquote>
-<p>Note: Make sure that you have the configuration file created by the script in <code>tests/e2e/utils/cognito_bootstrap/config.yaml</code>. If you did not use the script, plug in the name, ARN, or ID of the resources that you created in a yaml file in <code>tests/e2e/utils/cognito_bootstrap/config.yaml</code> by referring to the following sample:</p>
-</blockquote>
+<p>To delete the rest of resources (subdomain, certificates etc.), run the following commands from the root of your repository:</p>
 <ul>
-<li>Sample config file:</li>
-</ul>
+<li>
+<p>Ensure you have the configuration file <code>tests/e2e/utils/cognito_bootstrap/config.yaml</code> updated by the <code>cognito_post_deployment.py</code> script.. If you did not use the script, update the name, ARN, or ID of the resources that you created in a yaml file in <code>tests/e2e/utils/cognito_bootstrap/config.yaml</code> by referring to the following sample:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="nt">cognitoUserpool</span><span class="p">:</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ARN</span><span class="p">:</span><span class="w"> </span><span class="l">arn:aws:cognito-idp:us-west-2:123456789012:userpool/us-west-2_yasI9dbxF</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">appClientId</span><span class="p">:</span><span class="w"> </span><span class="l">5jmk7ljl2a74jk3n0a0fvj3l31</span><span class="w">
@@ -656,28 +653,28 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">hostedZoneId</span><span class="p">:</span><span class="w"> </span><span class="l">XXXXX</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">platform.example.com</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="nt">us-east-1-certARN</span><span class="p">:</span><span class="w"> </span><span class="l">arn:aws:acm:us-east-1:123456789012:certificate/373cc726-f525-4bc7-b7bf-d1d7b641c238</span><span class="w">
-</span></span></span></code></pre></div><ul>
-<li>Run the following command to install the script dependencies and delete the resources:</li>
+</span></span></span></code></pre></div></li>
 </ul>
-<blockquote>
-<p>Note: You can rerun the script incase some resources fail to delete</p>
-</blockquote>
+<ul>
+<li>Run the following command to install the script dependencies and delete the resources:
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nb">cd</span> tests/e2e
 </span></span><span class="line"><span class="cl">pip install -r requirements.txt
 </span></span><span class="line"><span class="cl"><span class="nv">PYTHONPATH</span><span class="o">=</span>.. python utils/cognito_bootstrap/cognito_resources_cleanup.py
 </span></span><span class="line"><span class="cl"><span class="nb">cd</span> -
-</span></span></code></pre></div></li>
-<li>
-<p>To delete the rest of RDS-S3 resources:
-Make sure that you have the configuration file created by the script in <code>tests/e2e/utils/rds-s3/metadata.yaml</code>.</p>
+</span></span></code></pre></div>You can rerun the script in case some resources fail to delete</li>
+</ul>
 </li>
-</ol>
+<li>
+<p>To delete the rest of RDS-S3 resources:</p>
+<p>Make sure that you have the configuration file created by the script in <code>tests/e2e/utils/rds-s3/metadata.yaml</code>.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"><span class="nv">PYTHONPATH</span><span class="o">=</span>.. python utils/rds-s3/auto-rds-s3-cleanup.py
-</span></span></code></pre></div>
+</span></span></code></pre></div></li>
+</ol>
+
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified October 11, 2022: <a href="https://github.com/awslabs/kubeflow-manifests//commit/fdbfea0ba16e681b4fb6f4f19d11870933efc3e6">Enable KFP Visualizations and Artifact Store with S3 as source Helm Charts (#463) (fdbfea0)</a>
+  Last modified October 13, 2022: <a href="https://github.com/awslabs/kubeflow-manifests//commit/744fbb1d8e4e69fbcaf983868ec1813e74c0d9ba"> [Kubeflow on AWS] Restructuring/rephrasing of Deployment&gt;Cognito section (#461) (744fbb1)</a>
 </div>
 
 </div>

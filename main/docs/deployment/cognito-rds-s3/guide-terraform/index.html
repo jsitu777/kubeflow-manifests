@@ -28,7 +28,7 @@
       "datePublished": "0001-01-01 00:00:00 \u002b0000 UTC",
       "dateModified" : "0001-01-01 00:00:00 \u002b0000 UTC",
       "url" : "https:\/\/jsitu777.github.io\/kubeflow-manifests\/main\/docs\/deployment\/cognito-rds-s3\/guide-terraform\/",
-      "wordCount" : "566",
+      "wordCount" : "567",
       "keywords" : [ "Kubeflow" ]
   }
   </script>
@@ -49,12 +49,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/cognito-rds-s3/guide-terraform/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2022-10-11T11:48:55-07:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
+<meta property="article:modified_time" content="2022-10-13T19:29:52-04:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
 
 <meta itemprop="name" content="Terraform Deployment Guide">
 <meta itemprop="description" content="Deploy Kubeflow with Cognito, RDS, and S3 using Terraform">
-<meta itemprop="dateModified" content="2022-10-11T11:48:55-07:00" />
-<meta itemprop="wordCount" content="566">
+<meta itemprop="dateModified" content="2022-10-13T19:29:52-04:00" />
+<meta itemprop="wordCount" content="567">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Terraform Deployment Guide"/>
 <meta name="twitter:description" content="Deploy Kubeflow with Cognito, RDS, and S3 using Terraform"/>
@@ -389,7 +389,7 @@
     <li><a href="#deployment-steps">Deployment Steps</a>
       <ul>
         <li><a href="#configure">Configure</a></li>
-        <li><a href="#all-configurations">All Configurations</a></li>
+        <li><a href="#view-all-configurations">View all Configurations</a></li>
         <li><a href="#preview">Preview</a></li>
         <li><a href="#apply">Apply</a></li>
       </ul>
@@ -475,8 +475,7 @@
 <li>Create an RDS DB instance</li>
 <li>Deploy Kubeflow with Cognito as an identity provider, RDS as a KFP and Katib persistence layer, and S3 as an artifact store</li>
 </ul>
-<p>Additional background on using Cognito with the AWS Distribution for Kubeflow can be found <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/cognito-rds-s3/guide/#background">here</a>.</p>
-<p>Terraform documentation can be found <a href="https://www.terraform.io/docs">here</a>.</p>
+<p>Find additional information on <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/cognito-rds-s3/guide/#background">using Cognito with the AWS Distribution for Kubeflow</a> in this guide. You can also check <a href="https://www.terraform.io/docs">Terraform documentation</a>.</p>
 <h2 id="prerequisites">Prerequisites</h2>
 <p>Be sure that you have satisfied the <a href="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/prerequisites/">installation prerequisites</a> before working through this guide.</p>
 <p>Specifially, you must:</p>
@@ -552,8 +551,8 @@
 </span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
 </span></span></code></pre></div></li>
 </ol>
-<h3 id="all-configurations">All Configurations</h3>
-<p>A full list of inputs for the terraform stack can be found <a href="https://github.com/awslabs/kubeflow-manifests/blob/main/deployments/cognito-rds-s3/terraform/variables.tf">here</a>.</p>
+<h3 id="view-all-configurations">View all Configurations</h3>
+<p>View <a href="https://github.com/awslabs/kubeflow-manifests/blob/main/deployments/cognito-rds-s3/terraform/variables.tf">all possible configuration options of the terraform stack</a> in the <code>variables.tf</code> file.</p>
 <h3 id="preview">Preview</h3>
 <p>View a preview of the configuration you are about apply:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">terraform init <span class="o">&amp;&amp;</span> terraform plan
@@ -575,7 +574,7 @@
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified October 11, 2022: <a href="https://github.com/awslabs/kubeflow-manifests//commit/fdbfea0ba16e681b4fb6f4f19d11870933efc3e6">Enable KFP Visualizations and Artifact Store with S3 as source Helm Charts (#463) (fdbfea0)</a>
+  Last modified October 13, 2022: <a href="https://github.com/awslabs/kubeflow-manifests//commit/744fbb1d8e4e69fbcaf983868ec1813e74c0d9ba"> [Kubeflow on AWS] Restructuring/rephrasing of Deployment&gt;Cognito section (#461) (744fbb1)</a>
 </div>
 
 </div>

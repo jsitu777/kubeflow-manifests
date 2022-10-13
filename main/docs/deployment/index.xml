@@ -209,7 +209,7 @@ You might want to grant &lt;code&gt;Administrative Privileges&lt;/code&gt; as it
 &lt;h3 id=&#34;option-1-amazon-ec2&#34;&gt;Option 1: Amazon EC2&lt;/h3&gt;
 &lt;p&gt;Run the following command on your EC2 instance:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;make port-forward
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then,on your local machine, run the following:&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Then, on your local machine, run the following:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;ssh -i &amp;lt;path-to-your-key-pem&amp;gt; -L 8080:localhost:8080 -N ubuntu@ec2-&amp;lt;Public-IPv4-DNS&amp;gt;.compute-1.amazonaws.com -o &lt;span class=&#34;nv&#34;&gt;ExitOnForwardFailure&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;yes
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can then open the browser and go to &lt;a href=&#34;http://localhost:8080/&#34;&gt;http://localhost:8080/&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;option-2-docker&#34;&gt;Option 2: Docker&lt;/h3&gt;
@@ -227,7 +227,7 @@ You might want to grant &lt;code&gt;Administrative Privileges&lt;/code&gt; as it
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;$(&lt;/span&gt;terraform output -raw configure_kubectl&lt;span class=&#34;k&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
-&lt;p&gt;Choose your port forward option from &lt;a href=&#34;#port-forward-manifest-deployment&#34;&gt;here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;#port-forward-manifest-deployment&#34;&gt;Choose your port forward option&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2 id=&#34;open-the-browser&#34;&gt;Open the browser&lt;/h2&gt;
