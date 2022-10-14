@@ -28,7 +28,7 @@
       "datePublished": "0001-01-01 00:00:00 \u002b0000 UTC",
       "dateModified" : "0001-01-01 00:00:00 \u002b0000 UTC",
       "url" : "https:\/\/jsitu777.github.io\/kubeflow-manifests\/main\/docs\/deployment\/cognito\/guide-terraform\/",
-      "wordCount" : "376",
+      "wordCount" : "425",
       "keywords" : [ "Kubeflow" ]
   }
   </script>
@@ -49,12 +49,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/cognito/guide-terraform/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2022-10-13T19:29:52-04:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
+<meta property="article:modified_time" content="2022-10-14T08:55:58-07:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
 
 <meta itemprop="name" content="Terraform Deployment Guide">
 <meta itemprop="description" content="Deploy Kubeflow with AWS Cognito as an identity provider using Terraform">
-<meta itemprop="dateModified" content="2022-10-13T19:29:52-04:00" />
-<meta itemprop="wordCount" content="376">
+<meta itemprop="dateModified" content="2022-10-14T08:55:58-07:00" />
+<meta itemprop="wordCount" content="425">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Terraform Deployment Guide"/>
 <meta name="twitter:description" content="Deploy Kubeflow with AWS Cognito as an identity provider using Terraform"/>
@@ -62,8 +62,8 @@
 
 
 
-<link rel="preload" href="/kubeflow-manifests/main/scss/main.min.cfd7574257326fddbc6f33f260c0bda4c6d74394ebf2531282625a18d0a19e75.css" as="style">
-<link href="/kubeflow-manifests/main/scss/main.min.cfd7574257326fddbc6f33f260c0bda4c6d74394ebf2531282625a18d0a19e75.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/kubeflow-manifests/main/scss/main.min.8e19d503dc21f6c6cf4fc5e28fb0ba07d2e0fc64f2245365f16c8e79c3f69bf1.css" as="style">
+<link href="/kubeflow-manifests/main/scss/main.min.8e19d503dc21f6c6cf4fc5e28fb0ba07d2e0fc64f2245365f16c8e79c3f69bf1.css" rel="stylesheet" integrity="">
 
 <script
   src="https://code.jquery.com/jquery-3.5.1.min.js"
@@ -100,6 +100,16 @@
 				
 				
 				<a class="nav-link" href="/kubeflow-manifests/main/docs/" ><i class='fas fa-book pr-2'></i><span>Documentation</span></a>
+			</li>
+			
+			<li class="nav-item mr-2 mr-lg-4 mt-1 mt-lg-0">
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/kubeflow-manifests/main/blog/" ><i class='fas fa-blog pr-2'></i><span>Blog</span></a>
 			</li>
 			
 			<li class="nav-item mr-2 mr-lg-4 mt-1 mt-lg-0">
@@ -512,7 +522,12 @@ Additionally you have to set the Terraform variable <code>create_subdomain=false
 </span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">SUBDOMAIN</span><span class="o">=</span>
 </span></span><span class="line"><span class="cl"><span class="c1"># Name of the cognito user pool to create</span>
 </span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">USER_POOL_NAME</span><span class="o">=</span>
-</span></span></code></pre></div></li>
+</span></span><span class="line"><span class="cl"><span class="c1"># Load balancer scheme</span>
+</span></span><span class="line"><span class="cl"><span class="nb">export</span> <span class="nv">LOAD_BALANCER_SCHEME</span><span class="o">=</span>internet-facing
+</span></span></code></pre></div><blockquote>
+<p>NOTE: Configure Load Balancer Scheme (e.g. <code>internet-facing</code> or <code>internal</code>). Default is set to <code>internet-facing</code>. Use <code>internal</code> as the load balancer scheme if you want the load balancer to be accessible only within your VPC. See <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/how-elastic-load-balancing-works.html#load-balancer-scheme">Load balancer scheme</a> in the AWS documentation</p>
+</blockquote>
+</li>
 <li>
 <p>Save the variables to a <code>.tfvars</code> file:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">cat <span class="s">&lt;&lt;EOF &gt; sample.auto.tfvars
@@ -521,6 +536,7 @@ Additionally you have to set the Terraform variable <code>create_subdomain=false
 </span></span></span><span class="line"><span class="cl"><span class="s">aws_route53_root_zone_name=&#34;${ROOT_DOMAIN}&#34;
 </span></span></span><span class="line"><span class="cl"><span class="s">aws_route53_subdomain_zone_name=&#34;${SUBDOMAIN}&#34;
 </span></span></span><span class="line"><span class="cl"><span class="s">cognito_user_pool_name=&#34;${USER_POOL_NAME}&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s">load_balancer_scheme=&#34;${LOAD_BALANCER_SCHEME}
 </span></span></span><span class="line"><span class="cl"><span class="s">EOF</span>
 </span></span></code></pre></div></li>
 </ol>
@@ -547,7 +563,7 @@ Additionally you have to set the Terraform variable <code>create_subdomain=false
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified October 13, 2022: <a href="https://github.com/awslabs/kubeflow-manifests//commit/744fbb1d8e4e69fbcaf983868ec1813e74c0d9ba"> [Kubeflow on AWS] Restructuring/rephrasing of Deployment&gt;Cognito section (#461) (744fbb1)</a>
+  Last modified October 14, 2022: <a href="https://github.com/awslabs/kubeflow-manifests//commit/4a6bec9d82d23086e29af2b525bc286a14abd6b3">Add Load balancer scheme config option (#469) (4a6bec9)</a>
 </div>
 
 </div>
