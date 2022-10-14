@@ -2057,17 +2057,11 @@ Export the below variable:&lt;/p&gt;
 &lt;p&gt;Note: The script will &lt;strong&gt;not&lt;/strong&gt; delete any resource. Therefore, if a resource already exists (eg: Secret, database with the same name, or S3 bucket), &lt;strong&gt;it will skip the creation of those resources and use the existing resources instead&lt;/strong&gt;. This is by design in order to prevent unwanted results, such as accidental deletion. For example, if a database with the same name already exists, the script will skip the database creation setup. If you forgot to change the database name used for creation, then this gives you the chance to retry the script with the proper value. See &lt;code&gt;python auto-rds-s3-setup.py --help&lt;/code&gt; for the list of parameters, as well as their default values.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ol&gt;
-&lt;li&gt;Navigate to the &lt;code&gt;tests/e2e&lt;/code&gt; directory.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;Navigate to the &lt;code&gt;tests/e2e&lt;/code&gt; directory.
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; tests/e2e
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;Install the script dependencies.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip install -r requirements.txt
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html#id_users_create_cliwpsapi&#34;&gt;Create an IAM user&lt;/a&gt; with permissions to get bucket locations and allow read and write access to objects in an S3 bucket where you want to store the Kubeflow artifacts. Take note of the &lt;code&gt;AWS_ACCESS_KEY_ID&lt;/code&gt; and &lt;code&gt;AWS_SECRET_ACCESS_KEY&lt;/code&gt; of the IAM user that you created to use in the following step, which will be referenced as &lt;code&gt;MINIO_AWS_ACCESS_KEY_ID&lt;/code&gt; and &lt;code&gt;MINIO_AWS_SECRET_ACCESS_KEY&lt;/code&gt; respectively.&lt;/li&gt;
-&lt;li&gt;Export values for &lt;code&gt;CLUSTER_REGION&lt;/code&gt;, &lt;code&gt;CLUSTER_NAME&lt;/code&gt;, &lt;code&gt;S3_BUCKET&lt;/code&gt;, &lt;code&gt;MINIO_AWS_ACCESS_KEY_ID&lt;/code&gt;, and &lt;code&gt;MINIO_AWS_SECRET_ACCESS_KEY&lt;/code&gt;. Then, run the &lt;code&gt;auto-rds-s3-setup.py&lt;/code&gt; script.&lt;/li&gt;
-&lt;/ol&gt;
+&lt;li&gt;Export values for &lt;code&gt;CLUSTER_REGION&lt;/code&gt;, &lt;code&gt;CLUSTER_NAME&lt;/code&gt;, &lt;code&gt;S3_BUCKET&lt;/code&gt;, &lt;code&gt;MINIO_AWS_ACCESS_KEY_ID&lt;/code&gt;, and &lt;code&gt;MINIO_AWS_SECRET_ACCESS_KEY&lt;/code&gt;.
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;CLUSTER_REGION&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&amp;lt;&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;CLUSTER_NAME&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&amp;lt;&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;S3_BUCKET&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&amp;lt;&amp;gt;
@@ -2077,10 +2071,12 @@ Export the below variable:&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;MINIO_AWS_SECRET_ACCESS_KEY&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&amp;lt;&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;RDS_SECRET_NAME&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&amp;lt;&amp;gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;S3_SECRET_NAME&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&amp;lt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;PYTHONPATH&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;.. python utils/rds-s3/auto-rds-s3-setup.py
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;--region &lt;span class=&#34;nv&#34;&gt;$CLUSTER_REGION&lt;/span&gt; --cluster &lt;span class=&#34;nv&#34;&gt;$CLUSTER_NAME&lt;/span&gt; --bucket &lt;span class=&#34;nv&#34;&gt;$S3_BUCKET&lt;/span&gt; --s3_aws_access_key_id &lt;span class=&#34;nv&#34;&gt;$MINIO_AWS_ACCESS_KEY_ID&lt;/span&gt; --s3_aws_secret_access_key &lt;span class=&#34;nv&#34;&gt;$MINIO_AWS_SECRET_ACCESS_KEY&lt;/span&gt; --db_instance_name &lt;span class=&#34;nv&#34;&gt;$DB_INSTANCE_NAME&lt;/span&gt; --s3_secret_name &lt;span class=&#34;nv&#34;&gt;$S3_SECRET_NAME&lt;/span&gt; --rds_secret_name &lt;span class=&#34;nv&#34;&gt;$RDS_SECRET_NAME&lt;/span&gt; --db_subnet_group_name &lt;span class=&#34;nv&#34;&gt;$DB_SUBNET_GROUP_NAME&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;advanced-customization&#34;&gt;Advanced customization&lt;/h3&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;Run the &lt;code&gt;auto-rds-s3-setup.py&lt;/code&gt; script
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;PYTHONPATH=.. python utils/rds-s3/auto-rds-s3-setup.py --region $CLUSTER_REGION --cluster $CLUSTER_NAME --bucket $S3_BUCKET --s3_aws_access_key_id $MINIO_AWS_ACCESS_KEY_ID --s3_aws_secret_access_key $MINIO_AWS_SECRET_ACCESS_KEY --db_instance_name $DB_INSTANCE_NAME --s3_secret_name $S3_SECRET_NAME --rds_secret_name $RDS_SECRET_NAME --db_subnet_group_name $DB_SUBNET_GROUP_NAME
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;advanced-customization&#34;&gt;Advanced customization&lt;/h3&gt;
 &lt;p&gt;The &lt;code&gt;auto-rds-s3-setup.py&lt;/code&gt; script applies default values for the user password, max storage, storage type, instance type, and more. You can customize those preferences by specifying different values.&lt;/p&gt;
 &lt;p&gt;Learn more about the different parameters with the following command:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nv&#34;&gt;PYTHONPATH&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;.. python utils/rds-s3/auto-rds-s3-setup.py --help
@@ -2246,7 +2242,9 @@ Take note of your &lt;code&gt;S3 bucket name&lt;/code&gt; to use in the followin
 &lt;li&gt;RDS only&lt;/li&gt;
 &lt;li&gt;S3 only&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;rds-and-s3-deploy-both-rds-and-s3&#34;&gt;[RDS and S3] Deploy both RDS and S3&lt;/h4&gt;
+&lt;p&gt;Navigate to the root of repository&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$REPO_ROOT&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;rds-and-s3-deploy-both-rds-and-s3&#34;&gt;[RDS and S3] Deploy both RDS and S3&lt;/h4&gt;
 &lt;p&gt;Use the following command to deploy the Kubeflow manifests for both RDS and S3:
 
 
