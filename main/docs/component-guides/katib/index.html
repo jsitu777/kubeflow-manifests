@@ -49,11 +49,11 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jsitu777.github.io/kubeflow-manifests/main/docs/component-guides/katib/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2022-10-14T15:57:38-07:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
+<meta property="article:modified_time" content="2023-03-20T12:16:00-07:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
 
 <meta itemprop="name" content="Katib">
 <meta itemprop="description" content="Get started with Katib on Amazon EKS">
-<meta itemprop="dateModified" content="2022-10-14T15:57:38-07:00" />
+<meta itemprop="dateModified" content="2023-03-20T12:16:00-07:00" />
 <meta itemprop="wordCount" content="668">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Katib"/>
@@ -76,6 +76,8 @@
     
     <link href="/kubeflow-manifests/main/css/copy-code-button.min.css" rel="stylesheet">
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />
+
 
   </head>
   <body class="td-page">
@@ -90,6 +92,10 @@
 	</button>
 	<div class="collapse navbar-collapse ml-md-auto" id="main_navbar">
 		<ul class="navbar-nav ml-auto pt-4 pt-md-0 my-2 my-md-1">
+			<li class="nav-item mr-2 mr-lg-4 mt-1 mt-lg-0">
+				<div id="docsearch"></div>
+			</li>
+
 			
 			
 			<li class="nav-item mr-2 mr-lg-4 mt-1 mt-lg-0">
@@ -146,6 +152,7 @@
 			
 		</ul>
 	</div>
+	
 </nav>
 
     </header>
@@ -280,6 +287,10 @@
   <input type="checkbox" id="m-kubeflow-manifestsmaindocsdeploymentconnect-kubeflow-dashboard-check"/>
   <label for="m-kubeflow-manifestsmaindocsdeploymentconnect-kubeflow-dashboard-check"><a href="/kubeflow-manifests/main/docs/deployment/connect-kubeflow-dashboard/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-kubeflow-manifestsmaindocsdeploymentconnect-kubeflow-dashboard"><span class="">Connect to your Kubeflow Dashboard</span></a></label>
   
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-kubeflow-manifestsmaindocsdeploymentconfigure-notebook-culling-li">
+  <input type="checkbox" id="m-kubeflow-manifestsmaindocsdeploymentconfigure-notebook-culling-check"/>
+  <label for="m-kubeflow-manifestsmaindocsdeploymentconfigure-notebook-culling-check"><a href="/kubeflow-manifests/main/docs/deployment/configure-notebook-culling/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-kubeflow-manifestsmaindocsdeploymentconfigure-notebook-culling"><span class="">Configure Culling for Notebooks</span></a></label>
+  
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-kubeflow-manifestsmaindocsadd-ons-li">
@@ -335,7 +346,11 @@
   <label for="m-kubeflow-manifestsmaindocscomponent-guideskserve-check"><a href="/kubeflow-manifests/main/docs/component-guides/kserve/" class="align-left pl-0  td-sidebar-link td-sidebar-link__section" id="m-kubeflow-manifestsmaindocscomponent-guideskserve"><span class="">KServe</span></a></label>
   
   <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-kubeflow-manifestsmaindocscomponent-guideskservetutorial-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-kubeflow-manifestsmaindocscomponent-guideskserveaccess-aws-services-from-kserve-li">
+  <input type="checkbox" id="m-kubeflow-manifestsmaindocscomponent-guideskserveaccess-aws-services-from-kserve-check"/>
+  <label for="m-kubeflow-manifestsmaindocscomponent-guideskserveaccess-aws-services-from-kserve-check"><a href="/kubeflow-manifests/main/docs/component-guides/kserve/access-aws-services-from-kserve/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-kubeflow-manifestsmaindocscomponent-guideskserveaccess-aws-services-from-kserve"><span class="">Configure inferenceService to Access AWS Services from KServe</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-kubeflow-manifestsmaindocscomponent-guideskservetutorial-li">
   <input type="checkbox" id="m-kubeflow-manifestsmaindocscomponent-guideskservetutorial-check"/>
   <label for="m-kubeflow-manifestsmaindocscomponent-guideskservetutorial-check"><a href="/kubeflow-manifests/main/docs/component-guides/kserve/tutorial/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-kubeflow-manifestsmaindocscomponent-guideskservetutorial"><span class="">KServe with Kubeflow on AWS</span></a></label>
   
@@ -706,7 +721,7 @@
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified October 14, 2022: <a href="https://github.com/awslabs/kubeflow-manifests//commit/01e432b4b6d50695eb8fa55289cc1aafa7cd6090">Update website links to v1.6.1 (#486) (01e432b)</a>
+  Last modified March 20, 2023: <a href="https://github.com/awslabs/kubeflow-manifests//commit/4b280c21a94edc93b96aa4b68c3fac510444c610">Merge branch &#39;awslabs:main&#39; into main (4b280c2)</a>
 </div>
 
 </div>
@@ -726,7 +741,7 @@
         
       </div>
       <div class="col text-center py-2 order-sm-2">
-        <small class="text-white">&copy; 2022 The Kubeflow on AWS Authors.</small>
+        <small class="text-white">&copy; 2023 The Kubeflow on AWS Authors.</small>
         
 	
       </div>
@@ -773,6 +788,28 @@
 
 <script src="/kubeflow-manifests/main/js/copy-code-button.min.js"></script>
 
+
+<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>
+
+<script type="text/javascript">
+
+docsearch({
+
+appId: 'A1FXAERJE4',
+
+apiKey: '88f3a753878f24ffdcd3d786be775545',
+
+indexName: 'kubeflow-manifests',
+
+container: '#docsearch',
+
+searchParameters: {
+    facetFilters: ["version: main "],
+  },
+debug: true 
+
+});
+</script>
 
 
 

@@ -337,6 +337,8 @@ Skip this step if your domain is managed by other domain provider.&lt;/p&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;        &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;us-east-1-certARN&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;arn:aws:acm:us-east-1:123456789012:certificate/373cc726-f525-4bc7-b7bf-d1d7b641c238&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;h3 id=&#34;optional-configure-culling-for-notebooks&#34;&gt;(Optional) Configure Culling for Notebooks&lt;/h3&gt;
+&lt;p&gt;Enable culling for notebooks by following the &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/configure-notebook-culling/&#34;&gt;instructions&lt;/a&gt; in configure culling for notebooks guide.&lt;/p&gt;
 &lt;h2 id=&#34;20-install-kubeflow&#34;&gt;2.0 Install Kubeflow&lt;/h2&gt;
 &lt;p&gt;Install Kubeflow using the following command:
 
@@ -374,25 +376,25 @@ Skip this step if your domain is managed by other domain provider.&lt;/p&gt;
 
 
 
-&lt;ul class=&#34;nav nav-tabs&#34; id=&#34;tabs-6&#34; role=&#34;tablist&#34;&gt;&lt;li class=&#34;nav-item&#34;&gt;
+&lt;ul class=&#34;nav nav-tabs&#34; id=&#34;tabs-7&#34; role=&#34;tablist&#34;&gt;&lt;li class=&#34;nav-item&#34;&gt;
       &lt;a class=&#34;nav-link active tab-Kustomize&#34;
-        id=&#34;tabs-6-0-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-6-0&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Kustomize&amp;#34;);&#34;
-        aria-controls=&#34;tabs-6-0&#34; aria-selected=&#34;true&#34;&gt;
+        id=&#34;tabs-7-0-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-7-0&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Kustomize&amp;#34;);&#34;
+        aria-controls=&#34;tabs-7-0&#34; aria-selected=&#34;true&#34;&gt;
         Kustomize
       &lt;/a&gt;
     &lt;/li&gt;&lt;li class=&#34;nav-item&#34;&gt;
       &lt;a class=&#34;nav-link tab-Helm&#34;
-        id=&#34;tabs-6-1-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-6-1&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Helm&amp;#34;);&#34;
-        aria-controls=&#34;tabs-6-1&#34; aria-selected=&#34;false&#34;&gt;
+        id=&#34;tabs-7-1-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-7-1&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Helm&amp;#34;);&#34;
+        aria-controls=&#34;tabs-7-1&#34; aria-selected=&#34;false&#34;&gt;
         Helm
       &lt;/a&gt;
     &lt;/li&gt;&lt;/ul&gt;
 
 
-&lt;div class=&#34;tab-content&#34; id=&#34;tabs-6-content&#34;&gt;&lt;div class=&#34;tab-pane fade show active&#34;
-        id=&#34;tabs-6-0&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-6-0-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;deploy-kubeflow&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;INSTALLATION_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;kustomize&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;DEPLOYMENT_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cognito&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&#34;tab-content&#34; id=&#34;tabs-7-content&#34;&gt;&lt;div class=&#34;tab-pane fade show active&#34;
+        id=&#34;tabs-7-0&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-7-0-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;deploy-kubeflow&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;INSTALLATION_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;kustomize&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;DEPLOYMENT_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cognito&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
   &lt;div class=&#34;tab-pane fade&#34;
-        id=&#34;tabs-6-1&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-6-1-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;l&#34;&gt;make deploy-kubeflow INSTALLATION_OPTION=helm DEPLOYMENT_OPTION=cognito&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+        id=&#34;tabs-7-1&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-7-1-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;l&#34;&gt;make deploy-kubeflow INSTALLATION_OPTION=helm DEPLOYMENT_OPTION=cognito&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
   
 &lt;/div&gt;
 &lt;/p&gt;
@@ -475,26 +477,26 @@ Skip this step if your domain is managed by other domain provider.&lt;/p&gt;
 
 
 
-    &lt;ul class=&#34;nav nav-tabs&#34; id=&#34;tabs-9&#34; role=&#34;tablist&#34;&gt;&lt;li class=&#34;nav-item&#34;&gt;
+    &lt;ul class=&#34;nav nav-tabs&#34; id=&#34;tabs-10&#34; role=&#34;tablist&#34;&gt;&lt;li class=&#34;nav-item&#34;&gt;
       &lt;a class=&#34;nav-link active tab-Kustomize&#34;
-        id=&#34;tabs-9-0-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-9-0&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Kustomize&amp;#34;);&#34;
-        aria-controls=&#34;tabs-9-0&#34; aria-selected=&#34;true&#34;&gt;
+        id=&#34;tabs-10-0-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-10-0&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Kustomize&amp;#34;);&#34;
+        aria-controls=&#34;tabs-10-0&#34; aria-selected=&#34;true&#34;&gt;
         Kustomize
       &lt;/a&gt;
     &lt;/li&gt;&lt;li class=&#34;nav-item&#34;&gt;
       &lt;a class=&#34;nav-link tab-Helm&#34;
-        id=&#34;tabs-9-1-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-9-1&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Helm&amp;#34;);&#34;
-        aria-controls=&#34;tabs-9-1&#34; aria-selected=&#34;false&#34;&gt;
+        id=&#34;tabs-10-1-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-10-1&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Helm&amp;#34;);&#34;
+        aria-controls=&#34;tabs-10-1&#34; aria-selected=&#34;false&#34;&gt;
         Helm
       &lt;/a&gt;
     &lt;/li&gt;&lt;/ul&gt;
 
 
-&lt;div class=&#34;tab-content&#34; id=&#34;tabs-9-content&#34;&gt;&lt;div class=&#34;tab-pane fade show active&#34;
-        id=&#34;tabs-9-0&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-9-0-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;delete-kubeflow&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;INSTALLATION_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;kustomize&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;DEPLOYMENT_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cognito&lt;/span&gt;
+&lt;div class=&#34;tab-content&#34; id=&#34;tabs-10-content&#34;&gt;&lt;div class=&#34;tab-pane fade show active&#34;
+        id=&#34;tabs-10-0&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-10-0-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;delete-kubeflow&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;INSTALLATION_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;kustomize&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;DEPLOYMENT_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cognito&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
   &lt;div class=&#34;tab-pane fade&#34;
-        id=&#34;tabs-9-1&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-9-1-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;l&#34;&gt;make delete-kubeflow INSTALLATION_OPTION=helm DEPLOYMENT_OPTION=cognito&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+        id=&#34;tabs-10-1&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-10-1-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;l&#34;&gt;make delete-kubeflow INSTALLATION_OPTION=helm DEPLOYMENT_OPTION=cognito&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
   
 &lt;/div&gt;
@@ -590,6 +592,101 @@ Skip this step if your domain is managed by other domain provider.&lt;/p&gt;
 &lt;li&gt;Create a Kubeflow Pipeline built entirely using &lt;strong&gt;&lt;a href=&#34;https://github.com/kubeflow/pipelines/tree/master/components/aws/sagemaker&#34;&gt;SageMaker Components for Kubeflow Pipelines&lt;/a&gt;&lt;/strong&gt;, or integrate individual components into your workflow as needed.&lt;/li&gt;
 &lt;/ul&gt;
 
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Configure inferenceService to Access AWS Services from KServe</title>
+      <link>https://jsitu777.github.io/kubeflow-manifests/main/docs/component-guides/kserve/access-aws-services-from-kserve/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jsitu777.github.io/kubeflow-manifests/main/docs/component-guides/kserve/access-aws-services-from-kserve/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;access-aws-service-from-kserve-with-iam-roles-for-serviceaccountirsa&#34;&gt;Access AWS Service from Kserve with IAM Roles for ServiceAccount（IRSA）&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Export env values:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;CLUSTER_NAME&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;lt;&amp;gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;CLUSTER_REGION&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;lt;&amp;gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;PROFILE_NAMESPACE&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;kubeflow-user-example-com
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;SERVICE_ACCOUNT_NAME&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;aws-sa
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 123456789.dkr.ecr.us-west-2.amazonaws.com/kserve/sklearnserver:v0.8.0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;ECR_IMAGE_URL&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;lt;&amp;gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# s3://your-s3-bucket/model&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;S3_BUCKET_URL&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;lt;&amp;gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Create Service Account with IAM Role using &lt;a href=&#34;https://docs.aws.amazon.com/eks/latest/userguide/iam-roles-for-service-accounts.html&#34;&gt;IRSA&lt;/a&gt;. The following command attaches both &lt;code&gt;AmazonEC2ContainerRegistryReadOnly&lt;/code&gt; and &lt;code&gt;AmazonS3ReadOnlyAccess&lt;/code&gt; IAM policies:&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;eksctl create iamserviceaccount --name ${SERVICE_ACCOUNT_NAME} --namespace ${PROFILE_NAMESPACE} --cluster ${CLUSTER_NAME} --region ${CLUSTER_REGION} --attach-policy-arn=arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly --attach-policy-arn=arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess  --override-existing-serviceaccounts --approve
+&lt;/code&gt;&lt;/pre&gt;&lt;blockquote&gt;
+&lt;p&gt;NOTE: You can use ECR (&lt;code&gt;AmazonEC2ContainerRegistryReadOnly&lt;/code&gt;) and S3 (&lt;code&gt;AmazonS3ReadOnlyAccess&lt;/code&gt;) ReadOnly managed policies. We recommend creating fine grained policy for production usecase.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;deploy-models-from-s3-bucket&#34;&gt;Deploy models from S3 Bucket&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Create Secret with empty AWS Credential:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt;EOF &amp;gt; secret.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;apiVersion: v1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;    kind: Secret
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;    metadata:
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;      name: aws-secret
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;      namespace: ${PROFILE_NAMESPACE}
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;      annotations:
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;        serving.kserve.io/s3-endpoint: s3.amazonaws.com
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;        serving.kserve.io/s3-usehttps: &amp;#34;1&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;        serving.kserve.io/s3-region: ${CLUSTER_REGION}
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;    type: Opaque
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;    data:
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;      AWS_ACCESS_KEY_ID: &amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;      AWS_SECRET_ACCESS_KEY: &amp;#34;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;EOF&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubectl apply -f secret.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
+&lt;p&gt;NOTE: The &lt;strong&gt;empty&lt;/strong&gt; keys for &lt;code&gt;AWS_ACCESS_KEY_ID/AWS_SECRET_ACCESS_KEY&lt;/code&gt; force it to add the env vars to the init containers but don&amp;rsquo;t override the actual credentials from the IAM role (which happens if you add dummy values). These &lt;strong&gt;empty&lt;/strong&gt; keys are needed for IRSA to work in current version and will not be needed in future release.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;Attach secret to IRSA in your profile namespace:
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;kubectl patch serviceaccount ${SERVICE_ACCOUNT_NAME} -n ${PROFILE_NAMESPACE} -p &amp;#39;{&amp;#34;secrets&amp;#34;: [{&amp;#34;name&amp;#34;: &amp;#34;aws-secret&amp;#34;}]}&amp;#39;
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;create-an-inferenceservice&#34;&gt;Create an InferenceService&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Specify the service account in the model server spec :&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;NOTE: make sure you have workable image in &lt;code&gt;${ECR_IMAGE_URL}&lt;/code&gt;and model in &lt;code&gt;${S3_BUCKET_URL}&lt;/code&gt; for the inferenceService to work. Versioning of model and image must be consistent: eg. you can not use a v1 model then a v2 image.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt;EOF &amp;gt; inferenceService.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;apiVersion: serving.kserve.io/v1beta1
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;kind: InferenceService
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;metadata:
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;  name: &amp;#34;sklearn-iris&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;  namespace: ${PROFILE_NAMESPACE}
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;  annotations:
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;    sidecar.istio.io/inject: &amp;#34;false&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;spec:
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;  predictor:
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;    serviceAccountName: ${SERVICE_ACCOUNT_NAME}
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;    model:
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;      modelFormat:
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;        name: sklearn
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;      image: ${ECR_IMAGE_URL}
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;      storageUri: ${S3_BUCKET_URL}
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;EOF&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubectl apply -f inferenceService.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol&gt;
+&lt;li&gt;Check the InferenceService status:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;kubectl get inferenceservices sklearn-iris -n &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;PROFILE_NAMESPACE&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;NAME           URL                                                        READY   PREV   LATEST   PREVROLLEDOUTREVISION   LATESTREADYREVISION                    AGE
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sklearn-iris   http://sklearn-iris.kubeflow-user-example-com.example.com   True           &lt;span class=&#34;m&#34;&gt;100&lt;/span&gt;                              sklearn-iris-predictor-default-00001   105s
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       </description>
     </item>
     
@@ -1050,8 +1147,7 @@ data:
 &lt;/ol&gt;
 &lt;h2 id=&#34;configure-custom-domain-and-cognito&#34;&gt;Configure Custom Domain and Cognito&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Follow the Section 2.0 of &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/cognito/manifest/guide-automated/#20-create-required-resources&#34;&gt;Cognito setup guide&lt;/a&gt; in order to:&lt;/p&gt;
+&lt;li&gt;Follow the Section 2.0 of &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/cognito/manifest/guide-automated/#20-create-required-resources&#34;&gt;Cognito setup guide&lt;/a&gt; in order to:
 &lt;ol&gt;
 &lt;li&gt;Create a custom domain&lt;/li&gt;
 &lt;li&gt;Create TLS certificates for the domain&lt;/li&gt;
@@ -1059,6 +1155,10 @@ data:
 &lt;li&gt;Configure Ingress&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;optional-configure-culling-for-notebooks&#34;&gt;(Optional) Configure Culling for Notebooks&lt;/h3&gt;
+&lt;p&gt;Enable culling for notebooks by following the &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/configure-notebook-culling/&#34;&gt;instructions&lt;/a&gt; in configure culling for notebooks guide.&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
 &lt;li&gt;
 &lt;p&gt;Deploy Kubeflow.&lt;/p&gt;
 &lt;ol&gt;
@@ -1098,25 +1198,25 @@ data:
 
 
 
-&lt;ul class=&#34;nav nav-tabs&#34; id=&#34;tabs-3&#34; role=&#34;tablist&#34;&gt;&lt;li class=&#34;nav-item&#34;&gt;
+&lt;ul class=&#34;nav nav-tabs&#34; id=&#34;tabs-4&#34; role=&#34;tablist&#34;&gt;&lt;li class=&#34;nav-item&#34;&gt;
       &lt;a class=&#34;nav-link active tab-Kustomize&#34;
-        id=&#34;tabs-3-0-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-3-0&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Kustomize&amp;#34;);&#34;
-        aria-controls=&#34;tabs-3-0&#34; aria-selected=&#34;true&#34;&gt;
+        id=&#34;tabs-4-0-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-4-0&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Kustomize&amp;#34;);&#34;
+        aria-controls=&#34;tabs-4-0&#34; aria-selected=&#34;true&#34;&gt;
         Kustomize
       &lt;/a&gt;
     &lt;/li&gt;&lt;li class=&#34;nav-item&#34;&gt;
       &lt;a class=&#34;nav-link tab-Helm&#34;
-        id=&#34;tabs-3-1-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-3-1&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Helm&amp;#34;);&#34;
-        aria-controls=&#34;tabs-3-1&#34; aria-selected=&#34;false&#34;&gt;
+        id=&#34;tabs-4-1-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-4-1&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Helm&amp;#34;);&#34;
+        aria-controls=&#34;tabs-4-1&#34; aria-selected=&#34;false&#34;&gt;
         Helm
       &lt;/a&gt;
     &lt;/li&gt;&lt;/ul&gt;
 
 
-&lt;div class=&#34;tab-content&#34; id=&#34;tabs-3-content&#34;&gt;&lt;div class=&#34;tab-pane fade show active&#34;
-        id=&#34;tabs-3-0&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-3-0-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;deploy-kubeflow&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;INSTALLATION_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;kustomize&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;DEPLOYMENT_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cognito-rds-s3&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&#34;tab-content&#34; id=&#34;tabs-4-content&#34;&gt;&lt;div class=&#34;tab-pane fade show active&#34;
+        id=&#34;tabs-4-0&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-4-0-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;deploy-kubeflow&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;INSTALLATION_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;kustomize&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;DEPLOYMENT_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cognito-rds-s3&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
   &lt;div class=&#34;tab-pane fade&#34;
-        id=&#34;tabs-3-1&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-3-1-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;l&#34;&gt;make deploy-kubeflow INSTALLATION_OPTION=helm DEPLOYMENT_OPTION=cognito-rds-s3&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+        id=&#34;tabs-4-1&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-4-1-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;l&#34;&gt;make deploy-kubeflow INSTALLATION_OPTION=helm DEPLOYMENT_OPTION=cognito-rds-s3&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
   
 &lt;/div&gt;
 &lt;/li&gt;
@@ -1178,26 +1278,26 @@ data:
 
 
 
-    &lt;ul class=&#34;nav nav-tabs&#34; id=&#34;tabs-5&#34; role=&#34;tablist&#34;&gt;&lt;li class=&#34;nav-item&#34;&gt;
+    &lt;ul class=&#34;nav nav-tabs&#34; id=&#34;tabs-6&#34; role=&#34;tablist&#34;&gt;&lt;li class=&#34;nav-item&#34;&gt;
       &lt;a class=&#34;nav-link active tab-Kustomize&#34;
-        id=&#34;tabs-5-0-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-5-0&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Kustomize&amp;#34;);&#34;
-        aria-controls=&#34;tabs-5-0&#34; aria-selected=&#34;true&#34;&gt;
+        id=&#34;tabs-6-0-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-6-0&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Kustomize&amp;#34;);&#34;
+        aria-controls=&#34;tabs-6-0&#34; aria-selected=&#34;true&#34;&gt;
         Kustomize
       &lt;/a&gt;
     &lt;/li&gt;&lt;li class=&#34;nav-item&#34;&gt;
       &lt;a class=&#34;nav-link tab-Helm&#34;
-        id=&#34;tabs-5-1-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-5-1&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Helm&amp;#34;);&#34;
-        aria-controls=&#34;tabs-5-1&#34; aria-selected=&#34;false&#34;&gt;
+        id=&#34;tabs-6-1-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-6-1&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Helm&amp;#34;);&#34;
+        aria-controls=&#34;tabs-6-1&#34; aria-selected=&#34;false&#34;&gt;
         Helm
       &lt;/a&gt;
     &lt;/li&gt;&lt;/ul&gt;
 
 
-&lt;div class=&#34;tab-content&#34; id=&#34;tabs-5-content&#34;&gt;&lt;div class=&#34;tab-pane fade show active&#34;
-        id=&#34;tabs-5-0&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-5-0-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;delete-kubeflow&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;INSTALLATION_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;kustomize&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;DEPLOYMENT_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cognito-rds-s3&lt;/span&gt;
+&lt;div class=&#34;tab-content&#34; id=&#34;tabs-6-content&#34;&gt;&lt;div class=&#34;tab-pane fade show active&#34;
+        id=&#34;tabs-6-0&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-6-0-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;delete-kubeflow&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;INSTALLATION_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;kustomize&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;DEPLOYMENT_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cognito-rds-s3&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
   &lt;div class=&#34;tab-pane fade&#34;
-        id=&#34;tabs-5-1&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-5-1-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;l&#34;&gt;make delete-kubeflow INSTALLATION_OPTION=helm DEPLOYMENT_OPTION=cognito-rds-s3&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
+        id=&#34;tabs-6-1&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-6-1-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;l&#34;&gt;make delete-kubeflow INSTALLATION_OPTION=helm DEPLOYMENT_OPTION=cognito-rds-s3&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
   
 &lt;/div&gt;
@@ -1396,9 +1496,9 @@ public.ecr.aws/kubeflow-on-aws/notebook-servers/jupyter-pytorch:1.12.0-cpu-py38-
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Launch Ubuntu 18.04 cloud9 instance 
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;clone-repository&#34;&gt;Clone repository&lt;/h2&gt;
 &lt;p&gt;Clone the &lt;a href=&#34;https://github.com/awslabs/kubeflow-manifests&#34;&gt;&lt;code&gt;awslabs/kubeflow-manifests&lt;/code&gt;&lt;/a&gt; and the &lt;a href=&#34;https://github.com/kubeflow/manifests&#34;&gt;&lt;code&gt;kubeflow/manifests&lt;/code&gt;&lt;/a&gt; repositories and check out the release branches of your choosing.&lt;/p&gt;
-&lt;p&gt;Substitute the value for &lt;code&gt;KUBEFLOW_RELEASE_VERSION&lt;/code&gt;(e.g. v1.6.1) and &lt;code&gt;AWS_RELEASE_VERSION&lt;/code&gt;(e.g. v1.6.0-aws-b1.0.0) with the tag or branch you want to use below. Read more about &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/about/releases/&#34;&gt;releases and versioning&lt;/a&gt; if you are unsure about what these values should be.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;KUBEFLOW_RELEASE_VERSION&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;v1.6.1
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;AWS_RELEASE_VERSION&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;main
+&lt;p&gt;Substitute the value for &lt;code&gt;KUBEFLOW_RELEASE_VERSION&lt;/code&gt;(e.g. v1.7.0-rc.2) and &lt;code&gt;AWS_RELEASE_VERSION&lt;/code&gt;(e.g. v1.7.0-aws-b1.0.0) with the tag or branch you want to use below. Read more about &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/about/releases/&#34;&gt;releases and versioning&lt;/a&gt; if you are unsure about what these values should be.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;KUBEFLOW_RELEASE_VERSION&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;v1.7.0-rc.2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;AWS_RELEASE_VERSION&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;v1.7.0-aws-b1.0.0
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone https://github.com/awslabs/kubeflow-manifests.git &lt;span class=&#34;o&#34;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; kubeflow-manifests
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git checkout &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;AWS_RELEASE_VERSION&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;git clone --branch &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;KUBEFLOW_RELEASE_VERSION&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt; https://github.com/kubeflow/manifests.git upstream
@@ -1415,12 +1515,7 @@ public.ecr.aws/kubeflow-on-aws/notebook-servers/jupyter-pytorch:1.12.0-cpu-py38-
 &lt;li&gt;&lt;a href=&#34;https://kubernetes.io/docs/tasks/tools&#34;&gt;kubectl&lt;/a&gt; - A command line tool for working with Kubernetes clusters.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://mikefarah.gitbook.io/yq&#34;&gt;yq&lt;/a&gt; - A command line tool for YAML processing. (For Linux environments, use the &lt;a href=&#34;https://github.com/mikefarah/yq/#install&#34;&gt;wget plain binary installation&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://stedolan.github.io/jq/download/&#34;&gt;jq&lt;/a&gt; - A command line tool for processing JSON.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/releases/tag/v3.2.0&#34;&gt;kustomize version 3.2.0&lt;/a&gt; - A command line tool to customize Kubernetes objects through a kustomization file.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Warning: Kubeflow is not compatible with the latest versions of of kustomize 4.x. This is due to changes in the order that resources are sorted and printed. Please see &lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/issues/3794&#34;&gt;kubernetes-sigs/kustomize#3794&lt;/a&gt; and &lt;a href=&#34;https://github.com/kubeflow/manifests/issues/1797&#34;&gt;kubeflow/manifests#1797&lt;/a&gt;. We know that this is not ideal and are working with the upstream kustomize team to add support for the latest versions of kustomize as soon as we can.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/kubernetes-sigs/kustomize/releases/tag/kustomize%2Fv5.0.1&#34;&gt;kustomize version 5.0.1&lt;/a&gt; - A command line tool to customize Kubernetes objects through a kustomization file.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.python.org/downloads/&#34;&gt;python 3.8+&lt;/a&gt; - A programming language used for automated installation scripts.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://pip.pypa.io/en/stable/installation/&#34;&gt;pip&lt;/a&gt; - A package installer for python.&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://learn.hashicorp.com/tutorials/terraform/install-cli&#34;&gt;terraform&lt;/a&gt; - An infrastructure as code tool that lets you develop cloud and on-prem resources.&lt;/li&gt;
@@ -1435,10 +1530,10 @@ You might want to grant &lt;code&gt;Administrative Privileges&lt;/code&gt; as it
 &lt;p&gt;Warning &lt;a href=&#34;https://docs.aws.amazon.com/cloud9/latest/user-guide/security-iam.html&#34;&gt;Cloud9&lt;/a&gt; users: When configuring your IAM credentials on Cloud9, we recommend using a &lt;a href=&#34;https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html#cli-configure-quickstart-profiles&#34;&gt;profile&lt;/a&gt;. Click &lt;code&gt;Cancel&lt;/code&gt; when a pop up &amp;ldquo;Could not update credentials&amp;rdquo; opens, then choose &lt;code&gt;Permanently disable&lt;/code&gt; for the &amp;ldquo;Unable to update credentials&amp;rdquo; pop up.&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;aws configure --profile&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;kubeflow
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;AWS Access Key ID &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;None&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;: &amp;lt;enter access key id&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;AWS Secret Access Key &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;None&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;: &amp;lt;enter secret access key&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Default region name &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;None&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;: &amp;lt;AWS region&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;Default output format &lt;span class=&#34;o&#34;&gt;[&lt;/span&gt;None&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;: json
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# AWS Access Key ID [None]: &amp;lt;enter access key id&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# AWS Secret Access Key [None]: &amp;lt;enter secret access key&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Default region name [None]: &amp;lt;AWS region&amp;gt;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Default output format [None]: json&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Set the AWS_PROFILE variable with the profile above&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;AWS_PROFILE&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;kubeflow
@@ -1496,7 +1591,7 @@ You might want to grant &lt;code&gt;Administrative Privileges&lt;/code&gt; as it
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Run the following command to create an EKS cluster:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;eksctl create cluster &lt;span class=&#34;se&#34;&gt;\
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;--name &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;CLUSTER_NAME&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;--version 1.22 &lt;span class=&#34;se&#34;&gt;\
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;--version 1.24 &lt;span class=&#34;se&#34;&gt;\
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;--region &lt;span class=&#34;si&#34;&gt;${&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;CLUSTER_REGION&lt;/span&gt;&lt;span class=&#34;si&#34;&gt;}&lt;/span&gt; &lt;span class=&#34;se&#34;&gt;\
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;--nodegroup-name linux-nodes &lt;span class=&#34;se&#34;&gt;\
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;se&#34;&gt;&lt;/span&gt;--node-type m5.xlarge &lt;span class=&#34;se&#34;&gt;\
@@ -2107,6 +2202,10 @@ Take note of your &lt;code&gt;S3 bucket name&lt;/code&gt; to use in the followin
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
+&lt;p&gt;[S3] Create IAM User With Permissions To S3 Bucket&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html#id_users_create_cliwpsapi&#34;&gt;Create an IAM user&lt;/a&gt; with permissions to get bucket locations and allow read and write access to objects in an S3 bucket where you want to store the Kubeflow artifacts. Take note of the &lt;code&gt;AWS_ACCESS_KEY_ID&lt;/code&gt; and &lt;code&gt;AWS_SECRET_ACCESS_KEY&lt;/code&gt; of the IAM user that you created to use in the following step, which will be referenced as &lt;code&gt;MINIO_AWS_ACCESS_KEY_ID&lt;/code&gt; and &lt;code&gt;MINIO_AWS_SECRET_ACCESS_KEY&lt;/code&gt; respectively.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
 &lt;p&gt;Export values:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;RDS_SECRET&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;lt;your rds secret name&amp;gt;&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;S3_SECRET&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;lt;your s3 secret name&amp;gt;&amp;#34;&lt;/span&gt;
@@ -2114,6 +2213,8 @@ Take note of your &lt;code&gt;S3 bucket name&lt;/code&gt; to use in the followin
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;MLMD_DB&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;metadata_db
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;S3_BUCKET&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;lt;your s3 bucket name&amp;gt;&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;MINIO_SERVICE_HOST&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;s3.amazonaws.com
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;MINIO_AWS_ACCESS_KEY_ID&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;lt;your s3 user access key&amp;gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;MINIO_AWS_SECRET_ACCESS_KEY&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;&amp;lt;your s3 user secret key&amp;gt;&amp;#34;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;Create Secrets in AWS Secrets Manager&lt;/p&gt;
@@ -2204,7 +2305,7 @@ Select the package manager of your choice.
 &lt;ul&gt;
 &lt;li&gt;For more details about configuring or finding your AWS credentials, see &lt;a href=&#34;https://docs.aws.amazon.com/general/latest/gr/aws-security-credentials.html&#34;&gt;AWS security credentials&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;aws secretsmanager create-secret --name &lt;span class=&#34;nv&#34;&gt;$S3_SECRET&lt;/span&gt; --secret-string &lt;span class=&#34;s1&#34;&gt;&amp;#39;{&amp;#34;accesskey&amp;#34;:&amp;#34;AXXXXXXXXXXXXXXXXXX6&amp;#34;,&amp;#34;secretkey&amp;#34;:&amp;#34;eXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXq&amp;#34;}&amp;#39;&lt;/span&gt; --region &lt;span class=&#34;nv&#34;&gt;$CLUSTER_REGION&lt;/span&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;aws secretsmanager create-secret --name &lt;span class=&#34;nv&#34;&gt;$S3_SECRET&lt;/span&gt; --secret-string &lt;span class=&#34;s1&#34;&gt;&amp;#39;{&amp;#34;accesskey&amp;#34;:&amp;#34;&amp;#39;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$MINIO_AWS_ACCESS_KEY_ID&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#34;,&amp;#34;secretkey&amp;#34;:&amp;#34;&amp;#39;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$MINIO_AWS_SECRET_ACCESS_KEY&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;#34;}&amp;#39;&lt;/span&gt; --region &lt;span class=&#34;nv&#34;&gt;$CLUSTER_REGION&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -2447,6 +2548,8 @@ Select the package manager of your choice.
 &lt;/ol&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;h3 id=&#34;optional-configure-culling-for-notebooks&#34;&gt;(Optional) Configure Culling for Notebooks&lt;/h3&gt;
+&lt;p&gt;Enable culling for notebooks by following the &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/configure-notebook-culling/&#34;&gt;instructions&lt;/a&gt; in configure culling for notebooks guide.&lt;/p&gt;
 &lt;h2 id=&#34;30-build-manifests-and-install-kubeflow&#34;&gt;3.0 Build Manifests and install Kubeflow&lt;/h2&gt;
 &lt;p&gt;Once you have the resources ready, you can deploy the Kubeflow manifests for one of the following deployment options:&lt;/p&gt;
 &lt;ul&gt;
@@ -2458,65 +2561,6 @@ Select the package manager of your choice.
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;cd&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$REPO_ROOT&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h4 id=&#34;rds-and-s3-deploy-both-rds-and-s3&#34;&gt;[RDS and S3] Deploy both RDS and S3&lt;/h4&gt;
 &lt;p&gt;Use the following command to deploy the Kubeflow manifests for both RDS and S3:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-&lt;ul class=&#34;nav nav-tabs&#34; id=&#34;tabs-7&#34; role=&#34;tablist&#34;&gt;&lt;li class=&#34;nav-item&#34;&gt;
-      &lt;a class=&#34;nav-link active tab-Kustomize&#34;
-        id=&#34;tabs-7-0-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-7-0&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Kustomize&amp;#34;);&#34;
-        aria-controls=&#34;tabs-7-0&#34; aria-selected=&#34;true&#34;&gt;
-        Kustomize
-      &lt;/a&gt;
-    &lt;/li&gt;&lt;li class=&#34;nav-item&#34;&gt;
-      &lt;a class=&#34;nav-link tab-Helm&#34;
-        id=&#34;tabs-7-1-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-7-1&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Helm&amp;#34;);&#34;
-        aria-controls=&#34;tabs-7-1&#34; aria-selected=&#34;false&#34;&gt;
-        Helm
-      &lt;/a&gt;
-    &lt;/li&gt;&lt;/ul&gt;
-
-
-&lt;div class=&#34;tab-content&#34; id=&#34;tabs-7-content&#34;&gt;&lt;div class=&#34;tab-pane fade show active&#34;
-        id=&#34;tabs-7-0&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-7-0-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;deploy-kubeflow&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;INSTALLATION_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;kustomize&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;DEPLOYMENT_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;rds-s3&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-  &lt;div class=&#34;tab-pane fade&#34;
-        id=&#34;tabs-7-1&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-7-1-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;l&#34;&gt;make deploy-kubeflow INSTALLATION_OPTION=helm DEPLOYMENT_OPTION=rds-s3&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-  
-&lt;/div&gt;
-&lt;/p&gt;
-&lt;h4 id=&#34;rds-deploy-rds-only&#34;&gt;[RDS] Deploy RDS only&lt;/h4&gt;
-&lt;p&gt;Use the following command to deploy the Kubeflow manifests for RDS only:
 
 
 
@@ -2568,14 +2612,14 @@ Select the package manager of your choice.
 
 
 &lt;div class=&#34;tab-content&#34; id=&#34;tabs-8-content&#34;&gt;&lt;div class=&#34;tab-pane fade show active&#34;
-        id=&#34;tabs-8-0&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-8-0-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;deploy-kubeflow&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;INSTALLATION_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;kustomize&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;DEPLOYMENT_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;rds-only&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+        id=&#34;tabs-8-0&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-8-0-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;deploy-kubeflow&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;INSTALLATION_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;kustomize&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;DEPLOYMENT_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;rds-s3&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
   &lt;div class=&#34;tab-pane fade&#34;
-        id=&#34;tabs-8-1&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-8-1-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;l&#34;&gt;make deploy-kubeflow INSTALLATION_OPTION=helm DEPLOYMENT_OPTION=rds-only&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+        id=&#34;tabs-8-1&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-8-1-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;l&#34;&gt;make deploy-kubeflow INSTALLATION_OPTION=helm DEPLOYMENT_OPTION=rds-s3&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
   
 &lt;/div&gt;
 &lt;/p&gt;
-&lt;h4 id=&#34;s3-deploy-s3-only&#34;&gt;[S3] Deploy S3 only&lt;/h4&gt;
-&lt;p&gt;Use the following command to deploy the Kubeflow manifests for S3 only:
+&lt;h4 id=&#34;rds-deploy-rds-only&#34;&gt;[RDS] Deploy RDS only&lt;/h4&gt;
+&lt;p&gt;Use the following command to deploy the Kubeflow manifests for RDS only:
 
 
 
@@ -2627,9 +2671,68 @@ Select the package manager of your choice.
 
 
 &lt;div class=&#34;tab-content&#34; id=&#34;tabs-9-content&#34;&gt;&lt;div class=&#34;tab-pane fade show active&#34;
-        id=&#34;tabs-9-0&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-9-0-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;deploy-kubeflow&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;INSTALLATION_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;kustomize&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;DEPLOYMENT_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;s3-only&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+        id=&#34;tabs-9-0&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-9-0-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;deploy-kubeflow&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;INSTALLATION_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;kustomize&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;DEPLOYMENT_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;rds-only&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
   &lt;div class=&#34;tab-pane fade&#34;
-        id=&#34;tabs-9-1&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-9-1-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;l&#34;&gt;make deploy-kubeflow INSTALLATION_OPTION=helm DEPLOYMENT_OPTION=s3-only&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+        id=&#34;tabs-9-1&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-9-1-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;l&#34;&gt;make deploy-kubeflow INSTALLATION_OPTION=helm DEPLOYMENT_OPTION=rds-only&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+  
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;h4 id=&#34;s3-deploy-s3-only&#34;&gt;[S3] Deploy S3 only&lt;/h4&gt;
+&lt;p&gt;Use the following command to deploy the Kubeflow manifests for S3 only:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;ul class=&#34;nav nav-tabs&#34; id=&#34;tabs-10&#34; role=&#34;tablist&#34;&gt;&lt;li class=&#34;nav-item&#34;&gt;
+      &lt;a class=&#34;nav-link active tab-Kustomize&#34;
+        id=&#34;tabs-10-0-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-10-0&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Kustomize&amp;#34;);&#34;
+        aria-controls=&#34;tabs-10-0&#34; aria-selected=&#34;true&#34;&gt;
+        Kustomize
+      &lt;/a&gt;
+    &lt;/li&gt;&lt;li class=&#34;nav-item&#34;&gt;
+      &lt;a class=&#34;nav-link tab-Helm&#34;
+        id=&#34;tabs-10-1-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-10-1&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Helm&amp;#34;);&#34;
+        aria-controls=&#34;tabs-10-1&#34; aria-selected=&#34;false&#34;&gt;
+        Helm
+      &lt;/a&gt;
+    &lt;/li&gt;&lt;/ul&gt;
+
+
+&lt;div class=&#34;tab-content&#34; id=&#34;tabs-10-content&#34;&gt;&lt;div class=&#34;tab-pane fade show active&#34;
+        id=&#34;tabs-10-0&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-10-0-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;deploy-kubeflow&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;INSTALLATION_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;kustomize&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;DEPLOYMENT_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;s3-only&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&#34;tab-pane fade&#34;
+        id=&#34;tabs-10-1&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-10-1-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;l&#34;&gt;make deploy-kubeflow INSTALLATION_OPTION=helm DEPLOYMENT_OPTION=s3-only&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
   
 &lt;/div&gt;
 &lt;/p&gt;
@@ -2761,25 +2864,25 @@ Select the package manager of your choice.
 
 
 
-&lt;ul class=&#34;nav nav-tabs&#34; id=&#34;tabs-13&#34; role=&#34;tablist&#34;&gt;&lt;li class=&#34;nav-item&#34;&gt;
+&lt;ul class=&#34;nav nav-tabs&#34; id=&#34;tabs-14&#34; role=&#34;tablist&#34;&gt;&lt;li class=&#34;nav-item&#34;&gt;
       &lt;a class=&#34;nav-link active tab-Kustomize&#34;
-        id=&#34;tabs-13-0-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-13-0&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Kustomize&amp;#34;);&#34;
-        aria-controls=&#34;tabs-13-0&#34; aria-selected=&#34;true&#34;&gt;
+        id=&#34;tabs-14-0-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-14-0&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Kustomize&amp;#34;);&#34;
+        aria-controls=&#34;tabs-14-0&#34; aria-selected=&#34;true&#34;&gt;
         Kustomize
       &lt;/a&gt;
     &lt;/li&gt;&lt;li class=&#34;nav-item&#34;&gt;
       &lt;a class=&#34;nav-link tab-Helm&#34;
-        id=&#34;tabs-13-1-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-13-1&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Helm&amp;#34;);&#34;
-        aria-controls=&#34;tabs-13-1&#34; aria-selected=&#34;false&#34;&gt;
+        id=&#34;tabs-14-1-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-14-1&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Helm&amp;#34;);&#34;
+        aria-controls=&#34;tabs-14-1&#34; aria-selected=&#34;false&#34;&gt;
         Helm
       &lt;/a&gt;
     &lt;/li&gt;&lt;/ul&gt;
 
 
-&lt;div class=&#34;tab-content&#34; id=&#34;tabs-13-content&#34;&gt;&lt;div class=&#34;tab-pane fade show active&#34;
-        id=&#34;tabs-13-0&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-13-0-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;delete-kubeflow&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;INSTALLATION_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;kustomize&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;DEPLOYMENT_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;rds-s3&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&#34;tab-content&#34; id=&#34;tabs-14-content&#34;&gt;&lt;div class=&#34;tab-pane fade show active&#34;
+        id=&#34;tabs-14-0&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-14-0-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;delete-kubeflow&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;INSTALLATION_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;kustomize&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;DEPLOYMENT_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;rds-s3&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
   &lt;div class=&#34;tab-pane fade&#34;
-        id=&#34;tabs-13-1&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-13-1-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;l&#34;&gt;make delete-kubeflow INSTALLATION_OPTION=helm DEPLOYMENT_OPTION=rds-s3&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+        id=&#34;tabs-14-1&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-14-1-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;l&#34;&gt;make delete-kubeflow INSTALLATION_OPTION=helm DEPLOYMENT_OPTION=rds-s3&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
   
 &lt;/div&gt;
 
@@ -2819,6 +2922,8 @@ Select the package manager of your choice.
 &lt;li&gt;&lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/prerequisites/&#34;&gt;Set up your deployment environment&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/create-eks-cluster/&#34;&gt;Create an EKS Cluster&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+&lt;h2 id=&#34;optional-configure-culling-for-notebooks&#34;&gt;(Optional) Configure Culling for Notebooks&lt;/h2&gt;
+&lt;p&gt;Enable culling for notebooks by following the &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/configure-notebook-culling/&#34;&gt;instructions&lt;/a&gt; in configure culling for notebooks guide.&lt;/p&gt;
 &lt;h2 id=&#34;build-manifests-and-install-kubeflow&#34;&gt;Build Manifests and install Kubeflow&lt;/h2&gt;
 &lt;blockquote&gt;
 &lt;p&gt;⚠️ Warning: We use a default email (&lt;code&gt;user@example.com&lt;/code&gt;) and password (&lt;code&gt;12341234&lt;/code&gt;) for our guides. For any production Kubeflow deployment, you should change the default password by following the steps in &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/connect-kubeflow-dashboard/#change-the-default-user-password-kustomize&#34;&gt;Change default user password&lt;/a&gt;.&lt;/p&gt;
@@ -2861,25 +2966,25 @@ Select the package manager of your choice.
 
 
 
-&lt;ul class=&#34;nav nav-tabs&#34; id=&#34;tabs-3&#34; role=&#34;tablist&#34;&gt;&lt;li class=&#34;nav-item&#34;&gt;
+&lt;ul class=&#34;nav nav-tabs&#34; id=&#34;tabs-4&#34; role=&#34;tablist&#34;&gt;&lt;li class=&#34;nav-item&#34;&gt;
       &lt;a class=&#34;nav-link active tab-Kustomize&#34;
-        id=&#34;tabs-3-0-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-3-0&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Kustomize&amp;#34;);&#34;
-        aria-controls=&#34;tabs-3-0&#34; aria-selected=&#34;true&#34;&gt;
+        id=&#34;tabs-4-0-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-4-0&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Kustomize&amp;#34;);&#34;
+        aria-controls=&#34;tabs-4-0&#34; aria-selected=&#34;true&#34;&gt;
         Kustomize
       &lt;/a&gt;
     &lt;/li&gt;&lt;li class=&#34;nav-item&#34;&gt;
       &lt;a class=&#34;nav-link tab-Helm&#34;
-        id=&#34;tabs-3-1-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-3-1&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Helm&amp;#34;);&#34;
-        aria-controls=&#34;tabs-3-1&#34; aria-selected=&#34;false&#34;&gt;
+        id=&#34;tabs-4-1-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-4-1&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Helm&amp;#34;);&#34;
+        aria-controls=&#34;tabs-4-1&#34; aria-selected=&#34;false&#34;&gt;
         Helm
       &lt;/a&gt;
     &lt;/li&gt;&lt;/ul&gt;
 
 
-&lt;div class=&#34;tab-content&#34; id=&#34;tabs-3-content&#34;&gt;&lt;div class=&#34;tab-pane fade show active&#34;
-        id=&#34;tabs-3-0&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-3-0-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;deploy-kubeflow&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;INSTALLATION_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;kustomize&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;DEPLOYMENT_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;vanilla&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&#34;tab-content&#34; id=&#34;tabs-4-content&#34;&gt;&lt;div class=&#34;tab-pane fade show active&#34;
+        id=&#34;tabs-4-0&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-4-0-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;deploy-kubeflow&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;INSTALLATION_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;kustomize&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;DEPLOYMENT_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;vanilla&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
   &lt;div class=&#34;tab-pane fade&#34;
-        id=&#34;tabs-3-1&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-3-1-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;l&#34;&gt;make deploy-kubeflow INSTALLATION_OPTION=helm DEPLOYMENT_OPTION=vanilla&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+        id=&#34;tabs-4-1&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-4-1-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;l&#34;&gt;make deploy-kubeflow INSTALLATION_OPTION=helm DEPLOYMENT_OPTION=vanilla&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
   
 &lt;/div&gt;
 
@@ -2935,25 +3040,25 @@ Select the package manager of your choice.
 
 
 
-&lt;ul class=&#34;nav nav-tabs&#34; id=&#34;tabs-5&#34; role=&#34;tablist&#34;&gt;&lt;li class=&#34;nav-item&#34;&gt;
+&lt;ul class=&#34;nav nav-tabs&#34; id=&#34;tabs-6&#34; role=&#34;tablist&#34;&gt;&lt;li class=&#34;nav-item&#34;&gt;
       &lt;a class=&#34;nav-link active tab-Kustomize&#34;
-        id=&#34;tabs-5-0-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-5-0&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Kustomize&amp;#34;);&#34;
-        aria-controls=&#34;tabs-5-0&#34; aria-selected=&#34;true&#34;&gt;
+        id=&#34;tabs-6-0-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-6-0&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Kustomize&amp;#34;);&#34;
+        aria-controls=&#34;tabs-6-0&#34; aria-selected=&#34;true&#34;&gt;
         Kustomize
       &lt;/a&gt;
     &lt;/li&gt;&lt;li class=&#34;nav-item&#34;&gt;
       &lt;a class=&#34;nav-link tab-Helm&#34;
-        id=&#34;tabs-5-1-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-5-1&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Helm&amp;#34;);&#34;
-        aria-controls=&#34;tabs-5-1&#34; aria-selected=&#34;false&#34;&gt;
+        id=&#34;tabs-6-1-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-6-1&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Helm&amp;#34;);&#34;
+        aria-controls=&#34;tabs-6-1&#34; aria-selected=&#34;false&#34;&gt;
         Helm
       &lt;/a&gt;
     &lt;/li&gt;&lt;/ul&gt;
 
 
-&lt;div class=&#34;tab-content&#34; id=&#34;tabs-5-content&#34;&gt;&lt;div class=&#34;tab-pane fade show active&#34;
-        id=&#34;tabs-5-0&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-5-0-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;delete-kubeflow&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;INSTALLATION_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;kustomize&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;DEPLOYMENT_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;vanilla&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&#34;tab-content&#34; id=&#34;tabs-6-content&#34;&gt;&lt;div class=&#34;tab-pane fade show active&#34;
+        id=&#34;tabs-6-0&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-6-0-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;delete-kubeflow&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;INSTALLATION_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;kustomize&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;DEPLOYMENT_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;vanilla&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
   &lt;div class=&#34;tab-pane fade&#34;
-        id=&#34;tabs-5-1&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-5-1-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;l&#34;&gt;make delete-kubeflow INSTALLATION_OPTION=helm DEPLOYMENT_OPTION=vanilla&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+        id=&#34;tabs-6-1&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-6-1-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;l&#34;&gt;make delete-kubeflow INSTALLATION_OPTION=helm DEPLOYMENT_OPTION=vanilla&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
   
 &lt;/div&gt;
 
@@ -3252,6 +3357,8 @@ Check also &lt;code&gt;Enabled Identity Providers&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Follow the &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/add-ons/load-balancer/guide/#configure-load-balancer-controller&#34;&gt;Configure Load Balancer Controller&lt;/a&gt; section of the load balancer guide to setup the resources required by the load balancer controller.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
+&lt;h3 id=&#34;optional-configure-culling-for-notebooks&#34;&gt;(Optional) Configure Culling for Notebooks&lt;/h3&gt;
+&lt;p&gt;Enable culling for notebooks by following the &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/configure-notebook-culling/&#34;&gt;instructions&lt;/a&gt; in configure culling for notebooks guide.&lt;/p&gt;
 &lt;h2 id=&#34;40-build-the-manifests-and-deploy-kubeflow&#34;&gt;4.0 Build the manifests and deploy Kubeflow&lt;/h2&gt;
 
 
@@ -3288,25 +3395,25 @@ Check also &lt;code&gt;Enabled Identity Providers&lt;/code&gt;.&lt;/p&gt;
 
 
 
-&lt;ul class=&#34;nav nav-tabs&#34; id=&#34;tabs-10&#34; role=&#34;tablist&#34;&gt;&lt;li class=&#34;nav-item&#34;&gt;
+&lt;ul class=&#34;nav nav-tabs&#34; id=&#34;tabs-11&#34; role=&#34;tablist&#34;&gt;&lt;li class=&#34;nav-item&#34;&gt;
       &lt;a class=&#34;nav-link active tab-Kustomize&#34;
-        id=&#34;tabs-10-0-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-10-0&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Kustomize&amp;#34;);&#34;
-        aria-controls=&#34;tabs-10-0&#34; aria-selected=&#34;true&#34;&gt;
+        id=&#34;tabs-11-0-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-11-0&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Kustomize&amp;#34;);&#34;
+        aria-controls=&#34;tabs-11-0&#34; aria-selected=&#34;true&#34;&gt;
         Kustomize
       &lt;/a&gt;
     &lt;/li&gt;&lt;li class=&#34;nav-item&#34;&gt;
       &lt;a class=&#34;nav-link tab-Helm&#34;
-        id=&#34;tabs-10-1-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-10-1&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Helm&amp;#34;);&#34;
-        aria-controls=&#34;tabs-10-1&#34; aria-selected=&#34;false&#34;&gt;
+        id=&#34;tabs-11-1-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-11-1&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Helm&amp;#34;);&#34;
+        aria-controls=&#34;tabs-11-1&#34; aria-selected=&#34;false&#34;&gt;
         Helm
       &lt;/a&gt;
     &lt;/li&gt;&lt;/ul&gt;
 
 
-&lt;div class=&#34;tab-content&#34; id=&#34;tabs-10-content&#34;&gt;&lt;div class=&#34;tab-pane fade show active&#34;
-        id=&#34;tabs-10-0&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-10-0-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;deploy-kubeflow&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;INSTALLATION_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;kustomize&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;DEPLOYMENT_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cognito&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&#34;tab-content&#34; id=&#34;tabs-11-content&#34;&gt;&lt;div class=&#34;tab-pane fade show active&#34;
+        id=&#34;tabs-11-0&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-11-0-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;make&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;deploy-kubeflow&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;INSTALLATION_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;kustomize&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;DEPLOYMENT_OPTION&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;cognito&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
   &lt;div class=&#34;tab-pane fade&#34;
-        id=&#34;tabs-10-1&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-10-1-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;l&#34;&gt;make deploy-kubeflow INSTALLATION_OPTION=helm DEPLOYMENT_OPTION=cognito&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+        id=&#34;tabs-11-1&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-11-1-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-yaml&#34; data-lang=&#34;yaml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;l&#34;&gt;make deploy-kubeflow INSTALLATION_OPTION=helm DEPLOYMENT_OPTION=cognito&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
   
 &lt;/div&gt;
 
@@ -3520,18 +3627,34 @@ Check if the DNS entry propogated with the &lt;a href=&#34;https://toolbox.googl
         
         
         &lt;p&gt;The &lt;a href=&#34;https://docs.aws.amazon.com/sagemaker/latest/dg/kubernetes-sagemaker-components-for-kubeflow-pipelines.html&#34;&gt;SageMaker Components for Kubeflow Pipelines&lt;/a&gt; allow you to move your data processing and training jobs from the Kubernetes cluster to SageMaker’s machine learning-optimized managed service.&lt;/p&gt;
-&lt;p&gt;These components integrate SageMaker with the portability and orchestration of Kubeflow Pipelines. Using the SageMaker components, each job in the pipeline workflow runs on SageMaker instead of the local Kubernetes cluster. The job parameters, status, logs, and outputs from SageMaker are accessible from the Kubeflow Pipelines UI.&lt;/p&gt;
+&lt;p&gt;These components integrate SageMaker with the portability and orchestration of Kubeflow Pipelines. Using the SageMaker components, each job in the pipeline workflow runs on SageMaker instead of the local Kubernetes cluster.&lt;/p&gt;
+&lt;p&gt;This allows you to create and monitor native SageMaker training, tuning, endpoint deployment, and batch transform jobs from your Kubeflow Pipelines hence allowing you to move complete compute including data processing and training jobs from the Kubernetes cluster to SageMaker’s machine learning-optimized managed service. The job parameters, status, and outputs from SageMaker are accessible from the Kubeflow Pipelines UI.&lt;/p&gt;
 &lt;h2 id=&#34;available-components&#34;&gt;Available components&lt;/h2&gt;
 &lt;p&gt;You can create a Kubeflow Pipeline built entirely using SageMaker components, or integrate individual components into your workflow as needed. Available Amazon SageMaker components can be found in the &lt;a href=&#34;https://github.com/kubeflow/pipelines/tree/master/components/aws/sagemaker&#34;&gt;Kubeflow Pipelines GitHub repository&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;There are two versions of SageMaker components - boto3 based v1 components and SageMaker Operator for K8s (ACK) based v2 components.&lt;/p&gt;
-&lt;h2 id=&#34;tutorial-sagemaker-training-pipeline-for-mnist-classification-with-k-means&#34;&gt;Tutorial: SageMaker Training Pipeline for MNIST Classification with K-Means&lt;/h2&gt;
+&lt;p&gt;There are two versions of SageMaker components - boto3 based v1 components and SageMaker Operator for K8s (ACK) based v2 components. You can read more about the two versions in SageMaker developer guide in &lt;a href=&#34;https://docs.aws.amazon.com/sagemaker/latest/dg/kubernetes-sagemaker-components-for-kubeflow-pipelines.html#kubeflow-pipeline-components&#34;&gt;AWS documentation&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;configure-permissions-for-pipeline-pods-to-access-sagemaker&#34;&gt;Configure Permissions for Pipeline pods to access SageMaker&lt;/h2&gt;
+&lt;h3 id=&#34;configuration-for-sagemaker-components-v2&#34;&gt;Configuration for SageMaker Components V2&lt;/h3&gt;
+&lt;p&gt;There is no additional configuration required for SageMaker Components V2 if you have already installed the AWS distribution of Kubeflow.&lt;/p&gt;
+&lt;h3 id=&#34;configuration-for-sagemaker-components-v1&#34;&gt;Configuration for SageMaker Components V1&lt;/h3&gt;
+&lt;p&gt;To use SageMaker Components version 1, grant SageMaker access to the service account used by Kubeflow pipeline pods. We recommend completing these steps to avoid configuration in future but you can skip this section if you do not intend to use version 1 of the components&lt;/p&gt;
+&lt;p&gt;Set the environment variable value for PROFILE_NAMESPACE(e.g. kubeflow-user-example-com) according to your profile and SERVICE_ACCOUNT name according to your installation:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;&lt;strong&gt;Note:&lt;/strong&gt;&lt;/em&gt;
+You will need to run these steps for every profile namespace you intend to use.&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;export PROFILE_NAMESPACE=kubeflow-user-example-com
+export KUBEFLOW_PIPELINE_POD_SERVICE_ACCOUNT=default-editor
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# Export your cluster name and cluster region
+export CLUSTER_NAME=
+export CLUSTER_REGION=
+&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# Create a service account in your specified profile namespace with SageMaker permissions
+
+eksctl create iamserviceaccount --name ${KUBEFLOW_PIPELINE_POD_SERVICE_ACCOUNT} --namespace ${PROFILE_NAMESPACE} --cluster ${CLUSTER_NAME} --region ${CLUSTER_REGION} --attach-policy-arn arn:aws:iam::aws:policy/AmazonSageMakerFullAccess --override-existing-serviceaccounts --approve
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;tutorials&#34;&gt;Tutorials&lt;/h2&gt;
+&lt;p&gt;There are a number of tutorials in kubeflow/pipelines repository available &lt;a href=&#34;https://github.com/kubeflow/pipelines/tree/master/samples/contrib/aws-samples&#34;&gt;here&lt;/a&gt;. The following is a sample SageMaker training pipeline for MNIST Classification with K-Means.&lt;/p&gt;
+&lt;h3 id=&#34;sagemaker-training-pipeline-for-mnist-classification-with-k-means&#34;&gt;SageMaker training pipeline for MNIST Classification with K-Means&lt;/h3&gt;
 &lt;p&gt;Kubeflow on AWS includes pipeline tutorials for SageMaker components that can be used to run a machine learning workflow with just a few clicks. To try out the examples, deploy Kubeflow on AWS on your cluster and visit the Kubeflow Dashboard &lt;code&gt;Pipelines&lt;/code&gt; tab. The sample currently included with Kubeflow is based off of the v2 Training Component.&lt;/p&gt;
 &lt;p&gt;In the following section we will walk through the steps to run the Sample SageMaker Training Pipeline. This sample runs a pipeline to train a classficiation model using Kmeans with MNIST dataset on SageMaker. This example was taken from an existing &lt;a href=&#34;https://github.com/aws/amazon-sagemaker-examples/blob/8279abfcc78bad091608a4a7135e50a0bd0ec8bb/sagemaker-python-sdk/1P_kmeans_highlevel/kmeans_mnist.ipynb&#34;&gt;SageMaker example&lt;/a&gt; and modified to work with the Amazon SageMaker Components for Kubeflow Pipelines.&lt;/p&gt;
 &lt;p&gt;Note:  The pipeline runs are executed in user namespaces using the default-editor Kubernetes service account.&lt;/p&gt;
-&lt;h2 id=&#34;installing-kubeflow-pipelines&#34;&gt;Installing Kubeflow Pipelines&lt;/h2&gt;
-&lt;p&gt;There are two ways to deploy Kubeflow Pipelines on AWS. If you are using the broader Kubeflow deployment, ACK and KFP come configured and ready to use with any of the Kubeflow on AWS deployment options. Read on to complete the pipeline execution.&lt;/p&gt;
-&lt;p&gt;On the other hand, if you are using standalone KFP installation, please refer to our more detailed instructions over at the &lt;a href=&#34;https://docs.aws.amazon.com/sagemaker/latest/dg/kubernetes-sagemaker-components-for-kubeflow-pipelines.html&#34;&gt;AWS Docs for Kubeflow Pipeline Components&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&#34;s3-bucket&#34;&gt;S3 Bucket&lt;/h2&gt;
+&lt;h3 id=&#34;s3-bucket&#34;&gt;S3 Bucket&lt;/h3&gt;
 &lt;p&gt;To train a model with SageMaker, we need an S3 bucket to store the dataset and artifacts from the training process. Run the following commands to create an S3 bucket. Specify the value for &lt;code&gt;SAGEMAKER_REGION&lt;/code&gt; as the region you want to create your SageMaker resources. For ease of use in the samples (using the default values of the pipeline), we suggest using &lt;code&gt;us-east-1&lt;/code&gt; as the region.&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# Choose any name for your S3 bucket
 export SAGEMAKER_REGION=us-east-1
@@ -3546,7 +3669,7 @@ fi
 
 echo ${S3_BUCKET_NAME}
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Note down your S3 bucket name which will be used in the samples.&lt;/p&gt;
-&lt;h2 id=&#34;sagemaker-execution-iam-role&#34;&gt;SageMaker execution IAM role&lt;/h2&gt;
+&lt;h3 id=&#34;sagemaker-execution-iam-role&#34;&gt;SageMaker execution IAM role&lt;/h3&gt;
 &lt;p&gt;The SageMaker training job needs an IAM role to access Amazon S3 and SageMaker. Run the following commands to create a SageMaker execution IAM role that is used by SageMaker to access AWS resources:&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# Choose any name for your Sagemaker execution role
 export SAGEMAKER_EXECUTION_ROLE_NAME=&amp;lt;sagemaker_role_name&amp;gt;
@@ -3560,7 +3683,7 @@ export SAGEMAKER_EXECUTION_ROLE_ARN=$(aws iam get-role --role-name ${SAGEMAKER_E
 
 echo $SAGEMAKER_EXECUTION_ROLE_ARN
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Note down the execution role ARN to use in samples.&lt;/p&gt;
-&lt;h2 id=&#34;prepare-the-dataset&#34;&gt;Prepare the dataset&lt;/h2&gt;
+&lt;h3 id=&#34;prepare-the-dataset&#34;&gt;Prepare the dataset&lt;/h3&gt;
 &lt;p&gt;To train a model with SageMaker, we need an S3 bucket to store the dataset and artifacts from the training process. We will use the S3 bucket you created earlier and simply use the dataset at &lt;code&gt;s3://sagemaker-sample-files/datasets/image/MNIST/mnist.pkl.gz&lt;/code&gt;.&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Clone this repository to use the pipelines and sample scripts.
@@ -3572,7 +3695,7 @@ cd tests/e2e
 python3 utils/s3_for_training/sync.py ${S3_BUCKET_NAME} ${SAGEMAKER_REGION}
 &lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h2 id=&#34;run-the-sample-pipeline&#34;&gt;Run the sample pipeline&lt;/h2&gt;
+&lt;h3 id=&#34;run-the-sample-pipeline&#34;&gt;Run the sample pipeline&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
 &lt;p&gt;To run the pipeline, open the Pipelines Tab on the Kubeflow dashboard. You should be able to see the pipeline sample called - &amp;ldquo;[Tutorial] SageMaker Training&amp;rdquo;. Select to run. Make sure to either create a new experiment or use an existing one.&lt;/p&gt;
@@ -3620,30 +3743,30 @@ region: us-east-1
         
         
         &lt;h2 id=&#34;compatibility&#34;&gt;Compatibility&lt;/h2&gt;
-&lt;p&gt;Amazon EKS maintains end-to-end testing between EKS Kubernetes versions and Kubeflow versions. The following table relates compatibility between Kubernetes versions on Amazon EKS and Kubeflow v1.6.&lt;/p&gt;
+&lt;p&gt;Amazon EKS maintains end-to-end testing between EKS Kubernetes versions and Kubeflow versions. The following table relates compatibility between Kubernetes versions on Amazon EKS and Kubeflow v1.7.&lt;/p&gt;
 &lt;div class=&#34;table-responsive&#34;&gt;
   &lt;table class=&#34;table table-bordered&#34;&gt;
     &lt;thead class=&#34;thead-light&#34;&gt;
       &lt;tr&gt;
         &lt;th&gt;EKS Versions&lt;/th&gt;
-        &lt;th&gt;Kubeflow v1.6&lt;/th&gt;
+        &lt;th&gt;Kubeflow v1.7&lt;/th&gt;
       &lt;/tr&gt;
     &lt;/thead&gt;
     &lt;tbody&gt;
     &lt;tr&gt;
+        &lt;td&gt;1.25&lt;/td&gt;
+        &lt;td&gt;&lt;b&gt;Compatible&lt;/b&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td&gt;1.24&lt;/td&gt;
+        &lt;td&gt;&lt;b&gt;Compatible&lt;/b&gt;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
         &lt;td&gt;1.23&lt;/td&gt;
         &lt;td&gt;&lt;b&gt;Compatible&lt;/b&gt;&lt;/td&gt;
       &lt;/tr&gt;
       &lt;tr&gt;
         &lt;td&gt;1.22&lt;/td&gt;
-        &lt;td&gt;&lt;b&gt;Compatible&lt;/b&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td&gt;1.21&lt;/td&gt;
-        &lt;td&gt;&lt;b&gt;Incompatible&lt;/b&gt;&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-        &lt;td&gt;1.20&lt;/td&gt;
         &lt;td&gt;&lt;b&gt;Incompatible&lt;/b&gt;&lt;/td&gt;
       &lt;/tr&gt;
     &lt;/tbody&gt;
@@ -3808,6 +3931,8 @@ region: us-east-1
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;EOF&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;h3 id=&#34;optional-configure-culling-for-notebooks&#34;&gt;(Optional) Configure Culling for Notebooks&lt;/h3&gt;
+&lt;p&gt;Enable culling for notebooks by following the &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/configure-notebook-culling/&#34;&gt;instructions&lt;/a&gt; in configure culling for notebooks guide.&lt;/p&gt;
 &lt;h3 id=&#34;view-all-configurations&#34;&gt;View all Configurations&lt;/h3&gt;
 &lt;p&gt;View &lt;a href=&#34;https://github.com/awslabs/kubeflow-manifests/blob/main/deployments/cognito-rds-s3/terraform/variables.tf&#34;&gt;all possible configuration options of the terraform stack&lt;/a&gt; in the &lt;code&gt;variables.tf&lt;/code&gt; file.&lt;/p&gt;
 &lt;h3 id=&#34;preview&#34;&gt;Preview&lt;/h3&gt;
@@ -3909,6 +4034,8 @@ Additionally you have to set the Terraform variable &lt;code&gt;create_subdomain
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;EOF&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;h3 id=&#34;optional-configure-culling-for-notebooks&#34;&gt;(Optional) Configure Culling for Notebooks&lt;/h3&gt;
+&lt;p&gt;Enable culling for notebooks by following the &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/configure-notebook-culling/&#34;&gt;instructions&lt;/a&gt; in configure culling for notebooks guide.&lt;/p&gt;
 &lt;h3 id=&#34;view-all-configurations&#34;&gt;View all configurations&lt;/h3&gt;
 &lt;p&gt;View &lt;a href=&#34;https://github.com/awslabs/kubeflow-manifests/blob/main/deployments/cognito/terraform/variables.tf&#34;&gt;all possible configuration options of the terraform stack&lt;/a&gt; in the &lt;code&gt;variables.tf&lt;/code&gt; file.&lt;/p&gt;
 &lt;h3 id=&#34;preview&#34;&gt;Preview&lt;/h3&gt;
@@ -4004,6 +4131,8 @@ Additionally you have to set the Terraform variable &lt;code&gt;create_subdomain
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;EOF&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;h3 id=&#34;optional-configure-culling-for-notebooks&#34;&gt;(Optional) Configure Culling for Notebooks&lt;/h3&gt;
+&lt;p&gt;Enable culling for notebooks by following the &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/configure-notebook-culling/&#34;&gt;instructions&lt;/a&gt; in configure culling for notebooks guide.&lt;/p&gt;
 &lt;h3 id=&#34;all-configurations&#34;&gt;All Configurations&lt;/h3&gt;
 &lt;p&gt;A full list of inputs for the terraform stack can be found &lt;a href=&#34;https://github.com/awslabs/kubeflow-manifests/blob/main/deployments/rds-s3/terraform/variables.tf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;preview&#34;&gt;Preview&lt;/h3&gt;
@@ -4071,6 +4200,8 @@ Additionally you have to set the Terraform variable &lt;code&gt;create_subdomain
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;EOF&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ol&gt;
+&lt;h3 id=&#34;optional-configure-culling-for-notebooks&#34;&gt;(Optional) Configure Culling for Notebooks&lt;/h3&gt;
+&lt;p&gt;Enable culling for notebooks by following the &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/configure-notebook-culling/&#34;&gt;instructions&lt;/a&gt; in configure culling for notebooks guide.&lt;/p&gt;
 &lt;h3 id=&#34;all-configurations&#34;&gt;All Configurations&lt;/h3&gt;
 &lt;p&gt;A full list of inputs for the terraform stack can be found &lt;a href=&#34;https://github.com/awslabs/kubeflow-manifests/blob/main/deployments/vanilla/terraform/variables.tf&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
 &lt;h3 id=&#34;preview&#34;&gt;Preview&lt;/h3&gt;
@@ -4393,6 +4524,17 @@ Additionally you have to set the Terraform variable &lt;code&gt;create_subdomain
         
         
         &lt;p&gt;We highly recommend that you follow AWS security best practices while provisioning any AWS resources.&lt;/p&gt;
+&lt;h2 id=&#34;default-security-configuration&#34;&gt;Default security configuration&lt;/h2&gt;
+&lt;h3 id=&#34;amazon-simple-storage-service-s3&#34;&gt;Amazon Simple Storage Service (S3)&lt;/h3&gt;
+&lt;h4 id=&#34;block-public-access&#34;&gt;Block public access&lt;/h4&gt;
+&lt;p&gt;The Amazon S3 bucket created for Kubeflow artifacts has a default &lt;a href=&#34;https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html&#34;&gt;&amp;ldquo;block public access&amp;rdquo; configuration&lt;/a&gt;.&lt;/p&gt;
+&lt;h4 id=&#34;encryption&#34;&gt;Encryption&lt;/h4&gt;
+&lt;p&gt;When you use Amazon S3 for kubeflow artifact storage, Kubeflow on AWS configures the Amazon S3 bucket to use &lt;a href=&#34;https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingServerSideEncryption.html&#34;&gt;server-side encryption with Amazon S3-managed encryption keys&lt;/a&gt; (SSE-S3). If you prefer to use &lt;a href=&#34;https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html&#34;&gt;server-side encryption with AWS Key Management Service&lt;/a&gt; (SSE-KMS), you can modify these files to specify an AWS KMS key.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/awslabs/kubeflow-manifests/blob/main/iaac/terraform/aws-infra/s3/main.tf&#34;&gt;main.tf&lt;/a&gt; for Terraform deployments&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/awslabs/kubeflow-manifests/blob/main/tests/e2e/utils/rds-s3/auto-rds-s3-setup.py&#34;&gt;auto-rds-s3-setup.py&lt;/a&gt; for manifest deployments&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Both SSE-S3 and SSE-KMS provide encryption of objects in the Amazon S3 bucket. You may prefer SSE-KMS if you want to separate the management of encryption keys (via AWS KMS) from management of the Amazon S3 bucket. That separation may provide a stronger security posture. In order to access and use an object in an Amazon S3 bucket, a user needs permission to read the object in the Amazon S3 bucket as well as permission to use the AWS KMS encryption key.&lt;/p&gt;
 &lt;h2 id=&#34;security-resources&#34;&gt;Security resources&lt;/h2&gt;
 &lt;p&gt;Refer to the following documents for more information:&lt;/p&gt;
 &lt;ul&gt;
@@ -4567,6 +4709,116 @@ Additionally you have to set the Terraform variable &lt;code&gt;create_subdomain
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;  &lt;/span&gt;- &lt;span class=&#34;nt&#34;&gt;email&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;user@example.com&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;w&#34;&gt;    &lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;hash&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;&lt;span class=&#34;w&#34;&gt; &lt;/span&gt;&lt;span class=&#34;l&#34;&gt;&amp;lt;enter the generated hash here&amp;gt;&lt;/span&gt;&lt;span class=&#34;w&#34;&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Configure Culling for Notebooks</title>
+      <link>https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/configure-notebook-culling/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/configure-notebook-culling/</guid>
+      <description>
+        
+        
+        &lt;p&gt;The culling feature allows you to stop a Notebook Server based on its &lt;strong&gt;Last Activity&lt;/strong&gt;. The Notebook Controller updates the respective &lt;code&gt;notebooks.kubeflow.org/last-activity&lt;/code&gt; annotation of each Notebook resource according to the execution state of the kernels. When this feature is enabled, the notebook instances will be &amp;ldquo;culled&amp;rdquo; (scaled to zero) if none of the kernels are performing computations for a specified period of time (&lt;code&gt;CULL_IDLE_TIME&lt;/code&gt;). More information about this feature can be found in the &lt;a href=&#34;https://github.com/kubeflow/kubeflow/blob/master/components/proposals/20220121-jupyter-notebook-idleness.md&#34;&gt;Jupyter notebook idleness proposal&lt;/a&gt;.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Export the following values values to configure the &lt;a href=&#34;https://github.com/kubeflow/kubeflow/blob/master/components/proposals/20220121-jupyter-notebook-idleness.md#api-changes&#34;&gt;culling policy parameters&lt;/a&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# whether to enable culling feature (true/false). ENABLE_CULLING must be set to “true” for this feature to take work&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;ENABLE_CULLING&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;true&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# specified idleness time (minutes) that notebook instance to be culled since last activity&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;CULL_IDLE_TIMEOUT&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;30&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# controller will update each notebook&amp;#39;s LAST_ACTIVITY_ANNOTATION every IDLENESS_CHECK_PERIOD (minutes)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;export&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;IDLENESS_CHECK_PERIOD&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;5&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The following commands will inject those values in a configuration file for setting up Notebook culling:
+Select the package manager of your choice.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;For Kustomize and Helm:
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    &lt;ul class=&#34;nav nav-tabs&#34; id=&#34;tabs-0&#34; role=&#34;tablist&#34;&gt;&lt;li class=&#34;nav-item&#34;&gt;
+      &lt;a class=&#34;nav-link active tab-Kustomize&#34;
+        id=&#34;tabs-0-0-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-0-0&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Kustomize&amp;#34;);&#34;
+        aria-controls=&#34;tabs-0-0&#34; aria-selected=&#34;true&#34;&gt;
+        Kustomize
+      &lt;/a&gt;
+    &lt;/li&gt;&lt;li class=&#34;nav-item&#34;&gt;
+      &lt;a class=&#34;nav-link tab-Helm&#34;
+        id=&#34;tabs-0-1-tab&#34; data-toggle=&#34;tab&#34; href=&#34;#tabs-0-1&#34; role=&#34;tab&#34; onclick=&#34;handleClick(&amp;#34;Helm&amp;#34;);&#34;
+        aria-controls=&#34;tabs-0-1&#34; aria-selected=&#34;false&#34;&gt;
+        Helm
+      &lt;/a&gt;
+    &lt;/li&gt;&lt;/ul&gt;
+
+
+&lt;div class=&#34;tab-content&#34; id=&#34;tabs-0-content&#34;&gt;&lt;div class=&#34;tab-pane fade show active&#34;
+        id=&#34;tabs-0-0&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-0-0-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;printf&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;enableCulling=&amp;#39;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$ENABLE_CULLING&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;cullIdleTime=&amp;#39;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$CULL_IDLE_TIMEOUT&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;idlenessCheckPeriod=&amp;#39;&lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$IDLENESS_CHECK_PERIOD&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&lt;/span&gt; &amp;gt; awsconfigs/apps/notebook-controller/params.env
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+  &lt;div class=&#34;tab-pane fade&#34;
+        id=&#34;tabs-0-1&#34; role=&#34;tabpanel&#34; aria-labelled-by=&#34;tabs-0-1-tab&#34;&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;yq e &lt;span class=&#34;s1&#34;&gt;&amp;#39;.cullingPolicy.enableCulling = env(ENABLE_CULLING)&amp;#39;&lt;/span&gt; -i charts/apps/notebook-controller/values.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;yq e &lt;span class=&#34;s1&#34;&gt;&amp;#39;.cullingPolicy.cullIdleTime = env(CULL_IDLE_TIMEOUT)&amp;#39;&lt;/span&gt; -i charts/apps/notebook-controller/values.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;yq e &lt;span class=&#34;s1&#34;&gt;&amp;#39;.cullingPolicy.idlenessCheckPeriod = env(IDLENESS_CHECK_PERIOD)&amp;#39;&lt;/span&gt; -i charts/apps/notebook-controller/values.yaml
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+  
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;For Terraform, append the notebook culling parameters in the &lt;code&gt;sample.auto.tfvars&lt;/code&gt; file with chosen deployment option: &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/vanilla/guide-terraform/&#34;&gt;Vanilla&lt;/a&gt;, &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/cognito/guide-terraform/&#34;&gt;Cognito&lt;/a&gt;, &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/rds-s3/guide-terraform/&#34;&gt;RDS-S3&lt;/a&gt;, and &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/cognito-rds-s3/guide-terraform/&#34;&gt;Cognito-RDS-S3&lt;/a&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;cat &lt;span class=&#34;s&#34;&gt;&amp;lt;&amp;lt;EOT &amp;gt;&amp;gt; sample.auto.tfvars
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;notebook_enable_culling=&amp;#34;${ENABLE_CULLING}&amp;#34; 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;notebook_cull_idle_time=&amp;#34;${CULL_IDLE_TIMEOUT}&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;notebook_idleness_check_period=&amp;#34;${IDLENESS_CHECK_PERIOD}&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s&#34;&gt;EOT&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Continue deploying Kubeflow based on your &lt;a href=&#34;https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/&#34;&gt;Deployment Option&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 
       </description>
