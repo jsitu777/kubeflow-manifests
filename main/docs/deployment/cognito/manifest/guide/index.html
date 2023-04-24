@@ -28,7 +28,7 @@
       "datePublished": "0001-01-01 00:00:00 \u002b0000 UTC",
       "dateModified" : "0001-01-01 00:00:00 \u002b0000 UTC",
       "url" : "https:\/\/jsitu777.github.io\/kubeflow-manifests\/main\/docs\/deployment\/cognito\/manifest\/guide\/",
-      "wordCount" : "1356",
+      "wordCount" : "1349",
       "keywords" : [ "Kubeflow" ]
   }
   </script>
@@ -49,12 +49,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/cognito/manifest/guide/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2023-04-20T09:49:47-07:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
+<meta property="article:modified_time" content="2023-04-24T13:51:50-07:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
 
 <meta itemprop="name" content="Manual Deployment Guide">
 <meta itemprop="description" content="Deploying Kubeflow with AWS Cognito as identity provider using Kustomize or Helm">
-<meta itemprop="dateModified" content="2023-04-20T09:49:47-07:00" />
-<meta itemprop="wordCount" content="1356">
+<meta itemprop="dateModified" content="2023-04-24T13:51:50-07:00" />
+<meta itemprop="wordCount" content="1349">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Manual Deployment Guide"/>
 <meta name="twitter:description" content="Deploying Kubeflow with AWS Cognito as identity provider using Kustomize or Helm"/>
@@ -137,7 +137,9 @@
 	
 	<a class="dropdown-item" href="https://awslabs.github.io/kubeflow-manifests/docs">latest</a>
 	
-	<a class="dropdown-item" href="https://awslabs.github.io/kubeflow-manifests/release-v1.6.1-aws-b1.0.0/docs">v1.6</a>
+	<a class="dropdown-item" href="https://awslabs.github.io/kubeflow-manifests/release-v1.7.0-aws-b1.0.0/docs">v1.7</a>
+	
+	<a class="dropdown-item" href="https://awslabs.github.io/kubeflow-manifests/release-v1.6.1-aws-b1.0.2/docs">v1.6</a>
 	
 	<a class="dropdown-item" href="https://awslabs.github.io/kubeflow-manifests/release-v1.5.1-aws-b1.0.2/docs">v1.5</a>
 	
@@ -532,7 +534,7 @@
 <p><img src="https://raw.githubusercontent.com/awslabs/kubeflow-manifests/main/website/content/en/docs/images/cognito/cognito-email-required.png" alt="cognito-email-required"></p>
 </li>
 <li>
-<p>On the Policies page, select <code>Only allow administrators to create users</code> under <code>Do you want to allow users to sign themselves up?</code> and save changes. This step is optional but is recommended to have strict control over the users.</p>
+<p>On the Configure sign-up experience page, unselect <code>Enable self-registration</code> under <code>Self-service sign-up?</code> and save changes. This step is optional but is recommended to have strict control over the users.</p>
 </li>
 <li>
 <p>Click on <code>Create pool</code> to create the user pool.</p>
@@ -542,7 +544,7 @@
 <p><img src="https://raw.githubusercontent.com/awslabs/kubeflow-manifests/main/website/content/en/docs/images/cognito/cognito-app-client-id.png" alt="cognito-app-client-id"></p>
 </li>
 <li>
-<p>In the <code>App client settings</code>, select <code>Authorization code grant</code> flow under OAuth-2.0 and check <code>email</code>, <code>openid</code>, <code>aws.cognito.signin.user.admin</code> and <code>profile</code> scopes.
+<p>In the <code>App client edit the Hosted UI</code>, select <code>Authorization code grant</code> flow under OAuth-2.0 and check <code>email</code>, <code>openid</code>, <code>aws.cognito.signin.user.admin</code> and <code>profile</code> scopes.
 Check also <code>Enabled Identity Providers</code>.</p>
 <ul>
 <li>
@@ -551,6 +553,7 @@ Check also <code>Enabled Identity Providers</code>.</p>
 <li>
 <p>Substitute <code>example.com</code> in this URL - <code>https://kubeflow.platform.example.com</code> with your domain and use it as the Sign out URL(s).</p>
 <p><img src="https://raw.githubusercontent.com/awslabs/kubeflow-manifests/main/website/content/en/docs/images/cognito/cognito-app-client-settings.png" alt="cognito-app-client-settings"></p>
+<p><img src="https://raw.githubusercontent.com/awslabs/kubeflow-manifests/main/website/content/en/docs/images/cognito/cognito-app-client-settings-oidc.png" alt="cognito-app-client-settings"></p>
 </li>
 </ul>
 </li>
@@ -899,7 +902,7 @@ Check if the DNS entry propogated with the <a href="https://toolbox.googleapps.c
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified April 20, 2023: <a href="https://github.com/awslabs/kubeflow-manifests//commit/57968d9a93f6d951f7e37ba785f75e8d93d2bf14">Merge remote-tracking branch &#39;upstream/main&#39; (57968d9)</a>
+  Last modified April 24, 2023: <a href="https://github.com/awslabs/kubeflow-manifests//commit/412d23702c1f404c06959bfbf3e97d7338d57ed7">Merge remote-tracking branch &#39;upstream/main&#39; (412d237)</a>
 </div>
 
 </div>
