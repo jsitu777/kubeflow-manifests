@@ -28,7 +28,7 @@
       "datePublished": "0001-01-01 00:00:00 \u002b0000 UTC",
       "dateModified" : "0001-01-01 00:00:00 \u002b0000 UTC",
       "url" : "https:\/\/jsitu777.github.io\/kubeflow-manifests\/main\/docs\/deployment\/cognito\/manifest\/guide\/",
-      "wordCount" : "1349",
+      "wordCount" : "1370",
       "keywords" : [ "Kubeflow" ]
   }
   </script>
@@ -49,12 +49,12 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jsitu777.github.io/kubeflow-manifests/main/docs/deployment/cognito/manifest/guide/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2023-04-24T13:51:50-07:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
+<meta property="article:modified_time" content="2023-05-11T10:47:22-07:00" /><meta property="og:site_name" content="Kubeflow on AWS" />
 
 <meta itemprop="name" content="Manual Deployment Guide">
 <meta itemprop="description" content="Deploying Kubeflow with AWS Cognito as identity provider using Kustomize or Helm">
-<meta itemprop="dateModified" content="2023-04-24T13:51:50-07:00" />
-<meta itemprop="wordCount" content="1349">
+<meta itemprop="dateModified" content="2023-05-11T10:47:22-07:00" />
+<meta itemprop="wordCount" content="1370">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Manual Deployment Guide"/>
 <meta name="twitter:description" content="Deploying Kubeflow with AWS Cognito as identity provider using Kustomize or Helm"/>
@@ -292,6 +292,10 @@
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-kubeflow-manifestsmaindocsdeploymentconnect-kubeflow-dashboard-li">
   <input type="checkbox" id="m-kubeflow-manifestsmaindocsdeploymentconnect-kubeflow-dashboard-check"/>
   <label for="m-kubeflow-manifestsmaindocsdeploymentconnect-kubeflow-dashboard-check"><a href="/kubeflow-manifests/main/docs/deployment/connect-kubeflow-dashboard/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-kubeflow-manifestsmaindocsdeploymentconnect-kubeflow-dashboard"><span class="">Connect to your Kubeflow Dashboard</span></a></label>
+  
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-kubeflow-manifestsmaindocsdeploymentcreate-profiles-with-iam-role-li">
+  <input type="checkbox" id="m-kubeflow-manifestsmaindocsdeploymentcreate-profiles-with-iam-role-check"/>
+  <label for="m-kubeflow-manifestsmaindocsdeploymentcreate-profiles-with-iam-role-check"><a href="/kubeflow-manifests/main/docs/deployment/create-profiles-with-iam-role/" class="align-left pl-0  td-sidebar-link td-sidebar-link__page" id="m-kubeflow-manifestsmaindocsdeploymentcreate-profiles-with-iam-role"><span class="">Create Profiles with IAM role</span></a></label>
   
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-kubeflow-manifestsmaindocsdeploymentconfigure-notebook-culling-li">
   <input type="checkbox" id="m-kubeflow-manifestsmaindocsdeploymentconfigure-notebook-culling-check"/>
@@ -866,13 +870,14 @@ Check also <code>Enabled Identity Providers</code>.</p>
 <p>The central dashboard should now be available at <code>https://kubeflow.platform.example.com</code>.</p>
 <p>Before connecting to the dashboard:</p>
 <ul>
-<li>
-<p>Go to the Cognito console and create some users in <code>Users and groups</code>. These are the users who will log in to the central dashboard.
-<img src="https://raw.githubusercontent.com/awslabs/kubeflow-manifests/main/website/content/en/docs/images/cognito/cognito-user-pool-created.png" alt="cognito-user-pool-created"></p>
+<li>Go to the Cognito console and create some users in <code>Users and groups</code>. These are the users who will log in to the central dashboard.
+<ul>
+<li>Create a user with email address <code>user@example.com</code>. This user and email address come preconfigured and have a Profile created by default.
+<img src="https://raw.githubusercontent.com/awslabs/kubeflow-manifests/main/website/content/en/docs/images/cognito/cognito-user-pool-created.png" alt="cognito-user-pool-created"></li>
+</ul>
 </li>
-<li>
-<p>Create a Profile for a user by following the steps in the <a href="https://www.kubeflow.org/docs/components/multi-tenancy/getting-started/#manual-profile-creation">Manual Profile Creation</a>.
-The following is a Profile example for reference:</p>
+<li>Create a Profile for a user by following the steps in the <a href="https://www.kubeflow.org/docs/components/multi-tenancy/getting-started/#manual-profile-creation">Manual Profile Creation</a>.
+The following is a Profile example for reference:
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">apiVersion: kubeflow.org/v1beta1
 </span></span><span class="line"><span class="cl">kind: Profile
 </span></span><span class="line"><span class="cl">metadata:
@@ -902,7 +907,7 @@ Check if the DNS entry propogated with the <a href="https://toolbox.googleapps.c
 	
 	
 	<div class="text-muted mt-5 pt-3 border-top">
-  Last modified April 24, 2023: <a href="https://github.com/awslabs/kubeflow-manifests//commit/412d23702c1f404c06959bfbf3e97d7338d57ed7">Merge remote-tracking branch &#39;upstream/main&#39; (412d237)</a>
+  Last modified May 11, 2023: <a href="https://github.com/awslabs/kubeflow-manifests//commit/dcc6d9d66f76e7999077c3128aea9314f5e99c9d">Merge remote-tracking branch &#39;upstream/main&#39; (dcc6d9d)</a>
 </div>
 
 </div>
